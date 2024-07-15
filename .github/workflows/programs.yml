@@ -2,6 +2,10 @@ name: Exiled Programs CI
 
 on: [push, pull_request]
 
+defaults:
+  run:
+    working-directory: ./EXILED
+
 jobs:
   build:
     # Prevent double running for push & pull_request events from the main repo

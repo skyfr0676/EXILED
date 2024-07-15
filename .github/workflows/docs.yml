@@ -7,11 +7,15 @@ on:
   pull_request:
     branches:
       - master
-      
+
+defaults:
+  run:
+    working-directory: ./EXILED
+
 env:
   EXILED_REFERENCES_URL: https://misaka-zerotwo.github.io/SL-References/Master.zip
   EXILED_REFERENCES_PATH: ${{ github.workspace }}/References
-      
+  
 jobs:
   build_and_publish_docs:
     runs-on: windows-latest
