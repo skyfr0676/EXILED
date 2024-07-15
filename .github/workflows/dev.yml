@@ -55,7 +55,7 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: ${{ env.PackageFile }}
-        path: ${{ env.PackageFile }}
+        path: EXILED/${{ env.PackageFile }}
         
     - name: Get references
       shell: pwsh
@@ -70,5 +70,5 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: Build Result
-        path: ./bin/Release/Exiled.tar.gz
+        path: EXILED/bin/Release/Exiled.tar.gz
 
