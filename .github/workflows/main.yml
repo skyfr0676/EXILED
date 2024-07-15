@@ -53,10 +53,10 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: Build Results
-        path: ./bin/Release
+        path: EXILED/bin/Release
 
     - name: Upload nuget package
       uses: actions/upload-artifact@v2
       with:
         name: ${{ env.PackageFile }}
-        path: ${{ env.PackageFile }}
+        path: EXILED/${{ env.PackageFile }}
