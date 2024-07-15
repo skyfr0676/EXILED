@@ -1,13 +1,17 @@
-name: Pull Request Opened
+name: PR Rename
 
 on:
   pull_request:
-    types: 
-      - opened
-      - labeled
-      - unlabeled
-      - edited
+#    types: 
+#      - opened
+#      - labeled
+#      - unlabeled
+#      - edited
   workflow_dispatch:
+
+defaults:
+  run:
+    working-directory: ./EXILED
 
 jobs:
   set-labels:
@@ -33,7 +37,7 @@ jobs:
       with:
         route: GET /repos/${{ github.repository }}/pulls/${{ github.event.pull_request.number }}
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.PAT }}
 
     - name: Extract Labels
       id: extract_labels
@@ -41,7 +45,7 @@ jobs:
     
     - name: Update PR Title
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.PAT }}
       run: |
         PR_TITLE=$(jq -r '.title' <<< "${{ steps.get_pr.outputs.data }}")
         PR_LABELS="${{ steps.extract_labels.outputs.labels }}"
