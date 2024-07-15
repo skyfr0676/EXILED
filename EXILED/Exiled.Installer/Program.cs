@@ -42,10 +42,11 @@ namespace Exiled.Installer
 
     internal static class Program
     {
-        private const long RepoID = 231269519;
+        private const long RepoID = 828620622;
         private const string ExiledAssetName = "exiled.tar.gz";
 
-        private static readonly Version VersionLimit = new("2.0.0");
+        // This is the lowest version the installer will check to install
+        private static readonly Version VersionLimit = new("8.0.0");
         private static readonly uint SecondsWaitForDownload = 480;
 
         private static readonly string Header = $"{Assembly.GetExecutingAssembly().GetName().Name}-{Assembly.GetExecutingAssembly().GetName().Version}";
