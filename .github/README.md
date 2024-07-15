@@ -110,3 +110,7 @@ Localized READMEs
     <a href="https://github.com/Exiled-Official/EXILED/blob/master/.github/documentation/localization/README-ไทย.md">ไทย</a>
   </div>
 </div>
+
+<h5 align="center">
+This repo is a clone from <a href="https://github.com/Exiled-Team/EXILED">Exiled-Team/EXILED</a> after the old repository was taken hostage by the old lead developer.
+</h5>
