@@ -39,4 +39,4 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: ${{ matrix.proj_name }}-${{ matrix.target }}
-        path: builds/${{ matrix.target }}
+        path: ./builds/${{ matrix.target }}

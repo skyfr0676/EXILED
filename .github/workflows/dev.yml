@@ -70,5 +70,5 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: Build Result
-        path: bin/Release/Exiled.tar.gz
+        path: ./bin/Release/Exiled.tar.gz
 
