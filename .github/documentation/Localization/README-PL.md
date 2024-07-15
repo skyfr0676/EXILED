@@ -1,10 +1,10 @@
 <h1 align="center">EXILED - EXtended In-runtime Library for External Development</h1>
 <div align="center">
     
-[<img src="https://img.shields.io/github/actions/workflow/status/Exiled-Team/EXILED/main.yml?style=for-the-badge&logo=githubactions&label=build" alt="CI"/>](https://github.com/Exiled-Team/EXILED/actions/workflows/main.yml/badge.svg?branch=master)
-<a href="https://github.com/Exiled-Team/EXILED/releases"><img src="https://img.shields.io/github/v/release/Exiled-Team/EXILED?display_name=tag&style=for-the-badge&logo=gitbook&label=Release" href="https://github.com/Exiled-Team/EXILED/releases" alt="GitHub Releases"></a>
-<img src="https://img.shields.io/github/downloads/Exiled-Team/EXILED/total?style=for-the-badge&logo=github" alt="Downloads">
-![Github Commits](https://img.shields.io/github/commit-activity/w/Exiled-Team/EXILED/apis-rework?style=for-the-badge&logo=git)
+[<img src="https://img.shields.io/github/actions/workflow/status/Exiled-Official/EXILED/main.yml?style=for-the-badge&logo=githubactions&label=build" alt="CI"/>](https://github.com/Exiled-Official/EXILED/actions/workflows/main.yml/badge.svg?branch=master)
+<a href="https://github.com/Exiled-Official/EXILED/releases"><img src="https://img.shields.io/github/v/release/Exiled-Official/EXILED?display_name=tag&style=for-the-badge&logo=gitbook&label=Release" href="https://github.com/Exiled-Official/EXILED/releases" alt="GitHub Releases"></a>
+<img src="https://img.shields.io/github/downloads/Exiled-Official/EXILED/total?style=for-the-badge&logo=github" alt="Downloads">
+![Github Commits](https://img.shields.io/github/commit-activity/w/Exiled-Official/EXILED/apis-rework?style=for-the-badge&logo=git)
 <a href="https://discord.gg/PyUkWTg">
     <img src="https://img.shields.io/discord/656673194693885975?style=for-the-badge&logo=discord" alt="Chat on Discord">
 </a>    
@@ -17,15 +17,6 @@ Wszystkie zdarzenia EXILED'a są zaprogromowane za pomocą Harmony, co oznacza �
  - Po pierwsze, cały kod framework'a może być swobodnie publikowany i udostępniany co pozwala programistom lepiej zrozumieć *jak* on działa, oraz dawać sugestie dotyczące dodawania i zmieniania jego funkcji.
  - Po drugie, ponieważ cały kod związany z framework'iem jest wykonywany poza plikami Assembly serwera, rzeczy takie jak małe aktualizacje gry będą miały niewielki (jeżeli jakikolwiek) wpływ na działanie framework'a, sprawiając że najprawdopodobniej będzie on kompatybilny z przyszłymi aktualizacjami gry oraz łatwiejszy do aktualizacji gdy *faktycznie* jest to potrzebne.
 
-# Przetłumaczone README
-- [Русский](https://github.com/Exiled-Team/EXILED/blob/master/Localization/README-Русский.md)
-- [中文](https://github.com/Exiled-Team/EXILED/blob/master/Localization/README-中文.md)
-- [Español](https://github.com/Exiled-Team/EXILED/blob/master/Localization/README-ES.md)
-- [Polski](https://github.com/Exiled-Team/EXILED/blob/master/Localization/README-PL.md)
-- [Português-BR](https://github.com/Exiled-Team/EXILED/blob/master/Localization/README-BR.md)
-- [Čeština](https://github.com/Exiled-Team/EXILED/blob/master/Localization/README-CS.md)
-- [Dansk](https://github.com/Exiled-Team/EXILED/blob/master/Localization/README-DK.md)
-
 # Instalacja
 Instalacja EXILED'a może wydawać się bardziej skomplikowana i wymagająca niż innych framework'ów ale tak naprawdę jest to całkiem proste.
 Jak wymieniono wyżej, większość EXILED'a jest zawarta poza plikiem Asembly-CSharp.dll serwera, aczkolwiek istnieja jedna ważna zmiana w tym pliku wymagana aby faktycznie *załadować* EXILED'a na serwer podczas uruchamiania, czysta wersja pliku Assembly z tą zmianą już wprowadzoną będzie dostarczona razem z kolejnymi wydaniami framework'a.
@@ -33,17 +24,17 @@ Jak wymieniono wyżej, większość EXILED'a jest zawarta poza plikiem Asembly-C
 Jeżeli zdecydujecie się na skorzystanie z instalatora, ten - jeżeli użyty poprawnie, zajmie się instalacją EXILED'a ze wszystkimi jego funkcjami.
 
 # Windows
-### Automatyczna instalacja ([więcej informacji](https://github.com/Exiled-Team/EXILED/blob/master/Exiled.Installer/README.md))
+### Automatyczna instalacja ([więcej informacji](https://github.com/Exiled-Official/EXILED/blob/master/Exiled.Installer/README.md))
 **UWAGA**: Przed uruchomieniem instalatora upewnijcie się, że jesteście zalogowani jako użytkownik, który będzie uruchamiał serwer albo ma uprawnienia Administratora.
 
-  - Pobierzcie **`Exiled.Installer-Win.exe` kilkając [tutaj](https://github.com/Exiled-Team/EXILED/releases)** (Naciśnijcie na zasoby (Assets) -> naciśnijcie na instalatora)
+  - Pobierzcie **`Exiled.Installer-Win.exe` kilkając [tutaj](https://github.com/Exiled-Official/EXILED/releases)** (Naciśnijcie na zasoby (Assets) -> naciśnijcie na instalatora)
   - Umieśćcie go w folderze waszego serwera (pobierzcie serwer dedykowany jeżeli jeszcze tego nie zrobiliście)
   - Naciśnijcie 2 razy na **`Exiled.Installer.exe`** albo **[pobierzcie ten plik .bat](https://www.dropbox.com/s/xny4xus73ze6mq9/install-prerelease.bat?dl=1)** i umieśćcie go w folderze waszego serwera aby zainstalować najnowsze wydanie 'beta'.
   - Aby zdobyć i zainstalować pluginy, sprawdźcie sekcję [Instalowanie pluginów](#installing-plugins) poniżej.
 **UWAGA:** Jeżeli instalujecie EXILED'a na serwerze, upewnijcie się, że uruchamiacie plik .exe jako ten sam użytkownik, który będzie uruchamiał serwer (albo ma uprawnienia Administratora)
 
 ### Ręczna instalacja
-  - Pobierzcie **`Exiled.tar.gz` klikając [tutaj](https://github.com/Exiled-Team/EXILED/releases)**
+  - Pobierzcie **`Exiled.tar.gz` klikając [tutaj](https://github.com/Exiled-Official/EXILED/releases)**
   - Wypakujcie jego zawartośc za pomocą [7Zip'a](https://www.7-zip.org/) albo [WinRar'a](https://www.win-rar.com/download.html?&L=6)
   - Przenieście folder **``EXILED``** do **`%appdata%`** *UWAGA: Folder EXILED musi znaleźć się w ścieżce ``C:\Users\%UserName%\AppData\Roaming``, ***A NIE*** ``C:\Users\%UserName%\AppData\Roaming\SCP Secret Laboratory``, i **MUSI** być w (...)\AppData\Roaming, a nie (...)\AppData\!*
     - Windows 10:
@@ -58,11 +49,11 @@ To tyle, EXILED powinien być juz zainstalowany i aktywowany podczas następnego
   - Przenieść go do folderu: ``C:\Users\%UserName%\AppData\Roaming\EXILED\Plugins`` (aby się tutaj dostać wystarczy wcisnąć Win + R i wpisać `%appdata%`)
 
 # Linux
-### Automatyczna instalacja ([więcej informacji](https://github.com/Exiled-Team/EXILED/blob/master/Exiled.Installer/README.md))
+### Automatyczna instalacja ([więcej informacji](https://github.com/Exiled-Official/EXILED/blob/master/Exiled.Installer/README.md))
 
 **UWAGA:** Jeżeli instalujecie EXILED'a na serwerze zdalnym, upewnijcie się, że uruchamiacie instalator jako ten sam użytkownik, który będzie uruchamiał serwer (albo jako root).
 
-  - Pobierzcie **`Exiled.Installer-Linux` klikając [tutaj](https://github.com/Exiled-Team/EXILED/releases)** (naciśnijcie na zasoby (Assets) -> naciśnijcie na instalator)
+  - Pobierzcie **`Exiled.Installer-Linux` klikając [tutaj](https://github.com/Exiled-Official/EXILED/releases)** (naciśnijcie na zasoby (Assets) -> naciśnijcie na instalator)
   - Zainstulujcie go wpisując **`./Exiled.Installer-Linux --path /path/to/server`** albo przenieście go bezpośrednio do folderu serwera, przejdźcie do niego za pomocą terminala (komenda `cd`) i wpiszcie: **`./Exiled.Installer-Linux`**.
   - Jeżeli chcecie zainstalować najnowsze wydanie 'beta', po prostu dodajcie **`--pre-releases`** na końcu komendy. Na przykład: **`./Exiled.Installer-Linux /home/scp/server --pre-releases`**
   - Kolejny przykład, dla tych którzy umieścili `Exiled.Installer-Linux` w swoim folderze serwera: **`/home/scp/server/Exiled.Installer-Linux --pre-releases`**
@@ -70,7 +61,7 @@ To tyle, EXILED powinien być juz zainstalowany i aktywowany podczas następnego
 
 ### Ręczna instalacja
   - **Upewnijcie się**, że jesteście zalogowani jako ten sam użytkownik, który będzie uruchamiał serwer.
-  - Pobierzcie **`Exiled.tar.gz` kilkając [tutaj](https://github.com/Exiled-Team/EXILED/releases)** (SSH: naciśnijcie prawym przyciskiem myszy na `Exiled.tar.gz` aby skopiować link, a następnie wpiszcie: **`wget (link_do_pobrania)`**)
+  - Pobierzcie **`Exiled.tar.gz` kilkając [tutaj](https://github.com/Exiled-Official/EXILED/releases)** (SSH: naciśnijcie prawym przyciskiem myszy na `Exiled.tar.gz` aby skopiować link, a następnie wpiszcie: **`wget (link_do_pobrania)`**)
   - Aby wypakować pliki do obecnego folderu **``tar -xzvf EXILED.tar.gz``**
   - Przenieście folder **`EXILED`** do ścieżki **``~/.config``**. *UWAGA: Folder EXILED musi znaleźć się w folderze ``~/.config``, ***A NIE*** ``~/.config/SCP Secret Laboratory``* (SSH: **`mv EXILED ~/.config/`**)
   - Przenieście folder **`SCP Secret Laboratory`** do ścieżki **``~/.config``**. *UWAGA: Folder musi znaleźć się w ``~/.config``, **A *NIE*** ``~/.config/SCP Secret Laboratory``* (SSH: **`mv SCP Secret Laboratory ~/.config/`**)
