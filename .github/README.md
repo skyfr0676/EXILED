@@ -18,19 +18,19 @@ All EXILED events are coded with Harmony, meaning they require no direct editing
  - Secondly, since all the code related to the framework is done outside of the server assembly, things like small game updates will have little, if any, effect on the framework. Making it most likely to be compatible with future game updates, as well as making it easier to update when it *is* necessary to do so.
 
 # Localized READMEs
-- [Русский](https://github.com/Exiled-Team/EXILED/blob/master/Localization/README-Русский.md)
-- [中文](https://github.com/Exiled-Team/EXILED/blob/master/Localization/README-中文.md)
-- [Español](https://github.com/Exiled-Team/EXILED/blob/master/Localization/README-ES.md)
-- [Polski](https://github.com/Exiled-Team/EXILED/blob/master/Localization/README-PL.md)
-- [Português-BR](https://github.com/Exiled-Team/EXILED/blob/master/Localization/README-BR.md)
-- [Italiano](https://github.com/Exiled-Team/EXILED/blob/master/Localization/README-IT.md)
-- [Čeština](https://github.com/Exiled-Team/EXILED/blob/master/Localization/README-CS.md)
-- [Dansk](https://github.com/Exiled-Team/EXILED/blob/master/Localization/README-DK.md)
-- [Türkçe](https://github.com/Exiled-Team/EXILED/blob/master/Localization/README-TR.md)
-- [German](https://github.com/Exiled-Team/EXILED/blob/master/Localization/README-DE.md)
-- [Français](https://github.com/Exiled-Team/EXILED/blob/master/Localization/README-FR.md)
-- [한국어](https://github.com/Exiled-Team/EXILED/blob/master/Localization/README-KR.md)
-- [ไทย](https://github.com/Exiled-Team/EXILED/blob/master/Localization/README-ไทย.md)
+- [Русский](https://github.com/Exiled-Team/EXILED/blob/master/.github/documentation/Localization/README-Русский.md)
+- [中文](https://github.com/Exiled-Team/EXILED/blob/master/.github/documentation/Localization/README-中文.md)
+- [Español](https://github.com/Exiled-Team/EXILED/blob/master/.github/documentation/Localization/README-ES.md)
+- [Polski](https://github.com/Exiled-Team/EXILED/blob/master/.github/documentation/Localization/README-PL.md)
+- [Português-BR](https://github.com/Exiled-Team/EXILED/blob/master/.github/documentation/Localization/README-BR.md)
+- [Italiano](https://github.com/Exiled-Team/EXILED/blob/master/.github/documentation/Localization/README-IT.md)
+- [Čeština](https://github.com/Exiled-Team/EXILED/blob/master/.github/documentation/Localization/README-CS.md)
+- [Dansk](https://github.com/Exiled-Team/EXILED/blob/master/.github/documentation/Localization/README-DK.md)
+- [Türkçe](https://github.com/Exiled-Team/EXILED/blob/master/.github/documentation/Localization/README-TR.md)
+- [German](https://github.com/Exiled-Team/EXILED/blob/master/.github/documentation/Localization/README-DE.md)
+- [Français](https://github.com/Exiled-Team/EXILED/blob/master/.github/documentation/Localization/README-FR.md)
+- [한국어](https://github.com/Exiled-Team/EXILED/blob/master/.github/documentation/Localization/README-KR.md)
+- [ไทย](https://github.com/Exiled-Team/EXILED/blob/master/.github/documentation/Localization/README-ไทย.md)
 
 # Installation
 Installation of EXILED is quite simple. It loads itself through Northwood’s Plugin API. That's why there are two folders inside the ``Exiled.tar.gz`` in release files. ``SCP Secret Laboratory`` contains the necessary files to load EXILED features in ``EXILED`` folder. All you need to do is move these two folders into the appropriate path, which are explained below, and you are done! 
@@ -38,7 +38,7 @@ Installation of EXILED is quite simple. It loads itself through Northwood’s Pl
 If you choose to use the installer it will, if run correctly, take care of installing all EXILED features.
 
 # Windows
-### Automatic installation ([more information](https://github.com/Exiled-Team/EXILED/blob/master/Exiled.Installer/README.md))
+### Automatic installation ([more information](https://github.com/Exiled-Team/EXILED/blob/master/EXILED/Exiled.Installer/README.md))
 **Note**: Make sure you're on the user that runs the server, or you have Admin privileges before running the Installer.
 
   - Download the **`Exiled.Installer-Win.exe` [from here](https://github.com/Exiled-Team/EXILED/releases)** (click on Assets -> click the Installer)
@@ -64,7 +64,7 @@ That's it, EXILED should now be installed and active the next time you boot up y
   - Move it to: ``C:\Users\%UserName%\AppData\Roaming\EXILED\Plugins`` (move here by pressing Win + R, then writing `%appdata%`)
 
 # Linux
-### Automatic installation ([more information](https://github.com/Exiled-Team/EXILED/blob/master/Exiled.Installer/README.md))
+### Automatic installation ([more information](https://github.com/Exiled-Team/EXILED/blob/master/EXILED/Exiled.Installer/README.md))
 
 **Note:** If you are installing EXILED on a remote server, make sure you run the Installer as the same user that runs your SCP:SL servers (or root)
 
