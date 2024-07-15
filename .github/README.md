@@ -10,7 +10,7 @@
 <div align="center">
 
 [![Version](https://img.shields.io/github/v/release/Exiled-Official/EXILED?sort=semver&style=flat-square&color=8DBBE9&label=Version)]()
-[![License](https://img.shields.io/github/license/Exiled-Official/EXILED?style=flat-square&label=License&color=df967f)]()
+[![License](https://img.shields.io/badge/License-CC%20BY%E2%80%93SA%203.0-df967f?style=flat-square)]()
 [![Contributors](https://img.shields.io/github/contributors-anon/Exiled-Official/EXILED?color=90E59A&style=flat-square&label=Contributors)]()
 [![GitHub Issues](https://img.shields.io/github/issues/Exiled-Official/EXILED.svg?style=flat-square&label=Issues&color=d77982)](https://github.com/Exiled-Official/EXILED/issues)
 [![Discord](https://img.shields.io/discord/656673194693885975?color=738adb&label=Discord&logo=discord&logoColor=white&style=flat-square)](https://discord.gg/PyUkWTg)
