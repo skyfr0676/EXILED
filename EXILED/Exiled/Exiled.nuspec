@@ -2,16 +2,16 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
 
-    <id>EXILED</id>
-    <title>EXILED</title>
+    <id>EXILEDOFFICIAL</id>
+    <title>Exiled-Official</title>
     <version>$version$</version>
-    <authors>The Exiled Team</authors>
-    <owners>Galaxy119</owners>
-    <copyright>Copyright © Exiled Team 2020 - $year$</copyright>
+    <authors>Exiled-Official</authors>
+    <owners>Exiled-Official</owners>
+    <copyright>Copyright © Exiled Official 2024 - $year$</copyright>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <repository type="Git" url="https://github.com/Exiled-Team/EXILED" />
-    <licenseUrl>https://github.com/Exiled-Team/EXILED/blob/master/LICENSE.md</licenseUrl>
-    <projectUrl>https://github.com/Exiled-Team/EXILED</projectUrl>
+    <repository type="Git" url="https://github.com/Exiled-Official/EXILED" />
+    <licenseUrl>https://github.com/Exiled-Official/EXILED/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/Exiled-Official/EXILED</projectUrl>
     <icon>images\Exiled_Icon.jpg</icon>
     <description>Plugin framework for SCP: Secret Laboratory.</description>
 
