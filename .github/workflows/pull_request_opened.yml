@@ -9,6 +9,10 @@ on:
       - edited
   workflow_dispatch:
 
+defaults:
+  run:
+    working-directory: ./EXILED
+
 jobs:
   set-labels:
     runs-on: ubuntu-latest
