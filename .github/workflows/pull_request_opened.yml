@@ -1,4 +1,4 @@
-name: Pull Request Opened
+name: PR Rename
 
 on:
   pull_request:
