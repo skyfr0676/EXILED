@@ -112,5 +112,5 @@ Localized READMEs
 </div>
 
 <h5 align="center">
-This repo is a fork from <a href="https://github.com/Exiled-Team/EXILED">Exiled-Team/EXILED</a> after the old repository was taken hostage by the old lead developer.
+This repo is a fork of <a href="https://github.com/Exiled-Team/EXILED">Exiled-Team/EXILED</a> after the old repository was taken hostage by the old lead developer.
 </h5>
