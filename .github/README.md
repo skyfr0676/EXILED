@@ -18,7 +18,7 @@
 </div>
 
 <p align="center">
-  <img alt="CursedMod Development" src="https://repobeats.axiom.co/api/embed/19ee1da65a0dce6cb76fac41d7f863b1d571cfcf.svg">
+  <img alt="EXILED Development" src="https://repobeats.axiom.co/api/embed/19ee1da65a0dce6cb76fac41d7f863b1d571cfcf.svg">
 </p>
 
 <h1 align="center">
