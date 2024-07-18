@@ -97,6 +97,10 @@ jobs:
           release_name: Release ${{ github.ref }}
           draft: true
           prerelease: false
+
+      - name: Check files
+        if: runner.os == 'Linux'
+        run: ls -R
       
       - name: Release
         if: runner.os == 'Windows'
