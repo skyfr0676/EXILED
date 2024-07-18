@@ -86,4 +86,5 @@ jobs:
         if: runner.os == 'Linux'
         uses: softprops/action-gh-release@v2
         with:
+          draft: true
           files: EXILED/builds/linux-x64/Exiled.Installer-Linux
