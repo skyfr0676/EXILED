@@ -53,11 +53,8 @@ jobs:
         shell: pwsh
         run: ./packaging.ps1
 
-      - name: Install dependencies for Exiled.Installer@linux-x64
-        run: dotnet restore Exiled.Installer -r linux-x64
-
-      - name: Install dependencies for Exiled.Installer@win-x64
-        run: dotnet restore Exiled.Installer -r win-x64
+      - name: Install dependencies for Exiled.Installer
+        run: dotnet restore Exiled.Installer
   
       - name: Build Exiled.Installer@linux-x64
         run: dotnet publish Exiled.Installer -r linux-x64 -c release -o builds/linux-x64 --self-contained true
