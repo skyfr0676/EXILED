@@ -11,7 +11,7 @@ defaults:
     working-directory: ./EXILED
 
 env:
-  EXILED_REFERENCES_URL: https://misaka-zerotwo.github.io/SL-References/Dev.zip
+  EXILED_REFERENCES_URL: https://Exiled-Official.github.io/SL-References/Master.zip
   EXILED_REFERENCES_PATH: ${{ github.workspace }}/EXILED/References
   EXILED_DLL_ARCHIVER_URL: https://github.com/Exiled-Official/EXILED-DLL-Archiver/releases/latest/download/EXILED-DLL-Archiver.exe
 
@@ -62,7 +62,7 @@ jobs:
       - name: Build Exiled.Installer@win-x64
         run: dotnet publish Exiled.Installer -r win-x64 -c release -o builds/win-x64 --self-contained true
         
-      - name: Release
+      - name: Create release
         uses: softprops/action-gh-release@v2
         with:
           files: |
