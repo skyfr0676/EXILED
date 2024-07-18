@@ -74,18 +74,6 @@ jobs:
       - name: Build ${{ matrix.proj_name }}@${{ matrix.target }}
         run: dotnet publish ${{ matrix.proj_name }} -r ${{ matrix.target }} -c release -o builds/${{ matrix.target }} --self-contained true
 
-      - name: Create Release
-        if: runner.os == 'Windows'
-        id: create_release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tag_name: ${{ github.ref }}
-          release_name: Release ${{ github.ref }}
-          draft: false
-          prerelease: false
-
       - name: Check files
         if: runner.os == 'Linux'
         run: ls -R
