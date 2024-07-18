@@ -76,7 +76,7 @@ jobs:
 
       - name: Create Release
         if: runner.os == 'Windows'
-        id: create_release2
+        id: create_release
         uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -86,21 +86,13 @@ jobs:
           draft: false
           prerelease: false
 
-      - name: Create Release
-        if: runner.os == 'Linux'
-        id: create_release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tag_name: ${{ github.ref }}
-          release_name: Release ${{ github.ref }}
-          draft: true
-          prerelease: false
-
       - name: Check files
         if: runner.os == 'Linux'
         run: ls -R
+        
+      - name: Check files
+        if: runner.os == 'Windows'
+        run: dir /s
       
       - name: Release
         if: runner.os == 'Windows'
@@ -108,5 +100,10 @@ jobs:
         with:
           files: |
             EXILED/bin/Release/Exiled.tar.gz
-            EXILED/builds/linux-x64/Exiled.Installer-linux-x64
             EXILED/builds/win-x64/Exiled.Installer-win-x64.exe
+      
+      - name: Release
+        if: runner.os == 'Linux'
+        uses: softprops/action-gh-release@v2
+        with:
+          files: EXILED/builds/linux-x64/Exiled.Installer-Linux
