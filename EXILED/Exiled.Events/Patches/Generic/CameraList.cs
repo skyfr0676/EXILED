@@ -51,7 +51,7 @@ namespace Exiled.Events.Patches.Generic
                     new(OpCodes.Ldsfld, Field(typeof(Room), nameof(Room.RoomIdentifierToRoom))),
                     new(OpCodes.Ldarg_0),
                     new(OpCodes.Callvirt, PropertyGetter(typeof(Scp079Camera), nameof(Scp079Camera.Room))),
-                    new(OpCodes.Callvirt, PropertyGetter(typeof(List<RoomIdentifier>), "Item")),
+                    new(OpCodes.Callvirt, Method(typeof(Dictionary<RoomIdentifier, Room>), "get_Item")),
                     new(OpCodes.Callvirt, PropertyGetter(typeof(Room), nameof(Room.CamerasValue))),
                     new(OpCodes.Ldloc_S, cameraBase.LocalIndex),
                     new(OpCodes.Newobj, GetDeclaredConstructors(typeof(Camera))[0]),
