@@ -9,6 +9,7 @@ namespace Exiled.API.Features.Roles
 {
     using System.Collections.Generic;
 
+    using Exiled.API.Enums;
     using PlayerRoles;
     using PlayerRoles.PlayableScps;
     using PlayerRoles.PlayableScps.HumeShield;
@@ -212,6 +213,11 @@ namespace Exiled.API.Features.Roles
             get => Identity._warningTimeSeconds;
             set => Identity._warningTimeSeconds = value;
         }
+
+        /// <summary>
+        /// Gets or sets the bound dance.
+        /// </summary>
+        internal DanceType DanceType { get; set; }
 
         /// <summary>
         /// Reset Scp3114 FakeIdentity.
