@@ -40,7 +40,10 @@ namespace Exiled.Events.Patches.Generic
             Door door = Door.Create(__instance, rooms);
 
             foreach (Room room in rooms)
+            {
                 room.DoorsValue.Add(door);
+                room.NearestRoomsValue.AddRange(rooms.Except(new List<Room>() { room }));
+            }
 
             if (door.Is(out CheckpointDoor checkpoint))
             {
@@ -49,6 +52,7 @@ namespace Exiled.Events.Patches.Generic
                     subDoor.RegisterRooms();
                     BreakableDoor targetDoor = Door.Get(subDoor).Cast<BreakableDoor>();
 
+                    targetDoor.ParentCheckpointDoor = checkpoint;
                     checkpoint.SubDoorsValue.Add(targetDoor);
                 }
             }
