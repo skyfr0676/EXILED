@@ -52,6 +52,7 @@ namespace Exiled.Events.Patches.Generic
                     subDoor.RegisterRooms();
                     BreakableDoor targetDoor = Door.Get(subDoor).Cast<BreakableDoor>();
 
+                    targetDoor.ParentCheckpointDoor = checkpoint;
                     checkpoint.SubDoorsValue.Add(targetDoor);
                 }
             }
