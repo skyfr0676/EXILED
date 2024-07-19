@@ -1,4 +1,4 @@
-﻿// -----------------------------------------------------------------------
+// -----------------------------------------------------------------------
 // <copyright file="Scp244Spawning.cs" company="Exiled Team">
 // Copyright (c) Exiled Team. All rights reserved.
 // Licensed under the CC BY-SA 3.0 license.
@@ -14,14 +14,12 @@ namespace Exiled.Events.Patches.Events.Map
     using Exiled.API.Features.Pools;
     using Exiled.Events.Attributes;
     using Exiled.Events.EventArgs.Map;
-    using MapGeneration;
-    using UnityEngine;
-
-#pragma warning disable SA1313 // Parameter names should begin with lower-case letter
     using HarmonyLib;
     using InventorySystem.Items.Pickups;
     using InventorySystem.Items.Usables.Scp244;
+    using MapGeneration;
     using Mirror;
+    using UnityEngine;
 
     using static HarmonyLib.AccessTools;
 
