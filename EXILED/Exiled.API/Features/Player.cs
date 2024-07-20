@@ -665,7 +665,8 @@ namespace Exiled.API.Features
         /// Gets a value indicating whether or not the player's <see cref="RoleTypeId"/> is any NTF rank.
         /// Equivalent to checking the player's <see cref="Team"/>.
         /// </summary>
-        public bool IsNTF => Role?.Team is Team.FoundationForces && Role?.Type is not RoleTypeId.FacilityGuard;
+        // TODO: Change logic for FacilityGuard in next major update
+        public bool IsNTF => Role?.Team is Team.FoundationForces;
 
         /// <summary>
         /// Gets a value indicating whether or not the player's <see cref="RoleTypeId"/> is any Chaos rank.
@@ -2152,6 +2153,8 @@ namespace Exiled.API.Features
 
             usableItem.Base.Owner = referenceHub;
             usableItem.Base.ServerOnUsingCompleted();
+
+            typeof(UsableItemsController).InvokeStaticEvent(nameof(UsableItemsController.ServerOnUsingCompleted), new object[] { referenceHub, usableItem.Base });
 
             if (usableItem.Base is not null)
                 usableItem.Destroy();
