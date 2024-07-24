@@ -1,3 +1,4 @@
+<div align="center"><img src="https://github.com/user-attachments/assets/5ea95992-2aeb-47c3-bd29-c966285276e0" height=75 alt="Exiled SCPSL, SCP Secret Laboratory Exiled, Exiled SCP: Secret Laboratory, Modding Framework, Mods, Exiled Mod SCPSL"/></div>
 <h1 align="center">Exiled</h1>
 <h6 align="center">EXtended In-runtime Library for External Development</h6>
 <div align="center">
