@@ -19,7 +19,7 @@ namespace Exiled.Events.Patches.Generic
     using static HarmonyLib.AccessTools;
 
     /// <summary>
-    /// Patches <see cref="BodyArmorUtils.RemoveEverythingExceedingLimits(Inventory, BodyArmor, bool, bool)"/>.
+    /// Patches <see cref="BodyArmorUtils.RemoveEverythingExceedingLimits(Inventory, BodyArmor, bool, bool)"/> to fix https://git.scpslgame.com/northwood-qa/scpsl-bug-reporting/-/issues/230 bug.
     /// </summary>
     [HarmonyPatch(typeof(BodyArmorUtils), nameof(BodyArmorUtils.RemoveEverythingExceedingLimits))]
     internal static class ArmorDropPatch
