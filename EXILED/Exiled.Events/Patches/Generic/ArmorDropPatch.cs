@@ -32,10 +32,13 @@ namespace Exiled.Events.Patches.Generic
             int continueIndex = newInstructions.FindIndex(x => x.Is(OpCodes.Call, Method(typeof(Dictionary<ushort, ItemBase>.Enumerator), nameof(Dictionary<ushort, ItemBase>.Enumerator.MoveNext)))) - 1;
             newInstructions[continueIndex].WithLabels(continueLabel);
 
+            // before: if (keyValuePair.Value.Category != ItemCategory.Armor)
+            // after: if (keyValuePair.Value.Category != ItemCategory.Armor && keyValuePair.Value.Category != ItemCategory.None)
             int index = newInstructions.FindIndex(x => x.Is(OpCodes.Ldc_I4_S, 9));
 
             newInstructions.InsertRange(index, new CodeInstruction[]
             {
+                // && keyValuePair.Value.Category != ItemCategory.None)
                 new(OpCodes.Ldloca_S, 4),
                 new(OpCodes.Call, PropertyGetter(typeof(KeyValuePair<ushort, ItemBase>), nameof(KeyValuePair<ushort, ItemBase>.Value))),
                 new(OpCodes.Ldfld, Field(typeof(ItemBase), nameof(ItemBase.Category))),
