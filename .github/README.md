@@ -42,7 +42,7 @@ Localized READMEs
   <div>
     <img src="https://flagsapi.com/CN/flat/64.png" height=30>
     <br>
-    <a href="https://github.com/ExMod-Team/EXILED/blob/master/.github/documentation/localization/README-中文.md">中文</a>
+    <a href=".github/documentation/localization/README-中文.md">中文</a>
   </div>
   <br>
   <div>
