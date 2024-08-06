@@ -5,7 +5,7 @@
 // </copyright>
 // -----------------------------------------------------------------------
 
-namespace Exiled.Events.Patches.Generic
+namespace Exiled.Events.Patches.Fixes
 {
     using System.Collections.Generic;
     using System.Reflection.Emit;
@@ -33,11 +33,11 @@ namespace Exiled.Events.Patches.Generic
             int index = newInstructions.FindLastIndex(x => x.opcode == OpCodes.Ldc_I4_0);
             newInstructions[index].WithLabels(continueLabel);
 
-            // TODO: NRE ON LEFT CLICK (KICK PLAYER) - DO NOT PUSH
             newInstructions.InsertRange(index, new CodeInstruction[]
             {
-                // if (hub.playerEffectController.GetEffect<SpawnProtected>().IsEnabled) return false;
-                new(OpCodes.Ldarg_1),
+                // if (hitboxIdentity.TargetHub.playerEffectController.GetEffect<SpawnProtected>().IsEnabled) return false;
+                new(OpCodes.Ldloc_2),
+                new(OpCodes.Callvirt, PropertyGetter(typeof(HitboxIdentity), nameof(HitboxIdentity.TargetHub))),
                 new(OpCodes.Ldfld, Field(typeof(ReferenceHub), nameof(ReferenceHub.playerEffectsController))),
                 new(OpCodes.Callvirt, Method(typeof(PlayerEffectsController), nameof(PlayerEffectsController.GetEffect), generics: new[] { typeof(SpawnProtected) })),
                 new(OpCodes.Callvirt, PropertyGetter(typeof(StatusEffectBase), nameof(StatusEffectBase.IsEnabled))),
