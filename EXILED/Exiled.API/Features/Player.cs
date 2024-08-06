@@ -292,6 +292,7 @@ namespace Exiled.API.Features
                     "northwood" => AuthenticationType.Northwood,
                     "localhost" => AuthenticationType.LocalHost,
                     "ID_Dedicated" => AuthenticationType.DedicatedServer,
+                    "offline" => AuthenticationType.Offline,
                     _ => AuthenticationType.Unknown,
                 };
             }
@@ -1310,7 +1311,7 @@ namespace Exiled.API.Features
                 if (int.TryParse(args, out int id))
                     return Get(id);
 
-                if (args.EndsWith("@steam") || args.EndsWith("@discord") || args.EndsWith("@northwood"))
+                if (args.EndsWith("@steam") || args.EndsWith("@discord") || args.EndsWith("@northwood") || args.EndsWith("@offline"))
                 {
                     foreach (Player player in Dictionary.Values)
                     {
