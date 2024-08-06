@@ -102,7 +102,7 @@ Localized READMEs
   <div>
     <img src="https://flagsapi.com/KR/flat/64.png" height=30>
     <br>
-    <a href="https://github.com/ExMod-Team/EXILED/blob/master/.github/documentation/localization/README-KR.md">한국어</a>
+    <a href=".github/documentation/localization/README-KR.md">한국어</a>
   </div>
   <br>
   <div>
