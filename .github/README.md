@@ -30,7 +30,7 @@ Localized READMEs
   <div>
     <img src="https://flagsapi.com/US/flat/64.png" height=30>
     <br>
-    <a href="https://github.com/ExMod-Team/EXILED/blob/master/.github/documentation/README.md">English</a>
+    <a href=".github/documentation/README.md">English</a>
   </div>
   <br>
   <div>
