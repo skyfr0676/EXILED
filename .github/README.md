@@ -96,7 +96,7 @@ Localized READMEs
   <div>
     <img src="https://flagsapi.com/FR/flat/64.png" height=30>
     <br>
-    <a href="https://github.com/ExMod-Team/EXILED/blob/master/.github/documentation/localization/README-FR.md">Français</a>
+    <a href=".github/documentation/localization/README-FR.md">Français</a>
   </div>
   <br>
   <div>
