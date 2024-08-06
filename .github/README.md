@@ -36,7 +36,7 @@ Localized READMEs
   <div>
     <img src="https://flagsapi.com/RU/flat/64.png" height=30>
     <br>
-    <a href="https://github.com/ExMod-Team/EXILED/blob/master/.github/documentation/localization/README-Русский.md">Русский</a>
+    <a href=".github/documentation/localization/README-Русский.md">Русский</a>
   </div>
   <br>
   <div>
