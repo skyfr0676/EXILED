@@ -84,7 +84,7 @@ Localized READMEs
   <div>
     <img src="https://flagsapi.com/TR/flat/64.png" height=30>
     <br>
-    <a href="https://github.com/ExMod-Team/EXILED/blob/master/.github/documentation/localization/README-TR.md">Türkçe</a>
+    <a href=".github/documentation/localization/README-TR.md">Türkçe</a>
   </div>
   <br>
   <div>
