@@ -10,6 +10,7 @@ namespace Exiled.Events.Patches.Fixes
     using System.Collections.Generic;
     using System.Reflection.Emit;
 
+    using CustomPlayerEffects;
     using Exiled.API.Features.Pools;
     using HarmonyLib;
     using PlayerRoles.FirstPersonControl;
@@ -55,6 +56,42 @@ namespace Exiled.Events.Patches.Fixes
             int index = newInstructions.FindIndex(x => x.Calls(PropertyGetter(typeof(FpcMotor), nameof(FpcMotor.Speed)))) + offset;
 
             newInstructions.Insert(index, new(OpCodes.Call, Method(typeof(Mathf), nameof(Mathf.Abs), new[] { typeof(float) })));
+
+            for (int z = 0; z < newInstructions.Count; z++)
+                yield return newInstructions[z];
+
+            ListPool<CodeInstruction>.Pool.Return(newInstructions);
+        }
+    }
+
+    /// <summary>
+    /// Patches <see cref="StatusEffectBase.ForceIntensity"/> to avoid values more than 100 for effect Slowness. Fix https://git.scpslgame.com/northwood-qa/scpsl-bug-reporting/-/issues/378.
+    /// </summary>
+    [HarmonyPatch(typeof(StatusEffectBase), nameof(StatusEffectBase.ForceIntensity))]
+    #pragma warning disable SA1402 // File may only contain a single type
+    internal class SlownessValueFix
+    #pragma warning restore SA1402 // File may only contain a single type
+    {
+        private static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions, ILGenerator generator)
+        {
+            List<CodeInstruction> newInstructions = ListPool<CodeInstruction>.Pool.Get(instructions);
+
+            Label continueLabel = generator.DefineLabel();
+
+            newInstructions[0].WithLabels(continueLabel);
+
+            newInstructions.InsertRange(0, new CodeInstruction[]
+            {
+                new(OpCodes.Ldarg_0),
+                new(OpCodes.Isinst, typeof(Slowness)),
+                new(OpCodes.Brfalse_S, continueLabel),
+                new(OpCodes.Ldarg_1),
+                new(OpCodes.Ldc_I4_S, 100),
+                new(OpCodes.Cgt),
+                new(OpCodes.Brfalse_S, continueLabel),
+                new(OpCodes.Ldc_I4_S, 100),
+                new(OpCodes.Starg_S, 1),
+            });
 
             for (int z = 0; z < newInstructions.Count; z++)
                 yield return newInstructions[z];
