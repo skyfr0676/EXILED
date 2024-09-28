@@ -51,7 +51,7 @@
     <!-- Project files -->
 
     <!-- Icon -->
-    <file src="..\assets\Exiled_Icon.jpg" target="images" />
+    <file src="..\assets\Exiled_Icon.png" target="images" />
   </files>
 
 </package>
