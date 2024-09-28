@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
 
-    <id>EXILEDOFFICIAL</id>
+    <id>EXILED-OFFICIAL</id>
     <title>ExMod-Team</title>
     <version>$version$</version>
     <authors>ExMod-Team</authors>
