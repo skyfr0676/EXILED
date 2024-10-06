@@ -32,7 +32,7 @@ jobs:
 
     steps:
     - name: Checkout
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
 
     - name: Dotnet Setup
       uses: actions/setup-dotnet@v3
@@ -42,10 +42,10 @@ jobs:
     - run: dotnet tool update -g docfx
 
     - name: Setup .NET Core SDK
-      uses: actions/setup-dotnet@v1.7.2
+      uses: actions/setup-dotnet@v4.0.1
 
     - name: Setup Nuget
-      uses: iRebbok/setup-nuget@master
+      uses: nuget/setup-nuget@v2
 
     - name: Get references
       shell: pwsh
