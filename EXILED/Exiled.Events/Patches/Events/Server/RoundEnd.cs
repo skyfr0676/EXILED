@@ -137,7 +137,7 @@ namespace Exiled.Events.Patches.Events.Server
             index = newInstructions.FindIndex(x => x.opcode == OpCodes.Stfld && x.operand == (object)Field(typeof(SumInfo_ClassList), nameof(SumInfo_ClassList.warhead_kills))) + offset;
             newInstructions.InsertRange(index, new CodeInstruction[]
             {
-                new(OpCodes.Ldflda, Field(PrivateType, NewList)),
+                new(OpCodes.Ldfld, Field(PrivateType, NewList)),
                 new(OpCodes.Call, PropertySetter(typeof(Round), nameof(Round.LastClassList))),
             });
 
