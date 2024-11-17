@@ -43,6 +43,7 @@ try
     {
         if (type.IsEnum && !type.IsGenericType)
         {
+            Type underlyingIntegralType = Enum.GetUnderlyingType(type);
             WriteLine($"- [{type.Name}](#{type.Name.ToLower()})");
             response += $"\n### {type.Name}\n\n";
             response += $"<details><summary><b>{type.FullName}</b></summary>\n\n";
@@ -50,7 +51,7 @@ try
 
             foreach (var value in Enum.GetValues(type))
             {
-                response += $" [{value.GetHashCode()}] = {value.ToString()}\n";
+                response += $" [{Convert.ToInt64(value)}] = {value.ToString()}\n";
             }
             response += "```\n\n</details>\n";
          }

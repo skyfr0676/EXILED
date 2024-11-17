@@ -2915,10 +2915,10 @@ Last Update (13.5.0.1)
 
 ```
  [0] = LowRange
- [257] = MediumRange
- [514] = HighRange
- [771] = UltraRange
- [255] = RadioDisabled
+ [1] = MediumRange
+ [2] = HighRange
+ [3] = UltraRange
+ [-1] = RadioDisabled
 ```
 
 </details>
@@ -3062,30 +3062,30 @@ Last Update (13.5.0.1)
 
 ```
  [0] = Scp173
- [257] = ClassD
- [514] = Spectator
- [771] = Scp106
- [1028] = NtfSpecialist
- [1285] = Scp049
- [1542] = Scientist
- [1799] = Scp079
- [2056] = ChaosConscript
- [2313] = Scp096
- [2570] = Scp0492
- [2827] = NtfSergeant
- [3084] = NtfCaptain
- [3341] = NtfPrivate
- [3598] = Tutorial
- [3855] = FacilityGuard
- [4112] = Scp939
- [4369] = CustomRole
- [4626] = ChaosRifleman
- [4883] = ChaosMarauder
- [5140] = ChaosRepressor
- [5397] = Overwatch
- [5654] = Filmmaker
- [5911] = Scp3114
- [255] = None
+ [1] = ClassD
+ [2] = Spectator
+ [3] = Scp106
+ [4] = NtfSpecialist
+ [5] = Scp049
+ [6] = Scientist
+ [7] = Scp079
+ [8] = ChaosConscript
+ [9] = Scp096
+ [10] = Scp0492
+ [11] = NtfSergeant
+ [12] = NtfCaptain
+ [13] = NtfPrivate
+ [14] = Tutorial
+ [15] = FacilityGuard
+ [16] = Scp939
+ [17] = CustomRole
+ [18] = ChaosRifleman
+ [19] = ChaosMarauder
+ [20] = ChaosRepressor
+ [21] = Overwatch
+ [22] = Filmmaker
+ [23] = Scp3114
+ [-1] = None
 ```
 
 </details>
