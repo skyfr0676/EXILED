@@ -43,7 +43,6 @@ try
     {
         if (type.IsEnum && !type.IsGenericType)
         {
-            Type underlyingIntegralType = Enum.GetUnderlyingType(type);
             WriteLine($"- [{type.Name}](#{type.Name.ToLower()})");
             response += $"\n### {type.Name}\n\n";
             response += $"<details><summary><b>{type.FullName}</b></summary>\n\n";
