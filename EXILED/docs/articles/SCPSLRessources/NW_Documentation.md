@@ -268,7 +268,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>Achievements.AchievementName</b></summary>
 ```
-
  [0] = TurnThemAll
  [1] = Pacified
  [2] = MelancholyOfDecay
@@ -310,7 +309,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>ActionCategory</b></summary>
 ```
-
  [0] = Gameplay
  [1] = Weapons
  [2] = Movement
@@ -326,7 +324,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>InventorySystem.Items.Firearms.Modules.ActionModuleResponse</b></summary>
 ```
-
  [0] = Idle
  [1] = Shoot
  [2] = Dry
@@ -338,7 +335,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>ActionName</b></summary>
 ```
-
  [0] = Shoot
  [1] = Zoom
  [2] = Jump
@@ -381,7 +377,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>InventorySystem.Searching.SearchSessionPipe+Activity</b></summary>
 ```
-
  [0] = Idle
  [1] = Requested
  [2] = Promised
@@ -393,7 +388,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>PlayerStatsSystem.AdminFlags</b></summary>
 ```
-
  [0] = None
  [1] = Noclip
  [2] = GodMode
@@ -406,7 +400,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>PlayerInteract+AlphaPanelOperations</b></summary>
 ```
-
  [0] = Cancel
  [1] = Lever
 ```
@@ -417,7 +410,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>InventorySystem.Items.Firearms.Attachments.AttachmentDescriptiveAdvantages</b></summary>
 ```
-
  [0] = None
  [2] = Flashlight
  [4] = AmmoCounter
@@ -431,7 +423,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>InventorySystem.Items.Firearms.Attachments.AttachmentDescriptiveDownsides</b></summary>
 ```
-
  [0] = None
  [2] = Laser
 ```
@@ -442,7 +433,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>InventorySystem.Items.Firearms.Attachments.AttachmentEditorsTranslation</b></summary>
 ```
-
  [0] = Custom
  [1] = PresetId
  [2] = SaveAttachments
@@ -469,7 +459,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>InventorySystem.Items.Firearms.Attachments.AttachmentName</b></summary>
 ```
-
  [0] = None
  [1] = IronSights
  [2] = DotSight
@@ -524,7 +513,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>InventorySystem.Items.Firearms.Attachments.AttachmentParam</b></summary>
 ```
-
  [0] = AdsZoomMultiplier
  [1] = AdsMouseSensitivityMultiplier
  [2] = DamageMultiplier
@@ -555,7 +543,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>InventorySystem.Items.Firearms.Attachments.AttachmentSlot</b></summary>
 ```
-
  [0] = Sight
  [1] = Barrel
  [2] = SideRail
@@ -573,7 +560,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>PlayerRoles.PlayableScps.Subroutines.AttackResult</b></summary>
 ```
-
  [0] = None
  [1] = AttackedObject
  [2] = AttackedPlayer
@@ -586,7 +572,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>PlayerStatsSystem.Scp049DamageHandler+AttackType</b></summary>
 ```
-
  [0] = Instakill
  [1] = CardiacArrest
  [2] = Scp0492
@@ -598,7 +583,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>PlayerStatsSystem.Scp096DamageHandler+AttackType</b></summary>
 ```
-
  [0] = GateKill
  [1] = SlapLeft
  [2] = SlapRight
@@ -611,7 +595,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>AudioPooling.AudioMixerChannelType</b></summary>
 ```
-
  [0] = DefaultSfx
  [1] = Interface
  [2] = Weapons
@@ -625,7 +608,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>CentralAuth.AuthenticationResponseFunctions+AuthenticationResponseFlags</b></summary>
 ```
-
  [1] = AuthToken
  [2] = BadgeToken
  [4] = DoNotTrack
@@ -638,7 +620,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>StatusBar+AutoHideType</b></summary>
 ```
-
  [0] = WhenFull
  [1] = WhenEmpty
  [2] = AlwaysVisible
@@ -650,7 +631,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>ServerRoles+BadgePreferences</b></summary>
 ```
-
  [0] = NoPreference
  [1] = PreferGlobal
  [2] = PreferLocal
@@ -662,7 +642,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>ServerRoles+BadgeVisibilityPreferences</b></summary>
 ```
-
  [0] = NoPreference
  [1] = Visible
  [2] = Hidden
@@ -674,7 +653,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>BanHandler+BanType</b></summary>
 ```
-
  [0] = UserId
  [1] = IP
  [-1] = NULL
@@ -686,7 +664,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>InventorySystem.Items.BlockedInteraction</b></summary>
 ```
-
  [1] = GeneralInteractions
  [2] = OpenInventory
  [4] = BeDisarmed
@@ -702,7 +679,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>Broadcast+BroadcastFlags</b></summary>
 ```
-
  [0] = Normal
  [1] = Truncated
  [2] = AdminChat
@@ -714,7 +690,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>LiteNetLib.Utils.NetSerializer+CallType</b></summary>
 ```
-
  [0] = Basic
  [1] = Array
  [2] = List
@@ -726,7 +701,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>InventorySystem.Items.Usables.Scp330.CandyKindID</b></summary>
 ```
-
  [0] = None
  [1] = Rainbow
  [2] = Yellow
@@ -743,7 +717,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>Subtitles.CassieAnnouncementType</b></summary>
 ```
-
  [0] = None
  [1] = Normal
  [2] = Decontamination
@@ -756,7 +729,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>PlayerRoles.PlayableScps.Scp079.Scp079KeyAbilityBase+Category</b></summary>
 ```
-
  [0] = Movement
  [1] = SpecialAbility
  [2] = OverconInteraction
@@ -768,7 +740,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>CentralAuthPreauthFlags</b></summary>
 ```
-
  [0] = None
  [1] = ReservedSlot
  [2] = IgnoreBans
@@ -785,7 +756,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>ChallengeState</b></summary>
 ```
-
  [0] = None
  [1] = Processing
  [2] = Done
@@ -798,7 +768,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>ChallengeType</b></summary>
 ```
-
  [0] = Reply
  [1] = MD5
  [2] = SHA1
@@ -810,7 +779,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>Interactables.Interobjects.CheckpointDoor+CheckpointErrorType</b></summary>
 ```
-
  [0] = Denied
  [1] = LockedDown
  [2] = Destroyed
@@ -822,7 +790,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>Interactables.Interobjects.CheckpointDoor+CheckpointSequenceStage</b></summary>
 ```
-
  [0] = Idle
  [1] = Granted
  [2] = Open
@@ -835,7 +802,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>CentralAuth.ClientInstanceMode</b></summary>
 ```
-
  [0] = Unverified
  [1] = ReadyClient
  [2] = Host
@@ -848,7 +814,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>PlayerRoles.PlayableScps.Scp079.Cameras.Scp079CurrentCameraSync+ClientSwitchState</b></summary>
 ```
-
  [0] = None
  [1] = SwitchingRoom
  [2] = SwitchingZone
@@ -860,7 +825,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>CustomLiteNetLib4MirrorTransport+ClientType</b></summary>
 ```
-
  [0] = GameClient
  [1] = VerificationService
 ```
@@ -871,7 +835,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>PlayerRoles.PlayableScps.Scp939.Scp939AmnesticCloudInstance+CloudState</b></summary>
 ```
-
  [0] = Spawning
  [1] = Created
  [2] = Destroyed
@@ -883,7 +846,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>PlayerRoles.PlayableScps.Scp173.Scp173TeleportAbility+CmdTeleportData</b></summary>
 ```
-
  [1] = Aiming
  [2] = WantsToTeleport
 ```
@@ -894,7 +856,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>Utf8Json.CollectionDeserializeToBehaviour</b></summary>
 ```
-
  [0] = Add
  [1] = OverwriteReplace
 ```
@@ -905,7 +866,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>Interactables.Interobjects.DoorUtils.DoorVariant+CollisionsDisablingReasons</b></summary>
 ```
-
  [1] = DoorClosing
  [2] = Scp106
 ```
@@ -916,7 +876,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>Misc+CommandOperationMode</b></summary>
 ```
-
  [0] = Disable
  [1] = Enable
  [2] = Toggle
@@ -928,7 +887,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>UserSettings.GUIElements.UserSettingDependency+Dependency+Condition</b></summary>
 ```
-
  [0] = EqualsTo
  [1] = LessThan
  [2] = GreaterThan
@@ -940,7 +898,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>GameCore.ConfigSharing+ConfigShare</b></summary>
 ```
-
  [0] = Bans
  [1] = Mutes
  [2] = Whitelist
@@ -956,7 +913,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>GameCore.ConfigShareTypes</b></summary>
 ```
-
  [0] = Bans
  [1] = Mutes
  [2] = Whitelist
@@ -972,7 +928,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>LiteNetLib.ConnectionRequestResult</b></summary>
 ```
-
  [0] = None
  [1] = Accept
  [2] = Reject
@@ -985,7 +940,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>LiteNetLib.ConnectionState</b></summary>
 ```
-
  [2] = Outgoing
  [4] = Connected
  [8] = ShutdownRequested
@@ -1000,7 +954,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>LiteNetLib.ConnectRequestResult</b></summary>
 ```
-
  [0] = None
  [1] = P2PLose
  [2] = Reconnection
@@ -1013,7 +966,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>GameCore.Console+ConsoleLogType</b></summary>
 ```
-
  [0] = DoNotLog
  [1] = Log
  [2] = Warning
@@ -1026,7 +978,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>PlayerRoles.PlayableScps.Scp049.Zombies.ZombieConsumeAbility+ConsumeError</b></summary>
 ```
-
  [0] = None
  [1] = CannotCancel
  [2] = AlreadyConsumed
@@ -1041,7 +992,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>InventorySystem.Items.Firearms.Modules.TubularMagazineAmmoManager+CurrentAction</b></summary>
 ```
-
  [0] = Idle
  [1] = Reloading
  [2] = Unloading
@@ -1053,7 +1003,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>CursorManagement.CursorOverrideMode</b></summary>
 ```
-
  [0] = NoOverride
  [1] = Centered
  [2] = Confined
@@ -1066,7 +1015,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>PlayerPrefsSl+DataType</b></summary>
 ```
-
  [0] = Bool
  [1] = Byte
  [2] = Sbyte
@@ -1103,7 +1051,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>DebugLevel</b></summary>
 ```
-
  [0] = Muted
  [1] = Narrow
  [2] = Normal
@@ -1117,7 +1064,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>Decals.DecalPoolType</b></summary>
 ```
-
  [0] = None
  [1] = Bullet
  [2] = Blood
@@ -1130,7 +1076,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>LightContainmentZoneDecontamination.DecontaminationController+DecontaminationStatus</b></summary>
 ```
-
  [0] = None
  [1] = Disabled
  [2] = Forced
@@ -1142,7 +1087,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>LiteNetLib.DeliveryMethod</b></summary>
 ```
-
  [0] = ReliableUnordered
  [1] = Sequenced
  [2] = ReliableOrdered
@@ -1156,7 +1100,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>AlphaWarheadNukesitePanel+DiodeType</b></summary>
 ```
-
  [0] = InProgress
  [1] = BlastDoor
  [2] = OutsideDoor
@@ -1168,7 +1111,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>LiteNetLib.DisconnectReason</b></summary>
 ```
-
  [0] = ConnectionFailed
  [1] = Timeout
  [2] = HostUnreachable
@@ -1189,7 +1131,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>LiteNetLib.DisconnectResult</b></summary>
 ```
-
  [0] = None
  [1] = Reject
  [2] = Disconnect
@@ -1201,7 +1142,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>PlayerRoles.PlayableScps.Scp3114.Scp3114Identity+DisguiseStatus</b></summary>
 ```
-
  [0] = None
  [1] = Equipping
  [2] = Active
@@ -1213,7 +1153,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>MainThreadDispatcher+DispatchTime</b></summary>
 ```
-
  [0] = Update
  [1] = LateUpdate
  [2] = FixedUpdate
@@ -1225,7 +1164,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>PlayerStatsSystem.StatSlider+DisplayExactMode</b></summary>
 ```
-
  [0] = PreferenceBased
  [1] = AlwaysExact
  [2] = AlwaysPercent
@@ -1238,7 +1176,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>UserSettings.VideoSettings.DisplayVideoSetting</b></summary>
 ```
-
  [0] = Resolution
  [1] = AspectRatio
  [2] = FullscreenMode
@@ -1253,7 +1190,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>GameCore.DistributionPlatform</b></summary>
 ```
-
  [0] = Dedicated
  [1] = Steam
  [2] = Discord
@@ -1265,7 +1201,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>Interactables.Interobjects.DoorUtils.DoorAction</b></summary>
 ```
-
  [0] = Opened
  [1] = Closed
  [2] = AccessDenied
@@ -1280,7 +1215,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>Interactables.Interobjects.DoorUtils.DoorDamageType</b></summary>
 ```
-
  [1] = None
  [2] = ServerCommand
  [4] = Grenade
@@ -1294,7 +1228,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>Interactables.Interobjects.DoorUtils.DoorLockMode</b></summary>
 ```
-
  [0] = FullLock
  [1] = CanOpen
  [2] = CanClose
@@ -1307,7 +1240,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>Interactables.Interobjects.DoorUtils.DoorLockReason</b></summary>
 ```
-
  [0] = None
  [1] = Regular079
  [2] = Lockdown079
@@ -1327,7 +1259,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>Utf8Json.Internal.DoubleConversion.DoubleToStringConverter+DtoaMode</b></summary>
 ```
-
  [0] = SHORTEST
  [1] = SHORTEST_SINGLE
 ```
@@ -1338,7 +1269,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>CustomPlayerEffects.StatusEffectBase+EffectClassification</b></summary>
 ```
-
  [0] = Negative
  [1] = Mixed
  [2] = Positive
@@ -1350,7 +1280,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>Respawning.RespawnEffectsController+EffectType</b></summary>
 ```
-
  [0] = Selection
  [1] = UponRespawn
 ```
@@ -1361,7 +1290,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>Interactables.Interobjects.ElevatorManager+ElevatorGroup</b></summary>
 ```
-
  [0] = GateA
  [1] = GateB
  [2] = LczA01
@@ -1378,7 +1306,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>Interactables.Interobjects.ElevatorChamber+ElevatorSequence</b></summary>
 ```
-
  [0] = DoorClosing
  [1] = MovingAway
  [2] = Arriving
@@ -1392,7 +1319,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>EncryptedChannelManager+EncryptedChannel</b></summary>
 ```
-
  [0] = RemoteAdmin
  [1] = GameConsole
  [2] = AdminChat
@@ -1404,7 +1330,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>InventorySystem.Items.Usables.Scp330.Scp330Translations+Entry</b></summary>
 ```
-
  [0] = Candies
 ```
 
@@ -1414,7 +1339,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>Escape+EscapeScenarioType</b></summary>
 ```
-
  [0] = None
  [1] = ClassD
  [2] = CuffedClassD
@@ -1428,7 +1352,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>LiteNetLib.NetEvent+EType</b></summary>
 ```
-
  [0] = Connect
  [1] = Disconnect
  [2] = Receive
@@ -1447,7 +1370,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>MapGeneration.FacilityZone</b></summary>
 ```
-
  [0] = None
  [1] = LightContainment
  [2] = HeavyContainment
@@ -1462,7 +1384,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>PlayerRoles.Faction</b></summary>
 ```
-
  [0] = SCP
  [1] = FoundationStaff
  [2] = FoundationEnemy
@@ -1475,7 +1396,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>PlayerRoles.PlayableScps.VisionInformation+FailReason</b></summary>
 ```
-
  [0] = NotOnSameFloor
  [1] = NotInDistance
  [2] = NotInView
@@ -1491,7 +1411,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>FalloffType</b></summary>
 ```
-
  [0] = Linear
  [1] = Exponential
  [2] = Footstep
@@ -1503,7 +1422,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>Utf8Json.Internal.DoubleConversion.DoubleToStringConverter+FastDtoaMode</b></summary>
 ```
-
  [0] = FAST_DTOA_SHORTEST
  [1] = FAST_DTOA_SHORTEST_SINGLE
 ```
@@ -1514,7 +1432,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>PlayerRoles.Filmmaker.FilmmakerBlendPreset</b></summary>
 ```
-
  [0] = Linear
  [1] = Smooth
  [2] = FetchNext
@@ -1527,7 +1444,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>InventorySystem.Items.Firearms.FirearmAudioFlags</b></summary>
 ```
-
  [0] = None
  [2] = ScaleDistance
  [4] = IsGunshot
@@ -1541,7 +1457,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>InventorySystem.Items.Firearms.FirearmStatusFlags</b></summary>
 ```
-
  [0] = None
  [2] = Cocked
  [4] = MagazineInserted
@@ -1555,7 +1470,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>Utf8Json.Internal.DoubleConversion.DoubleToStringConverter+Flags</b></summary>
 ```
-
  [0] = NO_FLAGS
  [1] = EMIT_POSITIVE_EXPONENT_SIGN
  [2] = EMIT_TRAILING_DECIMAL_POINT
@@ -1569,7 +1483,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>Utf8Json.Internal.DoubleConversion.StringToDoubleConverter+Flags</b></summary>
 ```
-
  [0] = NO_FLAGS
  [1] = ALLOW_HEX
  [2] = ALLOW_OCTALS
@@ -1586,7 +1499,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>CustomRendering.FogType</b></summary>
 ```
-
  [0] = None
  [1] = Inside
  [2] = Outside
@@ -1602,7 +1514,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>PlayerRoles.FirstPersonControl.Thirdperson.AnimatedCharacterModel+FootstepLoudness</b></summary>
 ```
-
  [8] = Civilian
  [12] = FoundationForces
  [30] = Chaos
@@ -1615,7 +1526,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>PlayerRoles.FirstPersonControl.FpcMotor+FpcViewMode</b></summary>
 ```
-
  [0] = LocalPlayer
  [1] = Server
  [2] = Thirdperson
@@ -1627,7 +1537,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>InventorySystem.Items.Pickups.PickupStandardPhysics+FreezingMode</b></summary>
 ```
-
  [0] = Default
  [1] = FreezeWhenSleeping
  [2] = NeverFreeze
@@ -1639,7 +1548,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>FriendlyFireAction</b></summary>
 ```
-
  [0] = Noop
  [1] = Kill
  [2] = Kick
@@ -1652,7 +1560,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>PlayerInteract+Generator079Operations</b></summary>
 ```
-
  [0] = Door
  [1] = Tablet
  [2] = Cancel
@@ -1664,7 +1571,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>MapGeneration.Distributors.Scp079Generator+GeneratorColliderId</b></summary>
 ```
-
  [0] = Door
  [1] = Switch
  [2] = CancelButton
@@ -1676,7 +1582,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>MapGeneration.Distributors.Scp079Generator+GeneratorFlags</b></summary>
 ```
-
  [1] = None
  [2] = Unlocked
  [4] = Open
@@ -1690,7 +1595,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>GeoblockingMode</b></summary>
 ```
-
  [0] = None
  [1] = Whitelist
  [2] = Blacklist
@@ -1702,7 +1606,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>VoiceChat.Playbacks.GlobalChatIconType</b></summary>
 ```
-
  [0] = None
  [1] = Avatar
  [2] = Radio
@@ -1715,7 +1618,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>PlayerRoles.Voice.GroupMuteFlags</b></summary>
 ```
-
  [0] = None
  [1] = Spectators
  [2] = Alive
@@ -1729,7 +1631,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>PlayerStatsSystem.DamageHandlerBase+HandlerOutput</b></summary>
 ```
-
  [0] = Nothing
  [1] = Damaged
  [2] = Death
@@ -1741,7 +1642,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>PlayerRoles.PlayableScps.Scp3114.Scp3114DamageHandler+HandlerType</b></summary>
 ```
-
  [0] = Slap
  [1] = Strangulation
  [2] = SkinSteal
@@ -1753,7 +1653,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>InventorySystem.Items.MicroHID.HidState</b></summary>
 ```
-
  [0] = Idle
  [1] = PoweringUp
  [2] = PoweringDown
@@ -1768,7 +1667,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>InventorySystem.Items.MicroHID.HidStatusMessageType</b></summary>
 ```
-
  [0] = UserInput
  [1] = State
  [2] = EnergySync
@@ -1780,7 +1678,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>InventorySystem.Items.MicroHID.HidUserInput</b></summary>
 ```
-
  [0] = None
  [1] = Prime
  [2] = Fire
@@ -1792,7 +1689,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>Utils.Networking.HintEffectReaderWriter+HintEffectType</b></summary>
 ```
-
  [0] = Alpha
  [1] = AlphaCurve
  [2] = Outline
@@ -1804,7 +1700,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>Hints.HintMessageParameterFunctions+HintMessageTypes</b></summary>
 ```
-
  [0] = Unknown
  [1] = TextHint
  [2] = TranslationHint
@@ -1816,7 +1711,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>Utils.Networking.HintParameterReaderWriter+HintParameterType</b></summary>
 ```
-
  [0] = Text
  [1] = Timespan
  [2] = Ammo
@@ -1843,7 +1737,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>Hints.HintTranslations</b></summary>
 ```
-
  [0] = WarheadDetonateCoverDenied
  [1] = MaxAmmoReached
  [2] = MaxAmmoAlreadyReached
@@ -1858,7 +1751,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>Utils.Networking.HintReaderWriter+HintType</b></summary>
 ```
-
  [0] = Translation
  [1] = Text
 ```
@@ -1869,7 +1761,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>HitboxType</b></summary>
 ```
-
  [0] = Body
  [1] = Limb
  [2] = Headshot
@@ -1881,7 +1772,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>Holidays</b></summary>
 ```
-
  [0] = NoHoliday
  [1] = Halloween
  [2] = Christmas
@@ -1899,7 +1789,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>InventorySystem.Hotkeys.HotkeysTranslation</b></summary>
 ```
-
  [0] = SettingsHeader
  [1] = CreateNewLabel
  [2] = SettingsHeaderHint
@@ -1949,7 +1838,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>HttpQueryMode</b></summary>
 ```
-
  [0] = HttpClient
  [1] = HttpProxy
  [2] = UnityWebRequest
@@ -1962,7 +1850,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>PlayerRoles.Voice.IntercomDisplay+IcomText</b></summary>
 ```
-
  [0] = Ready
  [1] = Transmitting
  [2] = TrasmittingBypass
@@ -1979,7 +1866,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>PlayerRoles.PlayableScps.Scp079.Map.Scp079TeammateIndicators+IndicatorType</b></summary>
 ```
-
  [0] = Low
  [1] = Medium
  [2] = High
@@ -1991,7 +1877,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>UserSettings.ToggleOrHoldInput+InputActivationMode</b></summary>
 ```
-
  [0] = Toggle
  [1] = Hold
 ```
@@ -2002,7 +1887,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>PlayerRoles.Voice.IntercomState</b></summary>
 ```
-
  [0] = Ready
  [1] = Starting
  [2] = InUse
@@ -2016,7 +1900,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>PlayerRoles.Visibility.InvisibilityFlags</b></summary>
 ```
-
  [0] = None
  [1] = OutOfRange
  [2] = Scp268
@@ -2029,7 +1912,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>Misc+IPAddressType</b></summary>
 ```
-
  [0] = Unknown
  [1] = IPV4
  [2] = IPV6
@@ -2043,7 +1925,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>ItemCategory</b></summary>
 ```
-
  [0] = None
  [1] = Keycard
  [2] = Medical
@@ -2062,7 +1943,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>InventorySystem.Items.ItemDescriptionType</b></summary>
 ```
-
  [0] = Default
  [1] = Keycard
  [2] = Firearm
@@ -2077,7 +1957,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>ItemTierFlags</b></summary>
 ```
-
  [0] = Common
  [1] = MilitaryGrade
  [2] = Rare
@@ -2090,7 +1969,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>ItemType</b></summary>
 ```
-
  [0] = KeycardJanitor
  [1] = KeycardScientist
  [2] = KeycardResearchCoordinator
@@ -2155,7 +2033,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>InventorySystem.Items.Jailbird.JailbirdMessageType</b></summary>
 ```
-
  [0] = UpdateState
  [1] = Broken
  [2] = Holstered
@@ -2173,7 +2050,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>InventorySystem.Items.Jailbird.JailbirdWearState</b></summary>
 ```
-
  [0] = Healthy
  [1] = LowWear
  [2] = MediumWear
@@ -2188,7 +2064,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>Utf8Json.JsonToken</b></summary>
 ```
-
  [0] = None
  [1] = BeginObject
  [2] = EndObject
@@ -2209,7 +2084,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>Interactables.Interobjects.DoorUtils.KeycardPermissions</b></summary>
 ```
-
  [0] = None
  [1] = Checkpoints
  [2] = ExitGates
@@ -2230,7 +2104,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>RoundSummary+LeadingTeam</b></summary>
 ```
-
  [0] = FacilityForces
  [1] = ChaosInsurgency
  [2] = Anomalies
@@ -2243,7 +2116,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>LegacyInterfaces</b></summary>
 ```
-
  [0] = GiveOrders
  [1] = FollowOrders
  [2] = SameRank
@@ -2271,7 +2143,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>UserSettings.VideoSettings.LightingVideoSetting</b></summary>
 ```
-
  [0] = RenderShadows
  [1] = ShadowResolution
  [2] = RenderLights
@@ -2283,7 +2154,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>LiteNetLib.LocalAddrType</b></summary>
 ```
-
  [1] = IPv4
  [2] = IPv6
  [3] = All
@@ -2295,7 +2165,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>ServerLogs+LoggingState</b></summary>
 ```
-
  [0] = Off
  [1] = Standby
  [2] = Write
@@ -2309,7 +2178,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>ServerConfigSynchronizer+MainBoolsSettings</b></summary>
 ```
-
  [1] = FriendlyFire
 ```
 
@@ -2319,7 +2187,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>LiteNetLib4Mirror.Open.Nat.MappingLifetime</b></summary>
 ```
-
  [0] = Permanent
  [1] = Session
  [2] = Manual
@@ -2332,7 +2199,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>MessageImportance</b></summary>
 ```
-
  [1] = MostImportant
  [2] = Normal
  [3] = LessImportant
@@ -2345,7 +2211,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>UserSettings.ControlsSettings.MiscControlsSetting</b></summary>
 ```
-
  [0] = AdsToggle
  [1] = SprintToggle
  [2] = SearchToggle
@@ -2362,7 +2227,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>UserSettings.OtherSettings.MiscPrivacySetting</b></summary>
 ```
-
  [0] = DoNotTrack
  [1] = SteamLobbyPrivacy
  [2] = RichPresence
@@ -2378,7 +2242,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>UserSettings.VideoSettings.MiscVideoSetting</b></summary>
 ```
-
  [0] = Brightness
  [1] = ExplosionShake
  [2] = HeadBobbing
@@ -2391,7 +2254,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>InventorySystem.Items.Autosync.AutosyncRpc+Mode</b></summary>
 ```
-
  [0] = Local
  [1] = AllClients
  [2] = Conditional
@@ -2403,7 +2265,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>ServerLogs+Modules</b></summary>
 ```
-
  [0] = Warhead
  [1] = Networking
  [2] = ClassChange
@@ -2420,7 +2281,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>LiteNetLib.NatAddressType</b></summary>
 ```
-
  [0] = Internal
  [1] = External
 ```
@@ -2431,7 +2291,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>LiteNetLib.NetLogLevel</b></summary>
 ```
-
  [0] = Warning
  [1] = Error
  [2] = Trace
@@ -2444,7 +2303,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>LiteNetLib4Mirror.Open.Nat.NetworkProtocolType</b></summary>
 ```
-
  [0] = Tcp
  [1] = Udp
 ```
@@ -2455,7 +2313,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>ServerStatic+NextRoundAction</b></summary>
 ```
-
  [0] = DoNothing
  [1] = Restart
  [2] = Shutdown
@@ -2467,7 +2324,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>PlayerRoles.PlayableScps.Scp079.GUI.NotificationSound</b></summary>
 ```
-
  [0] = Standard
  [-1] = None
 ```
@@ -2478,7 +2334,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>LiteNetLib.Utils.NtpLeapIndicator</b></summary>
 ```
-
  [0] = NoWarning
  [1] = LastMinuteHas61Seconds
  [2] = LastMinuteHas59Seconds
@@ -2491,7 +2346,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>LiteNetLib.Utils.NtpMode</b></summary>
 ```
-
  [3] = Client
  [4] = Server
 ```
@@ -2502,7 +2356,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>Utils.Networking.NullableBoolReaderWriter+NullableBoolValue</b></summary>
 ```
-
  [0] = Null
  [1] = True
  [2] = False
@@ -2514,7 +2367,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>Interactables.Interobjects.DoorUtils.DoorEventOpenerExtension+OpenerEventType</b></summary>
 ```
-
  [0] = WarheadStart
  [1] = WarheadCancel
  [2] = DeconEvac
@@ -2528,7 +2380,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>VoiceChat.Codec.Enums.OpusApplicationType</b></summary>
 ```
-
  [2048] = Voip
  [2049] = Audio
  [2051] = RestrictedLowDelay
@@ -2540,7 +2391,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>VoiceChat.Codec.Enums.OpusCtlGetRequest</b></summary>
 ```
-
  [4001] = Application
  [4003] = Bitrate
  [4005] = MaxBandwidth
@@ -2567,7 +2417,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>VoiceChat.Codec.Enums.OpusCtlSetRequest</b></summary>
 ```
-
  [4000] = Application
  [4002] = Bitrate
  [4004] = MaxBandwidth
@@ -2590,7 +2439,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>VoiceChat.Codec.Enums.OpusStatusCode</b></summary>
 ```
-
  [0] = OK
  [-7] = AllocFail
  [-6] = InvalidState
@@ -2607,7 +2455,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>ServerOutput.OutputCodes</b></summary>
 ```
-
  [16] = RoundRestart
  [17] = IdleEnter
  [18] = IdleExit
@@ -2624,7 +2471,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>LiteNetLib.PacketProperty</b></summary>
 ```
-
  [0] = Unreliable
  [1] = Channeled
  [2] = Ack
@@ -2651,7 +2497,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>InventorySystem.Items.Firearms.Attachments.ParameterMixingMode</b></summary>
 ```
-
  [0] = Override
  [1] = Additive
  [2] = Percent
@@ -2663,7 +2508,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>Utils.CustomParser+ParseResult</b></summary>
 ```
-
  [0] = FullSuccess
  [1] = PartialSuccess
  [2] = Failed
@@ -2675,7 +2519,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>PocketDimensionTeleport+PDTeleportType</b></summary>
 ```
-
  [0] = Killer
  [1] = Exit
 ```
@@ -2686,7 +2529,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>UserSettings.VideoSettings.PerformanceVideoSetting</b></summary>
 ```
-
  [0] = TextureResolution
  [1] = AntiAliasingType
  [2] = AntiAliasingQuality
@@ -2703,7 +2545,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>LightContainmentZoneDecontamination.DecontaminationController+DecontaminationPhase+PhaseFunction</b></summary>
 ```
-
  [0] = None
  [1] = GloballyAudible
  [2] = OpenCheckpoints
@@ -2716,7 +2557,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>InventorySystem.Items.Pickups.PickupSyncInfo+PickupFlags</b></summary>
 ```
-
  [1] = Locked
  [2] = InUse
 ```
@@ -2727,7 +2567,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>PlayerInfoArea</b></summary>
 ```
-
  [1] = Nickname
  [2] = Badge
  [4] = CustomInfo
@@ -2742,7 +2581,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>Misc+PlayerInfoColorTypes</b></summary>
 ```
-
  [0] = Pink
  [1] = Red
  [2] = Brown
@@ -2775,7 +2613,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>PlayerRoles.FirstPersonControl.PlayerMovementState</b></summary>
 ```
-
  [0] = Crouching
  [1] = Sneaking
  [2] = Walking
@@ -2788,7 +2625,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>PlayerPermissions</b></summary>
 ```
-
  [1] = KickingAndShortTermBanning
  [2] = BanningUpToDay
  [4] = LongTermBanning
@@ -2826,7 +2662,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>RemoteAdmin.Communication.RaPlayerList+PlayerSorting</b></summary>
 ```
-
  [0] = Ids
  [1] = Alphabetical
  [2] = Class
@@ -2839,7 +2674,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>LiteNetLib4Mirror.Open.Nat.PortMapper</b></summary>
 ```
-
  [1] = Pmp
  [2] = Upnp
 ```
@@ -2850,7 +2684,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>AdminToys.PrimitiveFlags</b></summary>
 ```
-
  [0] = None
  [1] = Collidable
  [2] = Visible
@@ -2862,7 +2695,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>_Scripts.Utils.StartExternalProcess+ProcessCreationFlags</b></summary>
 ```
-
  [0] = NONE
  [1] = DEBUG_PROCESS
  [2] = DEBUG_ONLY_THIS_PROCESS
@@ -2889,7 +2721,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>RemoteAdmin.Communication.RaClipboard+RaClipBoardType</b></summary>
 ```
-
  [0] = Ip
  [1] = UserId
  [2] = PlayerId
@@ -2901,7 +2732,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>InventorySystem.Items.Radio.RadioMessages+RadioCommand</b></summary>
 ```
-
  [0] = Enable
  [1] = Disable
  [2] = ChangeRange
@@ -2913,7 +2743,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>InventorySystem.Items.Radio.RadioMessages+RadioRangeLevel</b></summary>
 ```
-
  [0] = LowRange
  [257] = MediumRange
  [514] = HighRange
@@ -2927,7 +2756,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>RejectionReason</b></summary>
 ```
-
  [0] = NotSpecified
  [1] = ServerFull
  [2] = InvalidToken
@@ -2957,7 +2785,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>ReproProjectAssetType</b></summary>
 ```
-
  [0] = Wildcard
  [1] = Scene
  [2] = Prefab
@@ -2970,7 +2797,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>InventorySystem.Items.ThrowableProjectiles.ThrowableNetworkHandler+RequestType</b></summary>
 ```
-
  [0] = BeginThrow
  [1] = ConfirmThrowWeak
  [2] = ConfirmThrowFullForce
@@ -2983,7 +2809,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>InventorySystem.Items.Firearms.BasicMessages.RequestType</b></summary>
 ```
-
  [0] = Unload
  [1] = Reload
  [2] = AdsIn
@@ -3001,7 +2826,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>Respawning.RespawnManager+RespawnSequencePhase</b></summary>
 ```
-
  [0] = RespawnCooldown
  [1] = SelectingTeam
  [2] = PlayingEntryAnimations
@@ -3014,7 +2838,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>PlayerRoles.PlayableScps.Scp049.Scp049ResurrectAbility+ResurrectError</b></summary>
 ```
-
  [0] = None
  [1] = TargetNull
  [2] = Expired
@@ -3029,7 +2852,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>PlayerRoles.RoleChangeReason</b></summary>
 ```
-
  [0] = None
  [1] = RoundStart
  [2] = LateJoin
@@ -3047,7 +2869,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>PlayerRoles.RoleSpawnFlags</b></summary>
 ```
-
  [0] = None
  [1] = AssignInventory
  [2] = UseSpawnpoint
@@ -3060,7 +2881,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>PlayerRoles.RoleTypeId</b></summary>
 ```
-
  [0] = Scp173
  [257] = ClassD
  [514] = Spectator
@@ -3094,7 +2914,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>MapGeneration.RoomName</b></summary>
 ```
-
  [0] = Unnamed
  [1] = LczClassDSpawn
  [2] = LczComputerRoom
@@ -3141,7 +2960,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>MapGeneration.RoomShape</b></summary>
 ```
-
  [0] = Undefined
  [1] = Endroom
  [2] = Straight
@@ -3156,7 +2974,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>MapGeneration.ImageGenerator+RoomType</b></summary>
 ```
-
  [0] = Straight
  [1] = Curve
  [2] = RoomT
@@ -3171,7 +2988,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>RoundRestarting.RoundRestartType</b></summary>
 ```
-
  [0] = FullRestart
  [1] = FastRestart
  [2] = RedirectRestart
@@ -3183,7 +2999,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>PlayerRoles.PlayableScps.Scp939.Mimicry.MimicPointController+RpcStateMsg</b></summary>
 ```
-
  [0] = None
  [25] = PlacedByUser
  [26] = RemovedByUser
@@ -3196,7 +3011,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>PlayerRoles.PlayableScps.Scp3114.Scp3114Strangle+RpcType</b></summary>
 ```
-
  [0] = TargetResync
  [1] = TargetKilled
  [2] = AttackInterrupted
@@ -3209,7 +3023,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>PlayerRoles.PlayableScps.Scp3114.Scp3114StrangleAudio+RpcType</b></summary>
 ```
-
  [0] = ChokeSync
  [1] = Kill
 ```
@@ -3220,7 +3033,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>InventorySystem.Items.MarshmallowMan.MarshmallowItem+RpcType</b></summary>
 ```
-
  [0] = AttackStart
  [1] = Hit
  [2] = Holster
@@ -3232,7 +3044,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>PlayerRoles.PlayableScps.Scp079.Scp079ScannerSequence+ScanSequenceStep</b></summary>
 ```
-
  [0] = Init
  [1] = CountingDown
  [2] = ScanningFindNewTarget
@@ -3246,7 +3057,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>PlayerRoles.PlayableScps.Scp049.Zombies.ZombieAudioPlayer+Scp0492SoundId</b></summary>
 ```
-
  [0] = Growl
  [1] = AngryGrowl
  [2] = Attack
@@ -3258,7 +3068,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>PlayerRoles.PlayableScps.Scp079.Scp079HudTranslation</b></summary>
 ```
-
  [0] = Zoom
  [1] = AccessTier
  [2] = Experience
@@ -3358,7 +3167,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>PlayerRoles.PlayableScps.Scp096.Scp096AbilityState</b></summary>
 ```
-
  [0] = None
  [1] = TryingNotToCry
  [2] = Attacking
@@ -3372,7 +3180,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>PlayerRoles.PlayableScps.Scp096.Scp096HitResult</b></summary>
 ```
-
  [0] = None
  [1] = Window
  [2] = Door
@@ -3386,7 +3193,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>PlayerRoles.PlayableScps.Scp096.Scp096HudTranslation</b></summary>
 ```
-
  [0] = HelpMenuDescription
  [1] = HelpMenuTryNotToCry
  [2] = HelpMenuMeeleAttack
@@ -3403,7 +3209,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>PlayerRoles.PlayableScps.Scp096.Scp096RageState</b></summary>
 ```
-
  [0] = Docile
  [1] = Distressed
  [2] = Enraged
@@ -3416,7 +3221,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>PlayerRoles.PlayableScps.Scp173.Scp173AudioPlayer+Scp173SoundId</b></summary>
 ```
-
  [0] = Hit
  [1] = Teleport
  [2] = Snap
@@ -3428,7 +3232,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>InventorySystem.Items.Usables.Scp244.Scp244State</b></summary>
 ```
-
  [0] = Idle
  [1] = Active
  [2] = Destroyed
@@ -3441,7 +3244,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>PlayerRoles.PlayableScps.Scp3114.Scp3114HudTranslation</b></summary>
 ```
-
  [0] = IdentityStolenWarning
  [1] = UnableToAttackWarning
  [2] = EquipItemWarning
@@ -3466,7 +3268,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>Scp914.Scp914InteractCode</b></summary>
 ```
-
  [0] = ChangeMode
  [1] = Activate
 ```
@@ -3477,7 +3278,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>Scp914.Scp914KnobSetting</b></summary>
 ```
-
  [0] = Rough
  [1] = Coarse
  [2] = OneToOne
@@ -3491,7 +3291,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>Scp914.Scp914Mode</b></summary>
 ```
-
  [1] = Dropped
  [2] = Inventory
  [3] = DroppedAndInventory
@@ -3506,7 +3305,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>Scp914.Scp914Sound</b></summary>
 ```
-
  [0] = KnobChange
  [1] = Upgrading
 ```
@@ -3517,7 +3315,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>PlayerRoles.PlayableScps.Scp939.Scp939DamageType</b></summary>
 ```
-
  [0] = None
  [14] = Claw
  [15] = LungeTarget
@@ -3530,7 +3327,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>PlayerRoles.PlayableScps.Scp939.Scp939HudTranslation</b></summary>
 ```
-
  [0] = PressKeyToLunge
  [1] = HintPreviewVoice
  [2] = LocalPreviewHeader
@@ -3586,7 +3382,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>PlayerRoles.PlayableScps.Scp939.Scp939LungeState</b></summary>
 ```
-
  [0] = None
  [1] = Triggered
  [2] = LandHit
@@ -3600,7 +3395,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>EncryptedChannelManager+SecurityLevel</b></summary>
 ```
-
  [0] = Unsecured
  [1] = EncryptedAndAuthenticated
 ```
@@ -3611,7 +3405,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>UserSettings.ControlsSettings.SensitivitySetting</b></summary>
 ```
-
  [0] = SensMultiplier
  [1] = AdsReductionMultiplier
  [2] = Invert
@@ -3623,7 +3416,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>ServerLogs+ServerLogType</b></summary>
 ```
-
  [0] = ConnectionUpdate
  [1] = RemoteAdminActivity_GameChanging
  [2] = RemoteAdminActivity_Misc
@@ -3642,7 +3434,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>Security.ServerRateLimit</b></summary>
 ```
-
  [0] = playerInteract
  [1] = commands
 ```
@@ -3653,7 +3444,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>ServerShutdown+ServerShutdownState</b></summary>
 ```
-
  [0] = NotInitiated
  [1] = BroadcastingShutdown
  [2] = ShuttingDown
@@ -3666,7 +3456,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>UserSettings.GUIElements.UserSettingDependency+Dependency+SettingType</b></summary>
 ```
-
  [0] = Slider
  [1] = Toggle
  [2] = Dropdown
@@ -3678,7 +3467,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>LiteNetLib.ShutdownResult</b></summary>
 ```
-
  [0] = None
  [1] = Success
  [2] = WasConnected
@@ -3690,7 +3478,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>Respawning.SpawnableTeamType</b></summary>
 ```
-
  [0] = None
  [1] = ChaosInsurgency
  [2] = NineTailedFox
@@ -3702,7 +3489,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>PlayerRoles.Spectating.SpectatableListElementType</b></summary>
 ```
-
  [0] = Standard
  [1] = Scp079
  [2] = Scp3114
@@ -3714,7 +3500,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>PlayerRoles.Spectating.SpectatorSpawnReason</b></summary>
 ```
-
  [0] = None
  [1] = KilledByPlayer
  [2] = Other
@@ -3726,7 +3511,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>Mirror.LiteNetLib4Mirror.LiteNetLib4MirrorCore+States</b></summary>
 ```
-
  [0] = NonInitialized
  [1] = Idle
  [2] = Discovery
@@ -3741,7 +3525,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>InventorySystem.Items.Usables.StatusMessage+StatusType</b></summary>
 ```
-
  [0] = Start
  [1] = Cancel
 ```
@@ -3752,7 +3535,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>MapGeneration.Distributors.StructureType</b></summary>
 ```
-
  [0] = StandardLocker
  [1] = LargeGunLocker
  [2] = ScpPedestal
@@ -3767,7 +3549,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>Subtitles.SubtitleType</b></summary>
 ```
-
  [0] = NTFEntrance
  [1] = AwaitContainPlural
  [2] = AwaitContainSingle
@@ -3806,7 +3587,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>PlayerStatsSystem.SyncedStatBase+SyncMode</b></summary>
 ```
-
  [0] = Private
  [1] = PrivateAndSpectators
  [2] = Public
@@ -3818,7 +3598,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>AdminToys.ShootingTarget+TargetButton</b></summary>
 ```
-
  [0] = IncreaseHP
  [1] = DecreaseHP
  [2] = IncreaseResetTime
@@ -3834,7 +3613,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>PlayerRoles.Team</b></summary>
 ```
-
  [0] = SCPs
  [1] = FoundationForces
  [2] = ChaosInsurgency
@@ -3850,7 +3628,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>InventorySystem.Items.Thirdperson.ThirdpersonItemAnimationName</b></summary>
 ```
-
  [0] = Override0
  [1] = Override1
  [2] = Override2
@@ -3875,7 +3652,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>PlayerRoles.PlayableScps.Scp079.Scp079ScannerSequence+TrackerMessage</b></summary>
 ```
-
  [0] = None
  [1] = ScannerDisabled
  [2] = ScanTimeSync
@@ -3889,7 +3665,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>InventorySystem.Items.Firearms.Modules.DoubleAction+TriggerState</b></summary>
 ```
-
  [0] = Released
  [1] = Pulling
  [2] = SearLock
@@ -3901,7 +3676,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>UserSettings.UserInterfaceSettings.UISetting</b></summary>
 ```
-
  [0] = Language
  [1] = EnableSubtitles
  [2] = HealthbarMode
@@ -3917,7 +3691,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>LiteNetLib.UnconnectedMessageType</b></summary>
 ```
-
  [0] = BasicMessage
  [1] = Broadcast
 ```
@@ -3928,7 +3701,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>PlayerRoles.PlayableScps.Scp079.Scp079BlackoutRoomAbility+ValidationError</b></summary>
 ```
-
  [0] = None
  [1] = NotEnoughAux
  [26] = NoController
@@ -3943,7 +3715,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>PlayerRoles.PlayableScps.Scp079.Scp079BlackoutZoneAbility+ValidationError</b></summary>
 ```
-
  [0] = None
  [1] = NotEnoughAux
  [59] = Cooldown
@@ -3956,7 +3727,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>PlayerRoles.PlayableScps.Scp079.Scp079LockdownRoomAbility+ValidationError</b></summary>
 ```
-
  [0] = None
  [1] = Unknown
  [6] = NotEnoughAux
@@ -3971,7 +3741,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>PlayerRoles.PlayableScps.Scp3114.Scp3114FakeModelManager+VariantType</b></summary>
 ```
-
  [0] = Original
  [1] = Disguise
  [2] = Reveal
@@ -3983,7 +3752,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>UserSettings.AudioSettings.VcAudioSetting</b></summary>
 ```
-
  [0] = NoiseReduction
 ```
 
@@ -3993,7 +3761,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>VoiceChat.VcMuteFlags</b></summary>
 ```
-
  [0] = None
  [1] = LocalRegular
  [2] = LocalIntercom
@@ -4007,7 +3774,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>VoiceChat.VcPrivacyFlags</b></summary>
 ```
-
  [0] = None
  [1] = SettingsSelected
  [2] = AllowMicCapture
@@ -4020,7 +3786,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>GameCore.Version+VersionType</b></summary>
 ```
-
  [0] = Release
  [1] = PublicRC
  [2] = PublicBeta
@@ -4038,7 +3803,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>VoiceChat.VoiceChatChannel</b></summary>
 ```
-
  [0] = None
  [1] = Proximity
  [2] = Radio
@@ -4057,7 +3821,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>NonFacilityCompatibility+SceneDescription+VoiceChatSupportMode</b></summary>
 ```
-
  [0] = Unsupported
  [1] = WithoutIntercom
  [2] = FullySupported
@@ -4069,7 +3832,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>PlayerRoles.PlayableScps.Scp3114.Scp3114VoiceLines+VoiceLinesName</b></summary>
 ```
-
  [0] = KillSlap
  [1] = KillStrangle
  [2] = Slap
@@ -4085,7 +3847,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>UserSettings.AudioSettings.MixerAudioSettings+VolumeSliderSetting</b></summary>
 ```
-
  [0] = Master
  [1] = VoiceChat
  [2] = SoundEffects
@@ -4099,7 +3860,6 @@ Last Update (13.5.0.1)
 
 <details><summary><b>InventorySystem.Items.Firearms.Attachments.WorkstationController+WorkstationStatus</b></summary>
 ```
-
  [0] = Offline
  [1] = PoweringUp
  [2] = PoweringDown

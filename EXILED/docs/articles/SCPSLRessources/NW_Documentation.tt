@@ -46,7 +46,7 @@ try
             WriteLine($"- [{type.Name}](#{type.Name.ToLower()})");
             response += $"\n### {type.Name}\n\n";
             response += $"<details><summary><b>{type.FullName}</b></summary>\n";
-            response += $"```\n";
+            response += $"```";
 
             foreach (var value in Enum.GetValues(type))
             {
