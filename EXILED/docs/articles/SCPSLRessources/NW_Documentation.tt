@@ -17,6 +17,8 @@
 title: NW Documentation
 ---
 
+Last Update (<#= Exiled.Loader.AutoUpdateFiles.RequiredSCPSLVersion#>)
+
 ### Index
 
 - [RoleType, Team, Side, LeadingTeam](#roletype-team-side-and-leadingteam)
@@ -44,13 +46,13 @@ try
             WriteLine($"- [{type.Name}](#{type.Name.ToLower()})");
             response += $"\n### {type.Name}\n\n";
             response += $"<details><summary><b>{type.FullName}</b></summary>\n";
-            response += $"```md title=\"Latest Updated: {Exiled.Loader.AutoUpdateFiles.RequiredSCPSLVersion}\"\n";
+            response += $"```\n";
 
             foreach (var value in Enum.GetValues(type))
             {
                 response += $"\n [{value.GetHashCode()}] = {value.ToString()}";
             }
-                response += "\n```\n\n</details>\n";
+            response += "\n```\n\n</details>\n";
          }
     }
     WriteLine(response);
@@ -71,7 +73,7 @@ catch(Exception ex)
 
 <details><summary> <b>Roles</b></summary>
 
-```md title="Latest Updated: <#= Exiled.Loader.AutoUpdateFiles.RequiredSCPSLVersion#>"
+```
 | Id  | RoleTypeId     | Team             | Side             | LeadingTeam     |
 |-----|----------------|------------------|------------------|-----------------|
 <#= string.Join("\n",Enum.GetValues(typeof(RoleTypeId)).Cast<RoleTypeId>().ToList().OrderBy(x => x).Select(x => $"| {((int)x).ToString().PadRight(3)} | {x.ToString().PadRight(14)} | {RoleExtensions.GetTeam(x).ToString().PadRight(16)} | {RoleExtensions.GetSide(RoleExtensions.GetTeam(x)).ToString().PadRight(16)} | {RoleExtensions.GetLeadingTeam(RoleExtensions.GetTeam(x)).ToString().PadRight(16)}|"))#>

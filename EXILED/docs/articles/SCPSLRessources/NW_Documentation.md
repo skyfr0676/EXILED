@@ -17,6 +17,8 @@
 title: NW Documentation
 ---
 
+Last Update (13.5.0.1)
+
 ### Index
 
 - [RoleType, Team, Side, LeadingTeam](#roletype-team-side-and-leadingteam)
@@ -265,7 +267,7 @@ title: NW Documentation
 ### AchievementName
 
 <details><summary><b>Achievements.AchievementName</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = TurnThemAll
  [1] = Pacified
@@ -307,7 +309,7 @@ title: NW Documentation
 ### ActionCategory
 
 <details><summary><b>ActionCategory</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = Gameplay
  [1] = Weapons
@@ -323,7 +325,7 @@ title: NW Documentation
 ### ActionModuleResponse
 
 <details><summary><b>InventorySystem.Items.Firearms.Modules.ActionModuleResponse</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = Idle
  [1] = Shoot
@@ -335,7 +337,7 @@ title: NW Documentation
 ### ActionName
 
 <details><summary><b>ActionName</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = Shoot
  [1] = Zoom
@@ -378,7 +380,7 @@ title: NW Documentation
 ### Activity
 
 <details><summary><b>InventorySystem.Searching.SearchSessionPipe+Activity</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = Idle
  [1] = Requested
@@ -390,7 +392,7 @@ title: NW Documentation
 ### AdminFlags
 
 <details><summary><b>PlayerStatsSystem.AdminFlags</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = None
  [1] = Noclip
@@ -403,7 +405,7 @@ title: NW Documentation
 ### AlphaPanelOperations
 
 <details><summary><b>PlayerInteract+AlphaPanelOperations</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = Cancel
  [1] = Lever
@@ -414,7 +416,7 @@ title: NW Documentation
 ### AttachmentDescriptiveAdvantages
 
 <details><summary><b>InventorySystem.Items.Firearms.Attachments.AttachmentDescriptiveAdvantages</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = None
  [2] = Flashlight
@@ -428,7 +430,7 @@ title: NW Documentation
 ### AttachmentDescriptiveDownsides
 
 <details><summary><b>InventorySystem.Items.Firearms.Attachments.AttachmentDescriptiveDownsides</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = None
  [2] = Laser
@@ -439,7 +441,7 @@ title: NW Documentation
 ### AttachmentEditorsTranslation
 
 <details><summary><b>InventorySystem.Items.Firearms.Attachments.AttachmentEditorsTranslation</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = Custom
  [1] = PresetId
@@ -466,7 +468,7 @@ title: NW Documentation
 ### AttachmentName
 
 <details><summary><b>InventorySystem.Items.Firearms.Attachments.AttachmentName</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = None
  [1] = IronSights
@@ -521,7 +523,7 @@ title: NW Documentation
 ### AttachmentParam
 
 <details><summary><b>InventorySystem.Items.Firearms.Attachments.AttachmentParam</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = AdsZoomMultiplier
  [1] = AdsMouseSensitivityMultiplier
@@ -552,7 +554,7 @@ title: NW Documentation
 ### AttachmentSlot
 
 <details><summary><b>InventorySystem.Items.Firearms.Attachments.AttachmentSlot</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = Sight
  [1] = Barrel
@@ -570,7 +572,7 @@ title: NW Documentation
 ### AttackResult
 
 <details><summary><b>PlayerRoles.PlayableScps.Subroutines.AttackResult</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = None
  [1] = AttackedObject
@@ -583,7 +585,7 @@ title: NW Documentation
 ### AttackType
 
 <details><summary><b>PlayerStatsSystem.Scp049DamageHandler+AttackType</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = Instakill
  [1] = CardiacArrest
@@ -595,7 +597,7 @@ title: NW Documentation
 ### AttackType
 
 <details><summary><b>PlayerStatsSystem.Scp096DamageHandler+AttackType</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = GateKill
  [1] = SlapLeft
@@ -608,7 +610,7 @@ title: NW Documentation
 ### AudioMixerChannelType
 
 <details><summary><b>AudioPooling.AudioMixerChannelType</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = DefaultSfx
  [1] = Interface
@@ -622,7 +624,7 @@ title: NW Documentation
 ### AuthenticationResponseFlags
 
 <details><summary><b>CentralAuth.AuthenticationResponseFunctions+AuthenticationResponseFlags</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [1] = AuthToken
  [2] = BadgeToken
@@ -635,7 +637,7 @@ title: NW Documentation
 ### AutoHideType
 
 <details><summary><b>StatusBar+AutoHideType</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = WhenFull
  [1] = WhenEmpty
@@ -647,7 +649,7 @@ title: NW Documentation
 ### BadgePreferences
 
 <details><summary><b>ServerRoles+BadgePreferences</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = NoPreference
  [1] = PreferGlobal
@@ -659,7 +661,7 @@ title: NW Documentation
 ### BadgeVisibilityPreferences
 
 <details><summary><b>ServerRoles+BadgeVisibilityPreferences</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = NoPreference
  [1] = Visible
@@ -671,7 +673,7 @@ title: NW Documentation
 ### BanType
 
 <details><summary><b>BanHandler+BanType</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = UserId
  [1] = IP
@@ -683,7 +685,7 @@ title: NW Documentation
 ### BlockedInteraction
 
 <details><summary><b>InventorySystem.Items.BlockedInteraction</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [1] = GeneralInteractions
  [2] = OpenInventory
@@ -699,7 +701,7 @@ title: NW Documentation
 ### BroadcastFlags
 
 <details><summary><b>Broadcast+BroadcastFlags</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = Normal
  [1] = Truncated
@@ -711,7 +713,7 @@ title: NW Documentation
 ### CallType
 
 <details><summary><b>LiteNetLib.Utils.NetSerializer+CallType</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = Basic
  [1] = Array
@@ -723,7 +725,7 @@ title: NW Documentation
 ### CandyKindID
 
 <details><summary><b>InventorySystem.Items.Usables.Scp330.CandyKindID</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = None
  [1] = Rainbow
@@ -740,7 +742,7 @@ title: NW Documentation
 ### CassieAnnouncementType
 
 <details><summary><b>Subtitles.CassieAnnouncementType</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = None
  [1] = Normal
@@ -753,7 +755,7 @@ title: NW Documentation
 ### Category
 
 <details><summary><b>PlayerRoles.PlayableScps.Scp079.Scp079KeyAbilityBase+Category</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = Movement
  [1] = SpecialAbility
@@ -765,7 +767,7 @@ title: NW Documentation
 ### CentralAuthPreauthFlags
 
 <details><summary><b>CentralAuthPreauthFlags</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = None
  [1] = ReservedSlot
@@ -782,7 +784,7 @@ title: NW Documentation
 ### ChallengeState
 
 <details><summary><b>ChallengeState</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = None
  [1] = Processing
@@ -795,7 +797,7 @@ title: NW Documentation
 ### ChallengeType
 
 <details><summary><b>ChallengeType</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = Reply
  [1] = MD5
@@ -807,7 +809,7 @@ title: NW Documentation
 ### CheckpointErrorType
 
 <details><summary><b>Interactables.Interobjects.CheckpointDoor+CheckpointErrorType</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = Denied
  [1] = LockedDown
@@ -819,7 +821,7 @@ title: NW Documentation
 ### CheckpointSequenceStage
 
 <details><summary><b>Interactables.Interobjects.CheckpointDoor+CheckpointSequenceStage</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = Idle
  [1] = Granted
@@ -832,7 +834,7 @@ title: NW Documentation
 ### ClientInstanceMode
 
 <details><summary><b>CentralAuth.ClientInstanceMode</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = Unverified
  [1] = ReadyClient
@@ -845,7 +847,7 @@ title: NW Documentation
 ### ClientSwitchState
 
 <details><summary><b>PlayerRoles.PlayableScps.Scp079.Cameras.Scp079CurrentCameraSync+ClientSwitchState</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = None
  [1] = SwitchingRoom
@@ -857,7 +859,7 @@ title: NW Documentation
 ### ClientType
 
 <details><summary><b>CustomLiteNetLib4MirrorTransport+ClientType</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = GameClient
  [1] = VerificationService
@@ -868,7 +870,7 @@ title: NW Documentation
 ### CloudState
 
 <details><summary><b>PlayerRoles.PlayableScps.Scp939.Scp939AmnesticCloudInstance+CloudState</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = Spawning
  [1] = Created
@@ -880,7 +882,7 @@ title: NW Documentation
 ### CmdTeleportData
 
 <details><summary><b>PlayerRoles.PlayableScps.Scp173.Scp173TeleportAbility+CmdTeleportData</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [1] = Aiming
  [2] = WantsToTeleport
@@ -891,7 +893,7 @@ title: NW Documentation
 ### CollectionDeserializeToBehaviour
 
 <details><summary><b>Utf8Json.CollectionDeserializeToBehaviour</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = Add
  [1] = OverwriteReplace
@@ -902,7 +904,7 @@ title: NW Documentation
 ### CollisionsDisablingReasons
 
 <details><summary><b>Interactables.Interobjects.DoorUtils.DoorVariant+CollisionsDisablingReasons</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [1] = DoorClosing
  [2] = Scp106
@@ -913,7 +915,7 @@ title: NW Documentation
 ### CommandOperationMode
 
 <details><summary><b>Misc+CommandOperationMode</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = Disable
  [1] = Enable
@@ -925,7 +927,7 @@ title: NW Documentation
 ### Condition
 
 <details><summary><b>UserSettings.GUIElements.UserSettingDependency+Dependency+Condition</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = EqualsTo
  [1] = LessThan
@@ -937,7 +939,7 @@ title: NW Documentation
 ### ConfigShare
 
 <details><summary><b>GameCore.ConfigSharing+ConfigShare</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = Bans
  [1] = Mutes
@@ -953,7 +955,7 @@ title: NW Documentation
 ### ConfigShareTypes
 
 <details><summary><b>GameCore.ConfigShareTypes</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = Bans
  [1] = Mutes
@@ -969,7 +971,7 @@ title: NW Documentation
 ### ConnectionRequestResult
 
 <details><summary><b>LiteNetLib.ConnectionRequestResult</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = None
  [1] = Accept
@@ -982,7 +984,7 @@ title: NW Documentation
 ### ConnectionState
 
 <details><summary><b>LiteNetLib.ConnectionState</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [2] = Outgoing
  [4] = Connected
@@ -997,7 +999,7 @@ title: NW Documentation
 ### ConnectRequestResult
 
 <details><summary><b>LiteNetLib.ConnectRequestResult</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = None
  [1] = P2PLose
@@ -1010,7 +1012,7 @@ title: NW Documentation
 ### ConsoleLogType
 
 <details><summary><b>GameCore.Console+ConsoleLogType</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = DoNotLog
  [1] = Log
@@ -1023,7 +1025,7 @@ title: NW Documentation
 ### ConsumeError
 
 <details><summary><b>PlayerRoles.PlayableScps.Scp049.Zombies.ZombieConsumeAbility+ConsumeError</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = None
  [1] = CannotCancel
@@ -1038,7 +1040,7 @@ title: NW Documentation
 ### CurrentAction
 
 <details><summary><b>InventorySystem.Items.Firearms.Modules.TubularMagazineAmmoManager+CurrentAction</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = Idle
  [1] = Reloading
@@ -1050,7 +1052,7 @@ title: NW Documentation
 ### CursorOverrideMode
 
 <details><summary><b>CursorManagement.CursorOverrideMode</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = NoOverride
  [1] = Centered
@@ -1063,7 +1065,7 @@ title: NW Documentation
 ### DataType
 
 <details><summary><b>PlayerPrefsSl+DataType</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = Bool
  [1] = Byte
@@ -1100,7 +1102,7 @@ title: NW Documentation
 ### DebugLevel
 
 <details><summary><b>DebugLevel</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = Muted
  [1] = Narrow
@@ -1114,7 +1116,7 @@ title: NW Documentation
 ### DecalPoolType
 
 <details><summary><b>Decals.DecalPoolType</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = None
  [1] = Bullet
@@ -1127,7 +1129,7 @@ title: NW Documentation
 ### DecontaminationStatus
 
 <details><summary><b>LightContainmentZoneDecontamination.DecontaminationController+DecontaminationStatus</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = None
  [1] = Disabled
@@ -1139,7 +1141,7 @@ title: NW Documentation
 ### DeliveryMethod
 
 <details><summary><b>LiteNetLib.DeliveryMethod</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = ReliableUnordered
  [1] = Sequenced
@@ -1153,7 +1155,7 @@ title: NW Documentation
 ### DiodeType
 
 <details><summary><b>AlphaWarheadNukesitePanel+DiodeType</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = InProgress
  [1] = BlastDoor
@@ -1165,7 +1167,7 @@ title: NW Documentation
 ### DisconnectReason
 
 <details><summary><b>LiteNetLib.DisconnectReason</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = ConnectionFailed
  [1] = Timeout
@@ -1186,7 +1188,7 @@ title: NW Documentation
 ### DisconnectResult
 
 <details><summary><b>LiteNetLib.DisconnectResult</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = None
  [1] = Reject
@@ -1198,7 +1200,7 @@ title: NW Documentation
 ### DisguiseStatus
 
 <details><summary><b>PlayerRoles.PlayableScps.Scp3114.Scp3114Identity+DisguiseStatus</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = None
  [1] = Equipping
@@ -1210,7 +1212,7 @@ title: NW Documentation
 ### DispatchTime
 
 <details><summary><b>MainThreadDispatcher+DispatchTime</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = Update
  [1] = LateUpdate
@@ -1222,7 +1224,7 @@ title: NW Documentation
 ### DisplayExactMode
 
 <details><summary><b>PlayerStatsSystem.StatSlider+DisplayExactMode</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = PreferenceBased
  [1] = AlwaysExact
@@ -1235,7 +1237,7 @@ title: NW Documentation
 ### DisplayVideoSetting
 
 <details><summary><b>UserSettings.VideoSettings.DisplayVideoSetting</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = Resolution
  [1] = AspectRatio
@@ -1250,7 +1252,7 @@ title: NW Documentation
 ### DistributionPlatform
 
 <details><summary><b>GameCore.DistributionPlatform</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = Dedicated
  [1] = Steam
@@ -1262,7 +1264,7 @@ title: NW Documentation
 ### DoorAction
 
 <details><summary><b>Interactables.Interobjects.DoorUtils.DoorAction</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = Opened
  [1] = Closed
@@ -1277,7 +1279,7 @@ title: NW Documentation
 ### DoorDamageType
 
 <details><summary><b>Interactables.Interobjects.DoorUtils.DoorDamageType</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [1] = None
  [2] = ServerCommand
@@ -1291,7 +1293,7 @@ title: NW Documentation
 ### DoorLockMode
 
 <details><summary><b>Interactables.Interobjects.DoorUtils.DoorLockMode</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = FullLock
  [1] = CanOpen
@@ -1304,7 +1306,7 @@ title: NW Documentation
 ### DoorLockReason
 
 <details><summary><b>Interactables.Interobjects.DoorUtils.DoorLockReason</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = None
  [1] = Regular079
@@ -1324,7 +1326,7 @@ title: NW Documentation
 ### DtoaMode
 
 <details><summary><b>Utf8Json.Internal.DoubleConversion.DoubleToStringConverter+DtoaMode</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = SHORTEST
  [1] = SHORTEST_SINGLE
@@ -1335,7 +1337,7 @@ title: NW Documentation
 ### EffectClassification
 
 <details><summary><b>CustomPlayerEffects.StatusEffectBase+EffectClassification</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = Negative
  [1] = Mixed
@@ -1347,7 +1349,7 @@ title: NW Documentation
 ### EffectType
 
 <details><summary><b>Respawning.RespawnEffectsController+EffectType</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = Selection
  [1] = UponRespawn
@@ -1358,7 +1360,7 @@ title: NW Documentation
 ### ElevatorGroup
 
 <details><summary><b>Interactables.Interobjects.ElevatorManager+ElevatorGroup</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = GateA
  [1] = GateB
@@ -1375,7 +1377,7 @@ title: NW Documentation
 ### ElevatorSequence
 
 <details><summary><b>Interactables.Interobjects.ElevatorChamber+ElevatorSequence</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = DoorClosing
  [1] = MovingAway
@@ -1389,7 +1391,7 @@ title: NW Documentation
 ### EncryptedChannel
 
 <details><summary><b>EncryptedChannelManager+EncryptedChannel</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = RemoteAdmin
  [1] = GameConsole
@@ -1401,7 +1403,7 @@ title: NW Documentation
 ### Entry
 
 <details><summary><b>InventorySystem.Items.Usables.Scp330.Scp330Translations+Entry</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = Candies
 ```
@@ -1411,7 +1413,7 @@ title: NW Documentation
 ### EscapeScenarioType
 
 <details><summary><b>Escape+EscapeScenarioType</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = None
  [1] = ClassD
@@ -1425,7 +1427,7 @@ title: NW Documentation
 ### EType
 
 <details><summary><b>LiteNetLib.NetEvent+EType</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = Connect
  [1] = Disconnect
@@ -1444,7 +1446,7 @@ title: NW Documentation
 ### FacilityZone
 
 <details><summary><b>MapGeneration.FacilityZone</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = None
  [1] = LightContainment
@@ -1459,7 +1461,7 @@ title: NW Documentation
 ### Faction
 
 <details><summary><b>PlayerRoles.Faction</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = SCP
  [1] = FoundationStaff
@@ -1472,7 +1474,7 @@ title: NW Documentation
 ### FailReason
 
 <details><summary><b>PlayerRoles.PlayableScps.VisionInformation+FailReason</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = NotOnSameFloor
  [1] = NotInDistance
@@ -1488,7 +1490,7 @@ title: NW Documentation
 ### FalloffType
 
 <details><summary><b>FalloffType</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = Linear
  [1] = Exponential
@@ -1500,7 +1502,7 @@ title: NW Documentation
 ### FastDtoaMode
 
 <details><summary><b>Utf8Json.Internal.DoubleConversion.DoubleToStringConverter+FastDtoaMode</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = FAST_DTOA_SHORTEST
  [1] = FAST_DTOA_SHORTEST_SINGLE
@@ -1511,7 +1513,7 @@ title: NW Documentation
 ### FilmmakerBlendPreset
 
 <details><summary><b>PlayerRoles.Filmmaker.FilmmakerBlendPreset</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = Linear
  [1] = Smooth
@@ -1524,7 +1526,7 @@ title: NW Documentation
 ### FirearmAudioFlags
 
 <details><summary><b>InventorySystem.Items.Firearms.FirearmAudioFlags</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = None
  [2] = ScaleDistance
@@ -1538,7 +1540,7 @@ title: NW Documentation
 ### FirearmStatusFlags
 
 <details><summary><b>InventorySystem.Items.Firearms.FirearmStatusFlags</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = None
  [2] = Cocked
@@ -1552,7 +1554,7 @@ title: NW Documentation
 ### Flags
 
 <details><summary><b>Utf8Json.Internal.DoubleConversion.DoubleToStringConverter+Flags</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = NO_FLAGS
  [1] = EMIT_POSITIVE_EXPONENT_SIGN
@@ -1566,7 +1568,7 @@ title: NW Documentation
 ### Flags
 
 <details><summary><b>Utf8Json.Internal.DoubleConversion.StringToDoubleConverter+Flags</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = NO_FLAGS
  [1] = ALLOW_HEX
@@ -1583,7 +1585,7 @@ title: NW Documentation
 ### FogType
 
 <details><summary><b>CustomRendering.FogType</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = None
  [1] = Inside
@@ -1599,7 +1601,7 @@ title: NW Documentation
 ### FootstepLoudness
 
 <details><summary><b>PlayerRoles.FirstPersonControl.Thirdperson.AnimatedCharacterModel+FootstepLoudness</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [8] = Civilian
  [12] = FoundationForces
@@ -1612,7 +1614,7 @@ title: NW Documentation
 ### FpcViewMode
 
 <details><summary><b>PlayerRoles.FirstPersonControl.FpcMotor+FpcViewMode</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = LocalPlayer
  [1] = Server
@@ -1624,7 +1626,7 @@ title: NW Documentation
 ### FreezingMode
 
 <details><summary><b>InventorySystem.Items.Pickups.PickupStandardPhysics+FreezingMode</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = Default
  [1] = FreezeWhenSleeping
@@ -1636,7 +1638,7 @@ title: NW Documentation
 ### FriendlyFireAction
 
 <details><summary><b>FriendlyFireAction</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = Noop
  [1] = Kill
@@ -1649,7 +1651,7 @@ title: NW Documentation
 ### Generator079Operations
 
 <details><summary><b>PlayerInteract+Generator079Operations</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = Door
  [1] = Tablet
@@ -1661,7 +1663,7 @@ title: NW Documentation
 ### GeneratorColliderId
 
 <details><summary><b>MapGeneration.Distributors.Scp079Generator+GeneratorColliderId</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = Door
  [1] = Switch
@@ -1673,7 +1675,7 @@ title: NW Documentation
 ### GeneratorFlags
 
 <details><summary><b>MapGeneration.Distributors.Scp079Generator+GeneratorFlags</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [1] = None
  [2] = Unlocked
@@ -1687,7 +1689,7 @@ title: NW Documentation
 ### GeoblockingMode
 
 <details><summary><b>GeoblockingMode</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = None
  [1] = Whitelist
@@ -1699,7 +1701,7 @@ title: NW Documentation
 ### GlobalChatIconType
 
 <details><summary><b>VoiceChat.Playbacks.GlobalChatIconType</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = None
  [1] = Avatar
@@ -1712,7 +1714,7 @@ title: NW Documentation
 ### GroupMuteFlags
 
 <details><summary><b>PlayerRoles.Voice.GroupMuteFlags</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = None
  [1] = Spectators
@@ -1726,7 +1728,7 @@ title: NW Documentation
 ### HandlerOutput
 
 <details><summary><b>PlayerStatsSystem.DamageHandlerBase+HandlerOutput</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = Nothing
  [1] = Damaged
@@ -1738,7 +1740,7 @@ title: NW Documentation
 ### HandlerType
 
 <details><summary><b>PlayerRoles.PlayableScps.Scp3114.Scp3114DamageHandler+HandlerType</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = Slap
  [1] = Strangulation
@@ -1750,7 +1752,7 @@ title: NW Documentation
 ### HidState
 
 <details><summary><b>InventorySystem.Items.MicroHID.HidState</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = Idle
  [1] = PoweringUp
@@ -1765,7 +1767,7 @@ title: NW Documentation
 ### HidStatusMessageType
 
 <details><summary><b>InventorySystem.Items.MicroHID.HidStatusMessageType</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = UserInput
  [1] = State
@@ -1777,7 +1779,7 @@ title: NW Documentation
 ### HidUserInput
 
 <details><summary><b>InventorySystem.Items.MicroHID.HidUserInput</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = None
  [1] = Prime
@@ -1789,7 +1791,7 @@ title: NW Documentation
 ### HintEffectType
 
 <details><summary><b>Utils.Networking.HintEffectReaderWriter+HintEffectType</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = Alpha
  [1] = AlphaCurve
@@ -1801,7 +1803,7 @@ title: NW Documentation
 ### HintMessageTypes
 
 <details><summary><b>Hints.HintMessageParameterFunctions+HintMessageTypes</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = Unknown
  [1] = TextHint
@@ -1813,7 +1815,7 @@ title: NW Documentation
 ### HintParameterType
 
 <details><summary><b>Utils.Networking.HintParameterReaderWriter+HintParameterType</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = Text
  [1] = Timespan
@@ -1840,7 +1842,7 @@ title: NW Documentation
 ### HintTranslations
 
 <details><summary><b>Hints.HintTranslations</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = WarheadDetonateCoverDenied
  [1] = MaxAmmoReached
@@ -1855,7 +1857,7 @@ title: NW Documentation
 ### HintType
 
 <details><summary><b>Utils.Networking.HintReaderWriter+HintType</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = Translation
  [1] = Text
@@ -1866,7 +1868,7 @@ title: NW Documentation
 ### HitboxType
 
 <details><summary><b>HitboxType</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = Body
  [1] = Limb
@@ -1878,7 +1880,7 @@ title: NW Documentation
 ### Holidays
 
 <details><summary><b>Holidays</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = NoHoliday
  [1] = Halloween
@@ -1896,7 +1898,7 @@ title: NW Documentation
 ### HotkeysTranslation
 
 <details><summary><b>InventorySystem.Hotkeys.HotkeysTranslation</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = SettingsHeader
  [1] = CreateNewLabel
@@ -1946,7 +1948,7 @@ title: NW Documentation
 ### HttpQueryMode
 
 <details><summary><b>HttpQueryMode</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = HttpClient
  [1] = HttpProxy
@@ -1959,7 +1961,7 @@ title: NW Documentation
 ### IcomText
 
 <details><summary><b>PlayerRoles.Voice.IntercomDisplay+IcomText</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = Ready
  [1] = Transmitting
@@ -1976,7 +1978,7 @@ title: NW Documentation
 ### IndicatorType
 
 <details><summary><b>PlayerRoles.PlayableScps.Scp079.Map.Scp079TeammateIndicators+IndicatorType</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = Low
  [1] = Medium
@@ -1988,7 +1990,7 @@ title: NW Documentation
 ### InputActivationMode
 
 <details><summary><b>UserSettings.ToggleOrHoldInput+InputActivationMode</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = Toggle
  [1] = Hold
@@ -1999,7 +2001,7 @@ title: NW Documentation
 ### IntercomState
 
 <details><summary><b>PlayerRoles.Voice.IntercomState</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = Ready
  [1] = Starting
@@ -2013,7 +2015,7 @@ title: NW Documentation
 ### InvisibilityFlags
 
 <details><summary><b>PlayerRoles.Visibility.InvisibilityFlags</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = None
  [1] = OutOfRange
@@ -2026,7 +2028,7 @@ title: NW Documentation
 ### IPAddressType
 
 <details><summary><b>Misc+IPAddressType</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = Unknown
  [1] = IPV4
@@ -2040,7 +2042,7 @@ title: NW Documentation
 ### ItemCategory
 
 <details><summary><b>ItemCategory</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = None
  [1] = Keycard
@@ -2059,7 +2061,7 @@ title: NW Documentation
 ### ItemDescriptionType
 
 <details><summary><b>InventorySystem.Items.ItemDescriptionType</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = Default
  [1] = Keycard
@@ -2074,7 +2076,7 @@ title: NW Documentation
 ### ItemTierFlags
 
 <details><summary><b>ItemTierFlags</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = Common
  [1] = MilitaryGrade
@@ -2087,7 +2089,7 @@ title: NW Documentation
 ### ItemType
 
 <details><summary><b>ItemType</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = KeycardJanitor
  [1] = KeycardScientist
@@ -2152,7 +2154,7 @@ title: NW Documentation
 ### JailbirdMessageType
 
 <details><summary><b>InventorySystem.Items.Jailbird.JailbirdMessageType</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = UpdateState
  [1] = Broken
@@ -2170,7 +2172,7 @@ title: NW Documentation
 ### JailbirdWearState
 
 <details><summary><b>InventorySystem.Items.Jailbird.JailbirdWearState</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = Healthy
  [1] = LowWear
@@ -2185,7 +2187,7 @@ title: NW Documentation
 ### JsonToken
 
 <details><summary><b>Utf8Json.JsonToken</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = None
  [1] = BeginObject
@@ -2206,7 +2208,7 @@ title: NW Documentation
 ### KeycardPermissions
 
 <details><summary><b>Interactables.Interobjects.DoorUtils.KeycardPermissions</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = None
  [1] = Checkpoints
@@ -2227,7 +2229,7 @@ title: NW Documentation
 ### LeadingTeam
 
 <details><summary><b>RoundSummary+LeadingTeam</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = FacilityForces
  [1] = ChaosInsurgency
@@ -2240,7 +2242,7 @@ title: NW Documentation
 ### LegacyInterfaces
 
 <details><summary><b>LegacyInterfaces</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = GiveOrders
  [1] = FollowOrders
@@ -2268,7 +2270,7 @@ title: NW Documentation
 ### LightingVideoSetting
 
 <details><summary><b>UserSettings.VideoSettings.LightingVideoSetting</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = RenderShadows
  [1] = ShadowResolution
@@ -2280,7 +2282,7 @@ title: NW Documentation
 ### LocalAddrType
 
 <details><summary><b>LiteNetLib.LocalAddrType</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [1] = IPv4
  [2] = IPv6
@@ -2292,7 +2294,7 @@ title: NW Documentation
 ### LoggingState
 
 <details><summary><b>ServerLogs+LoggingState</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = Off
  [1] = Standby
@@ -2306,7 +2308,7 @@ title: NW Documentation
 ### MainBoolsSettings
 
 <details><summary><b>ServerConfigSynchronizer+MainBoolsSettings</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [1] = FriendlyFire
 ```
@@ -2316,7 +2318,7 @@ title: NW Documentation
 ### MappingLifetime
 
 <details><summary><b>LiteNetLib4Mirror.Open.Nat.MappingLifetime</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = Permanent
  [1] = Session
@@ -2329,7 +2331,7 @@ title: NW Documentation
 ### MessageImportance
 
 <details><summary><b>MessageImportance</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [1] = MostImportant
  [2] = Normal
@@ -2342,7 +2344,7 @@ title: NW Documentation
 ### MiscControlsSetting
 
 <details><summary><b>UserSettings.ControlsSettings.MiscControlsSetting</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = AdsToggle
  [1] = SprintToggle
@@ -2359,7 +2361,7 @@ title: NW Documentation
 ### MiscPrivacySetting
 
 <details><summary><b>UserSettings.OtherSettings.MiscPrivacySetting</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = DoNotTrack
  [1] = SteamLobbyPrivacy
@@ -2375,7 +2377,7 @@ title: NW Documentation
 ### MiscVideoSetting
 
 <details><summary><b>UserSettings.VideoSettings.MiscVideoSetting</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = Brightness
  [1] = ExplosionShake
@@ -2388,7 +2390,7 @@ title: NW Documentation
 ### Mode
 
 <details><summary><b>InventorySystem.Items.Autosync.AutosyncRpc+Mode</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = Local
  [1] = AllClients
@@ -2400,7 +2402,7 @@ title: NW Documentation
 ### Modules
 
 <details><summary><b>ServerLogs+Modules</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = Warhead
  [1] = Networking
@@ -2417,7 +2419,7 @@ title: NW Documentation
 ### NatAddressType
 
 <details><summary><b>LiteNetLib.NatAddressType</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = Internal
  [1] = External
@@ -2428,7 +2430,7 @@ title: NW Documentation
 ### NetLogLevel
 
 <details><summary><b>LiteNetLib.NetLogLevel</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = Warning
  [1] = Error
@@ -2441,7 +2443,7 @@ title: NW Documentation
 ### NetworkProtocolType
 
 <details><summary><b>LiteNetLib4Mirror.Open.Nat.NetworkProtocolType</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = Tcp
  [1] = Udp
@@ -2452,7 +2454,7 @@ title: NW Documentation
 ### NextRoundAction
 
 <details><summary><b>ServerStatic+NextRoundAction</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = DoNothing
  [1] = Restart
@@ -2464,7 +2466,7 @@ title: NW Documentation
 ### NotificationSound
 
 <details><summary><b>PlayerRoles.PlayableScps.Scp079.GUI.NotificationSound</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = Standard
  [-1] = None
@@ -2475,7 +2477,7 @@ title: NW Documentation
 ### NtpLeapIndicator
 
 <details><summary><b>LiteNetLib.Utils.NtpLeapIndicator</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = NoWarning
  [1] = LastMinuteHas61Seconds
@@ -2488,7 +2490,7 @@ title: NW Documentation
 ### NtpMode
 
 <details><summary><b>LiteNetLib.Utils.NtpMode</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [3] = Client
  [4] = Server
@@ -2499,7 +2501,7 @@ title: NW Documentation
 ### NullableBoolValue
 
 <details><summary><b>Utils.Networking.NullableBoolReaderWriter+NullableBoolValue</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = Null
  [1] = True
@@ -2511,7 +2513,7 @@ title: NW Documentation
 ### OpenerEventType
 
 <details><summary><b>Interactables.Interobjects.DoorUtils.DoorEventOpenerExtension+OpenerEventType</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = WarheadStart
  [1] = WarheadCancel
@@ -2525,7 +2527,7 @@ title: NW Documentation
 ### OpusApplicationType
 
 <details><summary><b>VoiceChat.Codec.Enums.OpusApplicationType</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [2048] = Voip
  [2049] = Audio
@@ -2537,7 +2539,7 @@ title: NW Documentation
 ### OpusCtlGetRequest
 
 <details><summary><b>VoiceChat.Codec.Enums.OpusCtlGetRequest</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [4001] = Application
  [4003] = Bitrate
@@ -2564,7 +2566,7 @@ title: NW Documentation
 ### OpusCtlSetRequest
 
 <details><summary><b>VoiceChat.Codec.Enums.OpusCtlSetRequest</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [4000] = Application
  [4002] = Bitrate
@@ -2587,7 +2589,7 @@ title: NW Documentation
 ### OpusStatusCode
 
 <details><summary><b>VoiceChat.Codec.Enums.OpusStatusCode</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = OK
  [-7] = AllocFail
@@ -2604,7 +2606,7 @@ title: NW Documentation
 ### OutputCodes
 
 <details><summary><b>ServerOutput.OutputCodes</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [16] = RoundRestart
  [17] = IdleEnter
@@ -2621,7 +2623,7 @@ title: NW Documentation
 ### PacketProperty
 
 <details><summary><b>LiteNetLib.PacketProperty</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = Unreliable
  [1] = Channeled
@@ -2648,7 +2650,7 @@ title: NW Documentation
 ### ParameterMixingMode
 
 <details><summary><b>InventorySystem.Items.Firearms.Attachments.ParameterMixingMode</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = Override
  [1] = Additive
@@ -2660,7 +2662,7 @@ title: NW Documentation
 ### ParseResult
 
 <details><summary><b>Utils.CustomParser+ParseResult</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = FullSuccess
  [1] = PartialSuccess
@@ -2672,7 +2674,7 @@ title: NW Documentation
 ### PDTeleportType
 
 <details><summary><b>PocketDimensionTeleport+PDTeleportType</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = Killer
  [1] = Exit
@@ -2683,7 +2685,7 @@ title: NW Documentation
 ### PerformanceVideoSetting
 
 <details><summary><b>UserSettings.VideoSettings.PerformanceVideoSetting</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = TextureResolution
  [1] = AntiAliasingType
@@ -2700,7 +2702,7 @@ title: NW Documentation
 ### PhaseFunction
 
 <details><summary><b>LightContainmentZoneDecontamination.DecontaminationController+DecontaminationPhase+PhaseFunction</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = None
  [1] = GloballyAudible
@@ -2713,7 +2715,7 @@ title: NW Documentation
 ### PickupFlags
 
 <details><summary><b>InventorySystem.Items.Pickups.PickupSyncInfo+PickupFlags</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [1] = Locked
  [2] = InUse
@@ -2724,7 +2726,7 @@ title: NW Documentation
 ### PlayerInfoArea
 
 <details><summary><b>PlayerInfoArea</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [1] = Nickname
  [2] = Badge
@@ -2739,7 +2741,7 @@ title: NW Documentation
 ### PlayerInfoColorTypes
 
 <details><summary><b>Misc+PlayerInfoColorTypes</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = Pink
  [1] = Red
@@ -2772,7 +2774,7 @@ title: NW Documentation
 ### PlayerMovementState
 
 <details><summary><b>PlayerRoles.FirstPersonControl.PlayerMovementState</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = Crouching
  [1] = Sneaking
@@ -2785,7 +2787,7 @@ title: NW Documentation
 ### PlayerPermissions
 
 <details><summary><b>PlayerPermissions</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [1] = KickingAndShortTermBanning
  [2] = BanningUpToDay
@@ -2823,7 +2825,7 @@ title: NW Documentation
 ### PlayerSorting
 
 <details><summary><b>RemoteAdmin.Communication.RaPlayerList+PlayerSorting</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = Ids
  [1] = Alphabetical
@@ -2836,7 +2838,7 @@ title: NW Documentation
 ### PortMapper
 
 <details><summary><b>LiteNetLib4Mirror.Open.Nat.PortMapper</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [1] = Pmp
  [2] = Upnp
@@ -2847,7 +2849,7 @@ title: NW Documentation
 ### PrimitiveFlags
 
 <details><summary><b>AdminToys.PrimitiveFlags</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = None
  [1] = Collidable
@@ -2859,7 +2861,7 @@ title: NW Documentation
 ### ProcessCreationFlags
 
 <details><summary><b>_Scripts.Utils.StartExternalProcess+ProcessCreationFlags</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = NONE
  [1] = DEBUG_PROCESS
@@ -2886,7 +2888,7 @@ title: NW Documentation
 ### RaClipBoardType
 
 <details><summary><b>RemoteAdmin.Communication.RaClipboard+RaClipBoardType</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = Ip
  [1] = UserId
@@ -2898,7 +2900,7 @@ title: NW Documentation
 ### RadioCommand
 
 <details><summary><b>InventorySystem.Items.Radio.RadioMessages+RadioCommand</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = Enable
  [1] = Disable
@@ -2910,7 +2912,7 @@ title: NW Documentation
 ### RadioRangeLevel
 
 <details><summary><b>InventorySystem.Items.Radio.RadioMessages+RadioRangeLevel</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = LowRange
  [257] = MediumRange
@@ -2924,7 +2926,7 @@ title: NW Documentation
 ### RejectionReason
 
 <details><summary><b>RejectionReason</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = NotSpecified
  [1] = ServerFull
@@ -2954,7 +2956,7 @@ title: NW Documentation
 ### ReproProjectAssetType
 
 <details><summary><b>ReproProjectAssetType</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = Wildcard
  [1] = Scene
@@ -2967,7 +2969,7 @@ title: NW Documentation
 ### RequestType
 
 <details><summary><b>InventorySystem.Items.ThrowableProjectiles.ThrowableNetworkHandler+RequestType</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = BeginThrow
  [1] = ConfirmThrowWeak
@@ -2980,7 +2982,7 @@ title: NW Documentation
 ### RequestType
 
 <details><summary><b>InventorySystem.Items.Firearms.BasicMessages.RequestType</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = Unload
  [1] = Reload
@@ -2998,7 +3000,7 @@ title: NW Documentation
 ### RespawnSequencePhase
 
 <details><summary><b>Respawning.RespawnManager+RespawnSequencePhase</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = RespawnCooldown
  [1] = SelectingTeam
@@ -3011,7 +3013,7 @@ title: NW Documentation
 ### ResurrectError
 
 <details><summary><b>PlayerRoles.PlayableScps.Scp049.Scp049ResurrectAbility+ResurrectError</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = None
  [1] = TargetNull
@@ -3026,7 +3028,7 @@ title: NW Documentation
 ### RoleChangeReason
 
 <details><summary><b>PlayerRoles.RoleChangeReason</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = None
  [1] = RoundStart
@@ -3044,7 +3046,7 @@ title: NW Documentation
 ### RoleSpawnFlags
 
 <details><summary><b>PlayerRoles.RoleSpawnFlags</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = None
  [1] = AssignInventory
@@ -3057,7 +3059,7 @@ title: NW Documentation
 ### RoleTypeId
 
 <details><summary><b>PlayerRoles.RoleTypeId</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = Scp173
  [257] = ClassD
@@ -3091,7 +3093,7 @@ title: NW Documentation
 ### RoomName
 
 <details><summary><b>MapGeneration.RoomName</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = Unnamed
  [1] = LczClassDSpawn
@@ -3138,7 +3140,7 @@ title: NW Documentation
 ### RoomShape
 
 <details><summary><b>MapGeneration.RoomShape</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = Undefined
  [1] = Endroom
@@ -3153,7 +3155,7 @@ title: NW Documentation
 ### RoomType
 
 <details><summary><b>MapGeneration.ImageGenerator+RoomType</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = Straight
  [1] = Curve
@@ -3168,7 +3170,7 @@ title: NW Documentation
 ### RoundRestartType
 
 <details><summary><b>RoundRestarting.RoundRestartType</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = FullRestart
  [1] = FastRestart
@@ -3180,7 +3182,7 @@ title: NW Documentation
 ### RpcStateMsg
 
 <details><summary><b>PlayerRoles.PlayableScps.Scp939.Mimicry.MimicPointController+RpcStateMsg</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = None
  [25] = PlacedByUser
@@ -3193,7 +3195,7 @@ title: NW Documentation
 ### RpcType
 
 <details><summary><b>PlayerRoles.PlayableScps.Scp3114.Scp3114Strangle+RpcType</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = TargetResync
  [1] = TargetKilled
@@ -3206,7 +3208,7 @@ title: NW Documentation
 ### RpcType
 
 <details><summary><b>PlayerRoles.PlayableScps.Scp3114.Scp3114StrangleAudio+RpcType</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = ChokeSync
  [1] = Kill
@@ -3217,7 +3219,7 @@ title: NW Documentation
 ### RpcType
 
 <details><summary><b>InventorySystem.Items.MarshmallowMan.MarshmallowItem+RpcType</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = AttackStart
  [1] = Hit
@@ -3229,7 +3231,7 @@ title: NW Documentation
 ### ScanSequenceStep
 
 <details><summary><b>PlayerRoles.PlayableScps.Scp079.Scp079ScannerSequence+ScanSequenceStep</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = Init
  [1] = CountingDown
@@ -3243,7 +3245,7 @@ title: NW Documentation
 ### Scp0492SoundId
 
 <details><summary><b>PlayerRoles.PlayableScps.Scp049.Zombies.ZombieAudioPlayer+Scp0492SoundId</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = Growl
  [1] = AngryGrowl
@@ -3255,7 +3257,7 @@ title: NW Documentation
 ### Scp079HudTranslation
 
 <details><summary><b>PlayerRoles.PlayableScps.Scp079.Scp079HudTranslation</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = Zoom
  [1] = AccessTier
@@ -3355,7 +3357,7 @@ title: NW Documentation
 ### Scp096AbilityState
 
 <details><summary><b>PlayerRoles.PlayableScps.Scp096.Scp096AbilityState</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = None
  [1] = TryingNotToCry
@@ -3369,7 +3371,7 @@ title: NW Documentation
 ### Scp096HitResult
 
 <details><summary><b>PlayerRoles.PlayableScps.Scp096.Scp096HitResult</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = None
  [1] = Window
@@ -3383,7 +3385,7 @@ title: NW Documentation
 ### Scp096HudTranslation
 
 <details><summary><b>PlayerRoles.PlayableScps.Scp096.Scp096HudTranslation</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = HelpMenuDescription
  [1] = HelpMenuTryNotToCry
@@ -3400,7 +3402,7 @@ title: NW Documentation
 ### Scp096RageState
 
 <details><summary><b>PlayerRoles.PlayableScps.Scp096.Scp096RageState</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = Docile
  [1] = Distressed
@@ -3413,7 +3415,7 @@ title: NW Documentation
 ### Scp173SoundId
 
 <details><summary><b>PlayerRoles.PlayableScps.Scp173.Scp173AudioPlayer+Scp173SoundId</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = Hit
  [1] = Teleport
@@ -3425,7 +3427,7 @@ title: NW Documentation
 ### Scp244State
 
 <details><summary><b>InventorySystem.Items.Usables.Scp244.Scp244State</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = Idle
  [1] = Active
@@ -3438,7 +3440,7 @@ title: NW Documentation
 ### Scp3114HudTranslation
 
 <details><summary><b>PlayerRoles.PlayableScps.Scp3114.Scp3114HudTranslation</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = IdentityStolenWarning
  [1] = UnableToAttackWarning
@@ -3463,7 +3465,7 @@ title: NW Documentation
 ### Scp914InteractCode
 
 <details><summary><b>Scp914.Scp914InteractCode</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = ChangeMode
  [1] = Activate
@@ -3474,7 +3476,7 @@ title: NW Documentation
 ### Scp914KnobSetting
 
 <details><summary><b>Scp914.Scp914KnobSetting</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = Rough
  [1] = Coarse
@@ -3488,7 +3490,7 @@ title: NW Documentation
 ### Scp914Mode
 
 <details><summary><b>Scp914.Scp914Mode</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [1] = Dropped
  [2] = Inventory
@@ -3503,7 +3505,7 @@ title: NW Documentation
 ### Scp914Sound
 
 <details><summary><b>Scp914.Scp914Sound</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = KnobChange
  [1] = Upgrading
@@ -3514,7 +3516,7 @@ title: NW Documentation
 ### Scp939DamageType
 
 <details><summary><b>PlayerRoles.PlayableScps.Scp939.Scp939DamageType</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = None
  [14] = Claw
@@ -3527,7 +3529,7 @@ title: NW Documentation
 ### Scp939HudTranslation
 
 <details><summary><b>PlayerRoles.PlayableScps.Scp939.Scp939HudTranslation</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = PressKeyToLunge
  [1] = HintPreviewVoice
@@ -3583,7 +3585,7 @@ title: NW Documentation
 ### Scp939LungeState
 
 <details><summary><b>PlayerRoles.PlayableScps.Scp939.Scp939LungeState</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = None
  [1] = Triggered
@@ -3597,7 +3599,7 @@ title: NW Documentation
 ### SecurityLevel
 
 <details><summary><b>EncryptedChannelManager+SecurityLevel</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = Unsecured
  [1] = EncryptedAndAuthenticated
@@ -3608,7 +3610,7 @@ title: NW Documentation
 ### SensitivitySetting
 
 <details><summary><b>UserSettings.ControlsSettings.SensitivitySetting</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = SensMultiplier
  [1] = AdsReductionMultiplier
@@ -3620,7 +3622,7 @@ title: NW Documentation
 ### ServerLogType
 
 <details><summary><b>ServerLogs+ServerLogType</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = ConnectionUpdate
  [1] = RemoteAdminActivity_GameChanging
@@ -3639,7 +3641,7 @@ title: NW Documentation
 ### ServerRateLimit
 
 <details><summary><b>Security.ServerRateLimit</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = playerInteract
  [1] = commands
@@ -3650,7 +3652,7 @@ title: NW Documentation
 ### ServerShutdownState
 
 <details><summary><b>ServerShutdown+ServerShutdownState</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = NotInitiated
  [1] = BroadcastingShutdown
@@ -3663,7 +3665,7 @@ title: NW Documentation
 ### SettingType
 
 <details><summary><b>UserSettings.GUIElements.UserSettingDependency+Dependency+SettingType</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = Slider
  [1] = Toggle
@@ -3675,7 +3677,7 @@ title: NW Documentation
 ### ShutdownResult
 
 <details><summary><b>LiteNetLib.ShutdownResult</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = None
  [1] = Success
@@ -3687,7 +3689,7 @@ title: NW Documentation
 ### SpawnableTeamType
 
 <details><summary><b>Respawning.SpawnableTeamType</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = None
  [1] = ChaosInsurgency
@@ -3699,7 +3701,7 @@ title: NW Documentation
 ### SpectatableListElementType
 
 <details><summary><b>PlayerRoles.Spectating.SpectatableListElementType</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = Standard
  [1] = Scp079
@@ -3711,7 +3713,7 @@ title: NW Documentation
 ### SpectatorSpawnReason
 
 <details><summary><b>PlayerRoles.Spectating.SpectatorSpawnReason</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = None
  [1] = KilledByPlayer
@@ -3723,7 +3725,7 @@ title: NW Documentation
 ### States
 
 <details><summary><b>Mirror.LiteNetLib4Mirror.LiteNetLib4MirrorCore+States</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = NonInitialized
  [1] = Idle
@@ -3738,7 +3740,7 @@ title: NW Documentation
 ### StatusType
 
 <details><summary><b>InventorySystem.Items.Usables.StatusMessage+StatusType</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = Start
  [1] = Cancel
@@ -3749,7 +3751,7 @@ title: NW Documentation
 ### StructureType
 
 <details><summary><b>MapGeneration.Distributors.StructureType</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = StandardLocker
  [1] = LargeGunLocker
@@ -3764,7 +3766,7 @@ title: NW Documentation
 ### SubtitleType
 
 <details><summary><b>Subtitles.SubtitleType</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = NTFEntrance
  [1] = AwaitContainPlural
@@ -3803,7 +3805,7 @@ title: NW Documentation
 ### SyncMode
 
 <details><summary><b>PlayerStatsSystem.SyncedStatBase+SyncMode</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = Private
  [1] = PrivateAndSpectators
@@ -3815,7 +3817,7 @@ title: NW Documentation
 ### TargetButton
 
 <details><summary><b>AdminToys.ShootingTarget+TargetButton</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = IncreaseHP
  [1] = DecreaseHP
@@ -3831,7 +3833,7 @@ title: NW Documentation
 ### Team
 
 <details><summary><b>PlayerRoles.Team</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = SCPs
  [1] = FoundationForces
@@ -3847,7 +3849,7 @@ title: NW Documentation
 ### ThirdpersonItemAnimationName
 
 <details><summary><b>InventorySystem.Items.Thirdperson.ThirdpersonItemAnimationName</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = Override0
  [1] = Override1
@@ -3872,7 +3874,7 @@ title: NW Documentation
 ### TrackerMessage
 
 <details><summary><b>PlayerRoles.PlayableScps.Scp079.Scp079ScannerSequence+TrackerMessage</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = None
  [1] = ScannerDisabled
@@ -3886,7 +3888,7 @@ title: NW Documentation
 ### TriggerState
 
 <details><summary><b>InventorySystem.Items.Firearms.Modules.DoubleAction+TriggerState</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = Released
  [1] = Pulling
@@ -3898,7 +3900,7 @@ title: NW Documentation
 ### UISetting
 
 <details><summary><b>UserSettings.UserInterfaceSettings.UISetting</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = Language
  [1] = EnableSubtitles
@@ -3914,7 +3916,7 @@ title: NW Documentation
 ### UnconnectedMessageType
 
 <details><summary><b>LiteNetLib.UnconnectedMessageType</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = BasicMessage
  [1] = Broadcast
@@ -3925,7 +3927,7 @@ title: NW Documentation
 ### ValidationError
 
 <details><summary><b>PlayerRoles.PlayableScps.Scp079.Scp079BlackoutRoomAbility+ValidationError</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = None
  [1] = NotEnoughAux
@@ -3940,7 +3942,7 @@ title: NW Documentation
 ### ValidationError
 
 <details><summary><b>PlayerRoles.PlayableScps.Scp079.Scp079BlackoutZoneAbility+ValidationError</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = None
  [1] = NotEnoughAux
@@ -3953,7 +3955,7 @@ title: NW Documentation
 ### ValidationError
 
 <details><summary><b>PlayerRoles.PlayableScps.Scp079.Scp079LockdownRoomAbility+ValidationError</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = None
  [1] = Unknown
@@ -3968,7 +3970,7 @@ title: NW Documentation
 ### VariantType
 
 <details><summary><b>PlayerRoles.PlayableScps.Scp3114.Scp3114FakeModelManager+VariantType</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = Original
  [1] = Disguise
@@ -3980,7 +3982,7 @@ title: NW Documentation
 ### VcAudioSetting
 
 <details><summary><b>UserSettings.AudioSettings.VcAudioSetting</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = NoiseReduction
 ```
@@ -3990,7 +3992,7 @@ title: NW Documentation
 ### VcMuteFlags
 
 <details><summary><b>VoiceChat.VcMuteFlags</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = None
  [1] = LocalRegular
@@ -4004,7 +4006,7 @@ title: NW Documentation
 ### VcPrivacyFlags
 
 <details><summary><b>VoiceChat.VcPrivacyFlags</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = None
  [1] = SettingsSelected
@@ -4017,7 +4019,7 @@ title: NW Documentation
 ### VersionType
 
 <details><summary><b>GameCore.Version+VersionType</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = Release
  [1] = PublicRC
@@ -4035,7 +4037,7 @@ title: NW Documentation
 ### VoiceChatChannel
 
 <details><summary><b>VoiceChat.VoiceChatChannel</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = None
  [1] = Proximity
@@ -4054,7 +4056,7 @@ title: NW Documentation
 ### VoiceChatSupportMode
 
 <details><summary><b>NonFacilityCompatibility+SceneDescription+VoiceChatSupportMode</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = Unsupported
  [1] = WithoutIntercom
@@ -4066,7 +4068,7 @@ title: NW Documentation
 ### VoiceLinesName
 
 <details><summary><b>PlayerRoles.PlayableScps.Scp3114.Scp3114VoiceLines+VoiceLinesName</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = KillSlap
  [1] = KillStrangle
@@ -4082,7 +4084,7 @@ title: NW Documentation
 ### VolumeSliderSetting
 
 <details><summary><b>UserSettings.AudioSettings.MixerAudioSettings+VolumeSliderSetting</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = Master
  [1] = VoiceChat
@@ -4096,7 +4098,7 @@ title: NW Documentation
 ### WorkstationStatus
 
 <details><summary><b>InventorySystem.Items.Firearms.Attachments.WorkstationController+WorkstationStatus</b></summary>
-```md title="Latest Updated: 13.5.0.1"
+```
 
  [0] = Offline
  [1] = PoweringUp
@@ -4118,7 +4120,7 @@ title: NW Documentation
 
 <details><summary> <b>Roles</b></summary>
 
-```md title="Latest Updated: 13.5.0.1"
+```
 | Id  | RoleTypeId     | Team             | Side             | LeadingTeam     |
 |-----|----------------|------------------|------------------|-----------------|
 | -1  | None           | Dead             | None             | Draw            |
