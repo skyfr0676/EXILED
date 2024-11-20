@@ -699,7 +699,7 @@ namespace Exiled.API.Features
         /// Gets a value indicating whether or not the player's <see cref="RoleTypeId"/> is any SCP.
         /// Equivalent to checking the player's <see cref="Team"/>.
         /// </summary>
-        public bool IsScp => Role?.Team is Team.SCPs;
+        public bool IsScp => Role?.Type.IsScp() ?? false;
 
         /// <summary>
         /// Gets a value indicating whether or not the player's <see cref="RoleTypeId"/> is any human rank.
