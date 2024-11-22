@@ -155,7 +155,7 @@ namespace Exiled.API.Extensions
         /// Checks if the role is a military role (Chaos Insurgency or NTF).
         /// </summary>
         /// <param name="roleType">The <see cref="RoleTypeId"/>.</param>
-        /// <returns>A boolean which is true when the role is a military role. Does not include Facility Guards.</returns>
+        /// <returns>A boolean which is true when the role is a military role.</returns>
         public static bool IsMilitary(this RoleTypeId roleType) => roleType.IsNtf() || roleType.IsChaos() || roleType == RoleTypeId.FacilityGuard;
 
         /// <summary>
