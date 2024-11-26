@@ -175,6 +175,15 @@ namespace Exiled.API.Features.Items
         public Player Owner => Player.Get(Base.Owner) ?? Server.Host;
 
         /// <summary>
+        /// Gets or sets a reason for adding this item to the inventory.
+        /// </summary>
+        public ItemAddReason AddReason
+        {
+            get => Base.ServerAddReason;
+            set => Base.ServerAddReason = value;
+        }
+
+        /// <summary>
         /// Gets an existing <see cref="Item"/> or creates a new instance of one.
         /// </summary>
         /// <param name="itemBase">The <see cref="ItemBase"/> to convert into an item.</param>
@@ -232,6 +241,15 @@ namespace Exiled.API.Features.Items
         /// <param name="serial">The Item serial.</param>
         /// <returns>Returns the Item found or <see langword="null"/> if not found.</returns>
         public static Item Get(ushort serial) => List.FirstOrDefault(x => x.Serial == serial);
+
+        /// <summary>
+        /// Gets the Item belonging to the specified serial.
+        /// </summary>
+        /// <param name="serial">The Item serial.</param>
+        /// <typeparam name="T">The specified <see cref="Item"/> type.</typeparam>
+        /// <returns>Returns the Item found or <see langword="null"/> if not found.</returns>
+        public static T Get<T>(ushort serial)
+            where T : Item => Get(serial) as T;
 
         /// <summary>
         /// Creates a new <see cref="Item"/> with the proper inherited subclass.
