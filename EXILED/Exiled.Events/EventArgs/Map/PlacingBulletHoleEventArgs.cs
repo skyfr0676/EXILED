@@ -27,9 +27,9 @@ namespace Exiled.Events.EventArgs.Map
         /// <param name="hit">
         /// <inheritdoc cref="RaycastHit" />
         /// </param>
-        public PlacingBulletHoleEventArgs(Firearm firearm, RaycastHit hit)
+        public PlacingBulletHoleEventArgs(Item firearm, RaycastHit hit)
         {
-            Firearm = firearm;
+            Firearm = firearm.As<Firearm>();
             Player = Firearm.Owner;
             Position = hit.point;
             Rotation = Quaternion.LookRotation(hit.normal);

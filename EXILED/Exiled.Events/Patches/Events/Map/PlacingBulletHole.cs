@@ -16,6 +16,7 @@ namespace Exiled.Events.Patches.Events.Map
     using Exiled.Events.EventArgs.Map;
     using Handlers;
     using HarmonyLib;
+    using InventorySystem.Items;
     using InventorySystem.Items.Firearms.Modules;
     using UnityEngine;
 
@@ -47,7 +48,7 @@ namespace Exiled.Events.Patches.Events.Map
                     // this.Firearm
                     new(OpCodes.Ldarg_0),
                     new(OpCodes.Callvirt, PropertyGetter(typeof(ImpactEffectsModule), nameof(ImpactEffectsModule.Firearm))),
-                    new(OpCodes.Call, Method(typeof(API.Features.Items.Item), nameof(API.Features.Items.Item.Get))),
+                    new(OpCodes.Call, Method(typeof(API.Features.Items.Item), nameof(API.Features.Items.Item.Get), new[] { typeof(ItemBase) })),
 
                     // hit
                     new(OpCodes.Ldarg_2),

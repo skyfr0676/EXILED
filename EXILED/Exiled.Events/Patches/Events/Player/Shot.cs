@@ -5,8 +5,6 @@
 // </copyright>
 // -----------------------------------------------------------------------
 
-using System;
-
 namespace Exiled.Events.Patches.Events.Player
 {
 #pragma warning disable SA1402 // File may only contain a single type

@@ -5,18 +5,15 @@
 // </copyright>
 // -----------------------------------------------------------------------
 
-using Respawning.Waves;
-
 namespace Exiled.Events.EventArgs.Server
 {
     using System.Collections.Generic;
 
     using Exiled.API.Features;
     using Exiled.Events.EventArgs.Interfaces;
-
     using PlayerRoles;
-
     using Respawning;
+    using Respawning.Waves;
 
     /// <summary>
     /// Contains all information before spawning a wave of <see cref="SpawnableTeamType.NineTailedFox" /> or

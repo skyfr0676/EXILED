@@ -5,13 +5,13 @@
 // </copyright>
 // -----------------------------------------------------------------------
 
-using Respawning.Waves;
-
 namespace Exiled.Events.Handlers
 {
     using System.Collections.Generic;
 
     using Respawning;
+    using Respawning.Waves;
+
 #pragma warning disable SA1623 // Property summary documentation should match accessors
 
     using Exiled.Events.EventArgs.Player;
@@ -165,7 +165,7 @@ namespace Exiled.Events.Handlers
         /// <summary>
         /// Called after team spawns.
         /// </summary>
-        /// <param name="teamType"><inheritdoc cref="RespawnedTeamEventArgs.Team"/></param>
+        /// <param name="teamType"><inheritdoc cref="RespawnedTeamEventArgs.Wave"/></param>
         /// <param name="hubs"><inheritdoc cref="RespawnedTeamEventArgs.Players"/></param>
         public static void OnRespawnedTeam(SpawnableWaveBase teamType, List<ReferenceHub> hubs) => RespawnedTeam.InvokeSafely(new RespawnedTeamEventArgs(teamType, hubs));
 

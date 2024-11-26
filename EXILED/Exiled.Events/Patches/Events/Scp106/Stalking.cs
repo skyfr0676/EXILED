@@ -65,10 +65,8 @@ namespace Exiled.Events.Patches.Events.Scp106
                     new(OpCodes.Brfalse_S, returnLabel),
                 });
 
-            offset = 2;
-            index = newInstructions.FindIndex(instruction => instruction.operand == (object)PropertySetter(typeof(Scp106StalkAbility), nameof(Scp106StalkAbility.StalkActive))) + offset;
             newInstructions.InsertRange(
-                index,
+                newInstructions.Count - 1,
                 new CodeInstruction[]
                 {
                     // Player.Get(this.Owner);

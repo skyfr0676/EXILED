@@ -692,7 +692,7 @@ namespace Exiled.CustomItems.API.Features
 
                 if (pickup.Is(out Exiled.API.Features.Pickups.FirearmPickup firearmPickup) && this is CustomWeapon customWeapon)
                 {
-                    firearmPickup
+                    // set MaxAmmo if synced TODO
                 }
             }
 

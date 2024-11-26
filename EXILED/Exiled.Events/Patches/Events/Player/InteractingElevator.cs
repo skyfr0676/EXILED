@@ -24,7 +24,7 @@ namespace Exiled.Events.Patches.Events.Player
     using static HarmonyLib.AccessTools;
 
     /// <summary>
-    /// Patches <see cref="ElevatorManager.ServerReceiveMessage(NetworkConnection, ElevatorManager.ElevatorSyncMsg)" />.
+    /// Patches <see cref="ElevatorManager" />.
     /// Adds the <see cref="Handlers.Player.InteractingElevator" /> event.
     /// </summary>
     [EventPatch(typeof(Handlers.Player), nameof(Handlers.Player.InteractingElevator))]

@@ -8,8 +8,7 @@
 namespace Exiled.API.Enums
 {
     using Exiled.API.Features.Doors;
-
-    using static Interactables.Interobjects.ElevatorManager;
+    using Interactables.Interobjects;
 
     /// <summary>
     /// Unique identifier for the different types of doors.

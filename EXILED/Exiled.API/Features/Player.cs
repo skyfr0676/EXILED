@@ -45,7 +45,6 @@ namespace Exiled.API.Features
     using MEC;
     using Mirror;
     using Mirror.LiteNetLib4Mirror;
-    using NorthwoodLib;
     using PlayerRoles;
     using PlayerRoles.FirstPersonControl;
     using PlayerRoles.RoleAssign;
@@ -1323,7 +1322,7 @@ namespace Exiled.API.Features
                         if (!player.IsVerified || player.Nickname is null)
                             continue;
 
-                        if (!player.Nickname.Contains(args, StringComparison.OrdinalIgnoreCase))
+                        if (!player.Nickname.ToLower().Contains(args.ToLower()))
                             continue;
 
                         string secondString = player.Nickname;

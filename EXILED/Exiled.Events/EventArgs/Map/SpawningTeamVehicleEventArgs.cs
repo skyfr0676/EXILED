@@ -5,12 +5,11 @@
 // </copyright>
 // -----------------------------------------------------------------------
 
-using Respawning.Waves;
-
 namespace Exiled.Events.EventArgs.Map
 {
     using Exiled.Events.EventArgs.Interfaces;
     using Respawning;
+    using Respawning.Waves;
 
     /// <summary>
     /// Contains all information before the server spawns a team's respawn vehicle.

@@ -72,7 +72,8 @@ namespace Exiled.Events.Patches.Events.Player
                 new(OpCodes.Brtrue_S, cnt),
 
                 // gameobject loads into stack before il inject
-                new(OpCodes.Pop),
+                new(OpCodes.Ldloc_1),
+                new(OpCodes.Callvirt, PropertyGetter(typeof(BasicRagdoll), nameof(BasicRagdoll.gameObject))),
                 new(OpCodes.Call, Method(typeof(Object), nameof(Object.Destroy), new[] { typeof(Object) })),
                 new(OpCodes.Ldnull),
                 new(OpCodes.Ret),

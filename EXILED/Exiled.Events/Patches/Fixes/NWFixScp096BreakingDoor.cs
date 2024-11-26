@@ -5,14 +5,13 @@
 // </copyright>
 // -----------------------------------------------------------------------
 
-using Footprinting;
-
 namespace Exiled.Events.Patches.Fixes
 {
     using System.Collections.Generic;
     using System.Reflection.Emit;
 
     using API.Features.Pools;
+    using Footprinting;
     using HarmonyLib;
     using Interactables.Interobjects;
     using Interactables.Interobjects.DoorUtils;
@@ -34,7 +33,7 @@ namespace Exiled.Events.Patches.Fixes
             List<CodeInstruction> newInstructions = ListPool<CodeInstruction>.Pool.Get(instructions);
 
             Label ret = generator.DefineLabel();
-            int offset = -4;
+            int offset = -5;
             int index = newInstructions.FindIndex(x => x.operand == (object)Method(typeof(IDamageableDoor), nameof(IDamageableDoor.ServerDamage))) + offset;
 
             newInstructions.InsertRange(index, new[]

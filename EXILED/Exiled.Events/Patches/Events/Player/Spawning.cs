@@ -23,7 +23,7 @@ namespace Exiled.Events.Patches.Events.Player
     using static HarmonyLib.AccessTools;
 
     /// <summary>
-    /// Patches <see cref="RoleSpawnpointManager.Init"/> delegate.
+    /// Patches <see cref="RoleSpawnpointManager"/> delegate.
     /// Adds the <see cref="Handlers.Player.Spawning"/> event.
     /// Fix for spawning in void.
     /// </summary>
