@@ -135,6 +135,8 @@ namespace Exiled.API.Enums
         HczWarheadTopElevators,
         HczWarheadConnector,
         HczWarheadPortElevator,
+        HczMicroHIDLab,
+        HczPipesMain,
         #endregion
     }
 }
