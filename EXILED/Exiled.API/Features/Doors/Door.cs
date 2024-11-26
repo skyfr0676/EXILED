@@ -60,7 +60,7 @@ namespace Exiled.API.Features.Doors
 
             Type = GetDoorType();
 #if DEBUG
-            if (Type is DoorType.Unknown)
+            if (Type is DoorType.UnknownDoor or DoorType.UnknownGate or DoorType.UnknownElevator)
                 Log.Error($"[DOORTYPE UNKNOWN] {this}");
 #endif
         }
