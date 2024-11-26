@@ -181,13 +181,25 @@ namespace Exiled.API.Features
             return false;
         }
 
-        // TODO: Docs.
+        /// <summary>
+        /// Docs.
+        /// </summary>
+        /// <param name="faction">Docs1.</param>
+        /// <param name="time">Docs2.</param>
         public static void AdvanceTime(Faction faction, float time) => WaveManager.AdvanceTimer(faction, time);
 
-        // TODO: Docs.
+        /// <summary>
+        /// Docs.
+        /// </summary>
+        /// <param name="wave">Docs1.</param>
         public static void SpawnWave(SpawnableWaveBase wave) => WaveManager.Spawn(wave);
 
-        // TODO: Docs.
+        /// <summary>
+        /// Docs.
+        /// </summary>
+        /// <param name="faction">Docs1.</param>
+        /// <param name="mini">Docs2.</param>
+        /// <typeparam name="T">Docs3.</typeparam>
         public static void SpawnWave<T>(Faction faction, bool mini)
             where T : SpawnableWaveBase
         {
@@ -278,6 +290,10 @@ namespace Exiled.API.Features
                 ForceWave(wave);
         }
 
+        /// <summary>
+        /// Docs.
+        /// </summary>
+        /// <param name="wave">Docs1.</param>
         public static void ForceWave(SpawnableWaveBase wave)
         {
             WaveManager.Spawn(wave);

@@ -5,8 +5,6 @@
 // </copyright>
 // -----------------------------------------------------------------------
 
-using MEC;
-
 namespace Exiled.API.Features.Items
 {
     using System;
@@ -14,15 +12,11 @@ namespace Exiled.API.Features.Items
     using System.Linq;
 
     using CameraShaking;
-
     using Enums;
-
     using Exiled.API.Features.Pickups;
     using Exiled.API.Interfaces;
     using Exiled.API.Structs;
-
     using Extensions;
-
     using InventorySystem;
     using InventorySystem.Items;
     using InventorySystem.Items.Firearms;
@@ -31,7 +25,7 @@ namespace Exiled.API.Features.Items
     using InventorySystem.Items.Firearms.BasicMessages;
     using InventorySystem.Items.Firearms.Modules;
     using InventorySystem.Items.Pickups;
-
+    using MEC;
     using UnityEngine;
 
     using BaseFirearm = InventorySystem.Items.Firearms.Firearm;
@@ -138,7 +132,6 @@ namespace Exiled.API.Features.Items
         /// Gets the <see cref="Enums.AmmoType"/> of the firearm.
         /// </summary>
         public AmmoType AmmoType => (Base.Modules.OfType<MagazineModule>().FirstOrDefault()?.AmmoType ?? ItemType.None).GetAmmoType();
-
 
         /// <summary>
         /// Gets a value indicating whether the firearm is being aimed.
@@ -660,6 +653,7 @@ namespace Exiled.API.Features.Items
             Base._footprintCacheSet = false;
         }
 
+        /// <inheritdoc/>
         internal override void ReadPickupInfo(Pickup pickup)
         {
             base.ReadPickupInfo(pickup);
