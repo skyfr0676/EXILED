@@ -500,6 +500,11 @@ namespace Exiled.Events.Handlers
         public static Event<SendingAdminChatMessageEventsArgs> SendingAdminChatMessage { get; set; } = new();
 
         /// <summary>
+        /// Invoked before a <see cref="API.Features.Player"/> send a command.
+        /// </summary>
+        public static Event<SendingCommandEventArgs> SendingCommand { get; set; } = new();
+
+        /// <summary>
         /// Invoked before a <see cref="API.Features.Player"/> damage a Window.
         /// </summary> // TODO: DamagingWindow instead of PlayerDamageWindow
         public static Event<DamagingWindowEventArgs> PlayerDamageWindow { get; set; } = new();
@@ -980,10 +985,16 @@ namespace Exiled.Events.Handlers
         public static void OnSearchPickupRequest(SearchingPickupEventArgs ev) => SearchingPickup.InvokeSafely(ev);
 
         /// <summary>
-        /// Called before a <see cref="API.Features.Player"/> searches a Pickup.
+        /// Called before a <see cref="API.Features.Player"/> send an admin chat message.
         /// </summary>
         /// <param name="ev">The <see cref="SendingAdminChatMessageEventsArgs"/> instance.</param>
         public static void OnSendingAdminChatMessage(SendingAdminChatMessageEventsArgs ev) => SendingAdminChatMessage.InvokeSafely(ev);
+
+        /// <summary>
+        /// Called before a <see cref="API.Features.Player"/> send a command.
+        /// </summary>
+        /// <param name="ev">The <see cref="SendingCommandEventArgs"/> instance.</param>
+        public static void OnSendingCommand(SendingCommandEventArgs ev) => SendingCommand.InvokeSafely(ev);
 
         /// <summary>
         ///  Called before KillPlayer is called.
