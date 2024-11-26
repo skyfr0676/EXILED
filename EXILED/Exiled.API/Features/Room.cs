@@ -493,12 +493,12 @@ namespace Exiled.API.Features
             RoomIdentifierToRoom.Add(Identifier, this);
 
             Zone = FindZone(gameObject);
-#if Debug
+#if DEBUG
             if (Type is RoomType.Unknown)
                 Log.Error($"[ZONETYPE UNKNOWN] {this}");
 #endif
             Type = FindType(gameObject);
-#if Debug
+#if DEBUG
             if (Type is RoomType.Unknown)
                 Log.Error($"[ROOMTYPE UNKNOWN] {this}");
 #endif

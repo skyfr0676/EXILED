@@ -59,7 +59,7 @@ namespace Exiled.API.Features.Doors
             }
 
             Type = GetDoorType();
-#if Debug
+#if DEBUG
             if (Type is DoorType.Unknown)
                 Log.Error($"[DOORTYPE UNKNOWN] {this}");
 #endif
