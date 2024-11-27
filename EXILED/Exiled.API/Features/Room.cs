@@ -495,7 +495,7 @@ namespace Exiled.API.Features
 
             Zone = FindZone(gameObject);
 #if DEBUG
-            if (Zone is ZoneType.Unspecified or ZoneType.Other)
+            if (Zone is ZoneType.Unspecified)
                 Log.Error($"[ZONETYPE UNKNOWN] {this} Zone : {Identifier?.Zone}");
 #endif
             Type = FindType(gameObject);
