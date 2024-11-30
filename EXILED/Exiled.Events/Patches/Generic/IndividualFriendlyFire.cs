@@ -212,7 +212,7 @@ namespace Exiled.Events.Patches.Generic
 
             int offset = -1;
             int index = newInstructions.FindLastIndex(
-                instruction => instruction.LoadsField(Field(typeof(ReferenceHub), nameof(ReferenceHub.networkIdentity)))) + offset;
+                instruction => instruction.Calls(PropertyGetter(typeof(AttackerDamageHandler), nameof(AttackerDamageHandler.Attacker)))) + offset;
 
             LocalBuilder ffMulti = generator.DeclareLocal(typeof(float));
 
