@@ -30,11 +30,6 @@ namespace Exiled.API.Features.Items
             : base(itemBase)
         {
             Base = itemBase;
-
-            EnergyManager = Base.EnergyManager;
-            BrokenModule = Base.BrokenSync;
-            InputModule = Base.InputSync;
-            CycleController = Base.CycleController;
         }
 
         /// <summary>
@@ -48,22 +43,22 @@ namespace Exiled.API.Features.Items
         /// <summary>
         /// Gets the <see cref="EnergyManagerModule"/> of the MicroHID.
         /// </summary>
-        public EnergyManagerModule EnergyManager { get; }
+        public EnergyManagerModule EnergyManager => Base.EnergyManager;
 
         /// <summary>
         /// Gets the <see cref="BrokenSyncModule"/> of the MicroHID.
         /// </summary>
-        public BrokenSyncModule BrokenModule { get; }
+        public BrokenSyncModule BrokenModule => Base.BrokenSync;
 
         /// <summary>
         /// Gets the <see cref="InputSyncModule"/> of the MicroHID.
         /// </summary>
-        public InputSyncModule InputModule { get; }
+        public InputSyncModule InputModule => Base.InputSync;
 
         /// <summary>
         /// Gets the <see cref="CycleController"/> of the MicroHID.
         /// </summary>
-        public CycleController CycleController { get; }
+        public CycleController CycleController => Base.CycleController;
 
         /// <summary>
         /// Gets or sets the remaining energy in the MicroHID.
@@ -219,16 +214,5 @@ namespace Exiled.API.Features.Items
         /// </summary>
         /// <returns>A string containing MicroHid-related data.</returns>
         public override string ToString() => $"{Type} ({Serial}) [{Weight}] *{Scale}* |{Energy}| -{State}-";
-
-        /// <inheritdoc />
-        internal override void ReadPickupInfo(Pickup pickup)
-        {
-            base.ReadPickupInfo(pickup);
-
-            if (pickup.Is(out Pickups.MicroHIDPickup microHidPickup))
-            {
-                Energy = microHidPickup.Energy;
-            }
-        }
     }
 }
