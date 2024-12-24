@@ -328,7 +328,13 @@ namespace Exiled.API.Features.Core.UserSettings
             }
 
             setting = list.Find(x => x.Id == settingBase.SettingId);
-            setting.OriginalDefinition.OnChanged?.Invoke(player, setting);
+
+            if (setting.OriginalDefinition == null)
+            {
+                Settings.Add(Create(settingBase.OriginalDefinition));
+            }
+
+            setting.OriginalDefinition?.OnChanged?.Invoke(player, setting);
         }
     }
 }
