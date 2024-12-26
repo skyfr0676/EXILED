@@ -48,9 +48,8 @@ namespace Exiled.Events.Patches.Events.Scp2536
                     new CodeInstruction(OpCodes.Ldarg_1).MoveLabelsFrom(newInstructions[index]),
                     new(OpCodes.Call, Method(typeof(Player), nameof(Player.Get), new[] { typeof(ReferenceHub) })),
 
-                    // foundSpot
-                    new(OpCodes.Ldarg_2),
-                    new(OpCodes.Ldind_Ref),
+                    // scp2536Spawnpoint
+                    new(OpCodes.Ldloc_S, 4),
 
                     // true
                     new(OpCodes.Ldc_I4_1),
