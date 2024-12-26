@@ -67,13 +67,10 @@ namespace Exiled.Events.Patches.Events.Scp2536
                     new(OpCodes.Callvirt, PropertyGetter(typeof(FindingPositionEventArgs), nameof(FindingPositionEventArgs.IsAllowed))),
                     new(OpCodes.Brfalse_S, continueLabel),
 
-                    // foundSpot = ev.Spawnpoint;
-                    new(OpCodes.Ldarg_2),
+                    // scp2536Spawnpoint = ev.Spawnpoint;
                     new(OpCodes.Ldloc_S, ev.LocalIndex),
                     new(OpCodes.Callvirt, PropertyGetter(typeof(FindingPositionEventArgs), nameof(FindingPositionEventArgs.Spawnpoint))),
-                    new(OpCodes.Stind_Ref),
-
-                    new(OpCodes.Br_S, continueLabel),
+                    new(OpCodes.Stloc_S, 4),
                 });
 
             for (int z = 0; z < newInstructions.Count; z++)
