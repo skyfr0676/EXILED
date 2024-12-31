@@ -40,8 +40,9 @@ namespace Exiled.Events.EventArgs.Server
         {
             Players = players;
             MaximumRespawnAmount = maxRespawn;
-            Wave.PopulateQueue(SpawnQueue, MaximumRespawnAmount);
+            SpawnQueue = new();
             Wave = new TimedWave((TimeBasedWave)wave);
+            Wave.PopulateQueue(SpawnQueue, MaximumRespawnAmount);
             IsAllowed = true;
         }
 
