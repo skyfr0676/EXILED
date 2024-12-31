@@ -39,9 +39,10 @@ namespace Exiled.Events.EventArgs.Server
         public RespawningTeamEventArgs(List<Player> players, int maxRespawn, SpawnableWaveBase wave)
         {
             Players = players;
-            MaximumRespawnAmount = maxRespawn;
-            Wave.PopulateQueue(SpawnQueue, MaximumRespawnAmount);
+            MaximumRespawnAmount = maxRespawn;            
+            SpawnQueue = new();
             Wave = new TimedWave((TimeBasedWave)wave);
+            Wave.PopulateQueue(SpawnQueue, MaximumRespawnAmount);
             IsAllowed = true;
         }
 
