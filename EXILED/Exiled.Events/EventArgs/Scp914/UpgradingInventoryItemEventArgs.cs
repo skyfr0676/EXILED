@@ -1,14 +1,12 @@
 // -----------------------------------------------------------------------
-// <copyright file="UpgradingInventoryItemEventArgs.cs" company="Exiled Team">
-// Copyright (c) Exiled Team. All rights reserved.
+// <copyright file="UpgradingInventoryItemEventArgs.cs" company="ExMod Team">
+// Copyright (c) ExMod Team. All rights reserved.
 // Licensed under the CC BY-SA 3.0 license.
 // </copyright>
 // -----------------------------------------------------------------------
 
 namespace Exiled.Events.EventArgs.Scp914
 {
-    using System;
-
     using API.Features;
     using API.Features.Items;
     using global::Scp914;
@@ -44,18 +42,12 @@ namespace Exiled.Events.EventArgs.Scp914
         }
 
         /// <summary>
-        /// Gets the <see cref="Scp914Controller" /> instance.
-        /// </summary>
-        [Obsolete("Use Scp914::Scp914Controller instead.")]
-        public Scp914Controller Scp914 => API.Features.Scp914.Scp914Controller;
-
-        /// <summary>
         /// Gets or sets SCP-914 working knob setting.
         /// </summary>
         public Scp914KnobSetting KnobSetting { get; set; }
 
         /// <summary>
-        /// Gets or sets a value indicating whether or not the upgrade is successful.
+        /// Gets or sets a value indicating whether the upgrade is successful.
         /// </summary>
         public bool IsAllowed { get; set; }
 
