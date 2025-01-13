@@ -33,7 +33,8 @@ namespace Exiled.Events.EventArgs.Item
         }
 
         /// <summary>
-        /// Gets or Sets a value indicating whether the disruptor shoot and the ground. Still play the sound on client and remove a bullet.
+        /// Gets or Sets a value indicating whether the disruptor shoot and the ground.
+        /// <remarks>The client will still see all effects, like sounds and shoot.</remarks>
         /// </summary>
         public bool IsAllowed { get; set; }
 

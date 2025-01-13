@@ -60,6 +60,7 @@ namespace Exiled.Events.Handlers
 
         /// <summary>
         /// Invoked before a <see cref="ItemType.ParticleDisruptor"/> firing while on the ground.
+        /// <remarks>The client will still see all effects, like sounds and shoot.</remarks>
         /// </summary>
         public static Event<DisruptorFiringEventArgs> DisruptorFiring { get; set; } = new();
 
