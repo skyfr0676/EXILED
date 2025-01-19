@@ -26,7 +26,6 @@ namespace Exiled.Events.EventArgs.Player
         public ReloadingWeaponEventArgs(InventorySystem.Items.Firearms.Firearm firearm)
         {
             Firearm = Item.Get<Firearm>(firearm);
-            Firearm.Damage = 99555f;
             Player = Firearm.Owner;
         }
 
