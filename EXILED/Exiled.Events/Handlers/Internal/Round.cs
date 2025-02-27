@@ -27,6 +27,7 @@ namespace Exiled.Events.Handlers.Internal
     using InventorySystem.Items.Firearms.Attachments;
     using InventorySystem.Items.Firearms.Attachments.Components;
     using InventorySystem.Items.Usables;
+    using InventorySystem.Items.Usables.Scp244.Hypothermia;
     using PlayerRoles;
     using PlayerRoles.RoleAssign;
     using Utils.NonAllocLINQ;
@@ -61,6 +62,7 @@ namespace Exiled.Events.Handlers.Internal
             Scp173Role.TurnedPlayers.Clear();
             Scp096Role.TurnedPlayers.Clear();
             Scp079Role.TurnedPlayers.Clear();
+            Scp939Role.TurnedPlayers.Clear();
 
             MultiAdminFeatures.CallEvent(MultiAdminFeatures.EventType.ROUND_END);
 
@@ -104,6 +106,12 @@ namespace Exiled.Events.Handlers.Internal
             {
                 ev.Player.SendFakeSyncVar(room.RoomLightControllerNetIdentity, typeof(RoomLightController), nameof(RoomLightController.NetworkLightsEnabled), true);
                 ev.Player.SendFakeSyncVar(room.RoomLightControllerNetIdentity, typeof(RoomLightController), nameof(RoomLightController.NetworkLightsEnabled), false);
+            }
+
+            // TODO: Remove if this has been fixed for https://git.scpslgame.com/northwood-qa/scpsl-bug-reporting/-/issues/947
+            if (ev.Player.TryGetEffect(out Hypothermia hypothermia))
+            {
+                hypothermia.SubEffects = hypothermia.SubEffects.Where(x => x.GetType() != typeof(PostProcessSubEffect)).ToArray();
             }
         }
 
