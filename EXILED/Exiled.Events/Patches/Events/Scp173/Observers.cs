@@ -25,6 +25,7 @@ namespace Exiled.Events.Patches.Events.Scp173
     /// Adds the <see cref="Handlers.Scp173.AddingObserver" /> event.
     /// </summary>
     [EventPatch(typeof(Handlers.Scp173), nameof(Handlers.Scp173.AddingObserver))]
+    [EventPatch(typeof(Handlers.Scp173), nameof(Handlers.Scp173.RemoveObserver))]
     [HarmonyPatch(typeof(Scp173ObserversTracker), nameof(Scp173ObserversTracker.UpdateObserver))]
     internal static class Observers
     {
