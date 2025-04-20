@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
-// <copyright file="LoaderMessages.cs" company="Exiled Team">
-// Copyright (c) Exiled Team. All rights reserved.
+// <copyright file="LoaderMessages.cs" company="ExMod Team">
+// Copyright (c) ExMod Team. All rights reserved.
 // Licensed under the CC BY-SA 3.0 license.
 // </copyright>
 // -----------------------------------------------------------------------
@@ -29,7 +29,7 @@ namespace Exiled.Loader.Features
                                   ▀                                 ";
 
         /// <summary>
-        /// Gets the easter egg loader message.
+        /// Gets the Easter egg loader message.
         /// </summary>
         public static string EasterEgg => @"
    ▄████████    ▄████████ ▀████    ▐████▀  ▄█   ▄█          ▄████████ ████████▄
@@ -43,7 +43,7 @@ namespace Exiled.Loader.Features
                                                                                 ";
 
         /// <summary>
-        /// Gets the christmas loader message.
+        /// Gets the Christmas loader message.
         /// </summary>
         public static string Christmas => @"
        __
@@ -60,7 +60,7 @@ namespace Exiled.Loader.Features
    |____)_)";
 
         /// <summary>
-        /// Gets the halloween loader message.
+        /// Gets the Halloween loader message.
         /// </summary>
         public static string Halloween => @"
 @@@@@@@@  @@@  @@@  @@@  @@@       @@@@@@@@  @@@@@@@
@@ -81,7 +81,10 @@ namespace Exiled.Loader.Features
         /// <returns>The correspondent loader message.</returns>
         public static string GetMessage()
         {
-            if (Loader.Version.ToString().Contains("6.9") || Loader.Random.NextDouble() <= 0.069)
+            if (Environment.GetCommandLineArgs().Contains("--defaultloadmessage"))
+                return Default;
+
+            if (!Environment.GetCommandLineArgs().Contains("--noeasteregg") && (Loader.Version.ToString().Contains("6.9") || Loader.Random.NextDouble() <= 0.069))
                 return EasterEgg;
 
             return DateTime.Today.Month switch

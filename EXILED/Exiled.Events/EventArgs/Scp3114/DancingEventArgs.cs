@@ -1,6 +1,6 @@
-﻿// -----------------------------------------------------------------------
-// <copyright file="DancingEventArgs.cs" company="Exiled Team">
-// Copyright (c) Exiled Team. All rights reserved.
+// -----------------------------------------------------------------------
+// <copyright file="DancingEventArgs.cs" company="ExMod Team">
+// Copyright (c) ExMod Team. All rights reserved.
 // Licensed under the CC BY-SA 3.0 license.
 // </copyright>
 // -----------------------------------------------------------------------
@@ -29,7 +29,8 @@ namespace Exiled.Events.EventArgs.Scp3114
             Player = player;
             Scp3114 = player.Role.As<Scp3114Role>();
             IsDancing = newState;
-            DanceType = (DanceType)(newState ? UnityEngine.Random.Range(0, Scp3114.Dance._danceVariants) : byte.MaxValue);
+            DanceType = newState ? (Scp3114.NextDanceType ?? (DanceType)UnityEngine.Random.Range(0, Scp3114.Dance._danceVariants)) : (DanceType)byte.MaxValue;
+            Scp3114.NextDanceType = null;
             IsAllowed = isAllowed;
         }
 
@@ -37,7 +38,7 @@ namespace Exiled.Events.EventArgs.Scp3114
         public bool IsAllowed { get; set; }
 
         /// <summary>
-        /// Gets a value indicating whether or not SCP-3114 is dancing.
+        /// Gets a value indicating whether SCP-3114 is dancing.
         /// </summary>
         public bool IsDancing { get; }
 

@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
-// <copyright file="DoorLockType.cs" company="Exiled Team">
-// Copyright (c) Exiled Team. All rights reserved.
+// <copyright file="DoorLockType.cs" company="ExMod Team">
+// Copyright (c) ExMod Team. All rights reserved.
 // Licensed under the CC BY-SA 3.0 license.
 // </copyright>
 // -----------------------------------------------------------------------
@@ -65,7 +65,7 @@ namespace Exiled.API.Enums
         NoPower = 128, // 0x0080
 
         /// <summary>
-        /// Isloation.
+        /// Isolation.
         /// </summary>
         Isolation = 256, // 0x0100
 

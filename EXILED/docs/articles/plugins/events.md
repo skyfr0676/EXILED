@@ -23,17 +23,17 @@ The EXILED framework consists of two different types of events: Events that can 
 
 All events are part of a static class called a **handler**. All handlers can be found in the `Exiled.Events` namespace. Every handler is related to a specific feature in the game (eg. `Exiled.Events.Scp096` contains SCP-096 related events).
 
-Almost all events have a corresponding **event argument** class. The event argument provides the data of an event, as well as the ability to prevent it from occurring. All event arguments can be found in the `Exiled.Events.EventArgs` namespace, and all event arguments inherit from `System.EventArgs`.
+Almost all events have a corresponding **event argument** class. The event argument provides the data of an event, as well as the ability to prevent it from occurring. All event arguments can be found in the `Exiled.Events.EventArgs` namespace, and all event arguments inherit from `IExiledEvent`.
 
 ### Example: Enraging event
 The following is the structure of the `Exiled.Events.EventArgs.EnragingEventArgs`.
 ```cs
-public class EnragingEventArgs : System.EventArgs
+public class EnragingEventArgs : IScp096Event, IDeniableEvent
 {
     // Note: Constructor omitted.
     public Scp096 Scp096 { get; } // The SCP-096 instance.
     public Player Player { get; } // The player controlling SCP-096.
-    public bool IsAllowed { get; set; } // Whether or not SCP-096 can be enraged.
+    public bool IsAllowed { get; set; } // Whether SCP-096 can be enraged.
 }
 ```
 Notice the `IsAllowed` property of the event. This property, which defaults to `true`, can be set to `false` to prevent SCP-096 from being enraged. For most events that can be disallowed, `IsAllowed` is set to `true` by default, and plugins can set it to `false` to prevent the event from occurring. However, in some cases, `IsAllowed` defaults to false and plugins can set it to `true` to *allow* the event to occur. An example of this behavior is the `InteractingDoor` event. `IsAllowed` will default to `false` in this event if a player cannot open a door, however plugins may set it to `true` to allow the player to open it regardless.

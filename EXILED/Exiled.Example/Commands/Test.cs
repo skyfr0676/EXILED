@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
-// <copyright file="Test.cs" company="Exiled Team">
-// Copyright (c) Exiled Team. All rights reserved.
+// <copyright file="Test.cs" company="ExMod Team">
+// Copyright (c) ExMod Team. All rights reserved.
 // Licensed under the CC BY-SA 3.0 license.
 // </copyright>
 // -----------------------------------------------------------------------
@@ -10,7 +10,6 @@ namespace Exiled.Example.Commands
     using System;
 
     using CommandSystem;
-
     using Exiled.API.Features;
     using Exiled.API.Features.Pickups;
 

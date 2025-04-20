@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
-// <copyright file="Kicking.cs" company="Exiled Team">
-// Copyright (c) Exiled Team. All rights reserved.
+// <copyright file="Kicking.cs" company="ExMod Team">
+// Copyright (c) ExMod Team. All rights reserved.
 // Licensed under the CC BY-SA 3.0 license.
 // </copyright>
 // -----------------------------------------------------------------------
@@ -49,6 +49,9 @@ namespace Exiled.Events.Patches.Events.Player
                 new(OpCodes.Ldarg_1),
                 new(OpCodes.Call, Method(typeof(Player), nameof(Player.Get), new[] { typeof(ICommandSender) })),
 
+                // commandSender
+                new(OpCodes.Ldarg_1),
+
                 // reason
                 new(OpCodes.Ldarg_2),
 
@@ -58,7 +61,7 @@ namespace Exiled.Events.Patches.Events.Player
                 // true
                 new(OpCodes.Ldc_I4_1),
 
-                // KickingEventArgs ev = new(Player, Player, string, string, bool)
+                // KickingEventArgs ev = new(Player, Player, ICommandSender, string, string, bool)
                 new(OpCodes.Newobj, GetDeclaredConstructors(typeof(KickingEventArgs))[0]),
                 new(OpCodes.Dup),
                 new(OpCodes.Dup),

@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
-// <copyright file="Map.cs" company="Exiled Team">
-// Copyright (c) Exiled Team. All rights reserved.
+// <copyright file="Map.cs" company="ExMod Team">
+// Copyright (c) ExMod Team. All rights reserved.
 // Licensed under the CC BY-SA 3.0 license.
 // </copyright>
 // -----------------------------------------------------------------------
@@ -26,11 +26,6 @@ namespace Exiled.Events.Handlers
         public static Event<PlacingBulletHoleEventArgs> PlacingBulletHole { get; set; } = new();
 
         /// <summary>
-        /// Invoked before placing blood.
-        /// </summary>
-        public static Event<PlacingBloodEventArgs> PlacingBlood { get; set; } = new();
-
-        /// <summary>
         /// Invoked before announcing the light containment zone decontamination.
         /// </summary>
         public static Event<AnnouncingDecontaminationEventArgs> AnnouncingDecontamination { get; set; } = new();
@@ -46,6 +41,11 @@ namespace Exiled.Events.Handlers
         public static Event<AnnouncingNtfEntranceEventArgs> AnnouncingNtfEntrance { get; set; } = new();
 
         /// <summary>
+        /// Invoked before announcing the Chaos entrance.
+        /// </summary>
+        public static Event<AnnouncingChaosEntranceEventArgs> AnnouncingChaosEntrance { get; set; } = new();
+
+        /// <summary>
         /// Invoked before a <see cref="Scp079Generator"/> has been activated.
         /// </summary>
         public static Event<GeneratorActivatingEventArgs> GeneratorActivating { get; set; } = new();
@@ -54,6 +54,11 @@ namespace Exiled.Events.Handlers
         /// Invoked before decontaminating the light containment zone.
         /// </summary>
         public static Event<DecontaminatingEventArgs> Decontaminating { get; set; } = new();
+
+        /// <summary>
+        /// Invoked after an elevator sequence is updated.
+        /// </summary>
+        public static Event<ElevatorSequencesUpdatedEventArgs> ElevatorSequencesUpdated { get; set; } = new();
 
         /// <summary>
         /// Invoked before a grenade explodes.
@@ -91,14 +96,19 @@ namespace Exiled.Events.Handlers
         public static Event<TurningOffLightsEventArgs> TurningOffLights { get; set; } = new();
 
         /// <summary>
-        /// Invoked after an pickup is spawned.
+        /// Invoked after a pickup is spawned.
         /// </summary>
         public static Event<PickupAddedEventArgs> PickupAdded { get; set; } = new();
 
         /// <summary>
-        /// Invoked after an pickup is destroyed.
+        /// Invoked after a pickup is destroyed.
         /// </summary>
         public static Event<PickupDestroyedEventArgs> PickupDestroyed { get; set; } = new();
+
+        /// <summary>
+        /// Invoked before a room connector spawns.
+        /// </summary>
+        public static Event<SpawningRoomConnectorEventArgs> SpawningRoomConnector { get; set; } = new();
 
         /// <summary>
         /// Invoked before a team vehicle is spawned.
@@ -122,12 +132,6 @@ namespace Exiled.Events.Handlers
         public static void OnPlacingBulletHole(PlacingBulletHoleEventArgs ev) => PlacingBulletHole.InvokeSafely(ev);
 
         /// <summary>
-        /// Called before placing bloods.
-        /// </summary>
-        /// <param name="ev">The <see cref="PlacingBloodEventArgs"/> instance.</param>
-        public static void OnPlacingBlood(PlacingBloodEventArgs ev) => PlacingBlood.InvokeSafely(ev);
-
-        /// <summary>
         /// Called before announcing the light containment zone decontamination.
         /// </summary>
         /// <param name="ev">The <see cref="AnnouncingDecontaminationEventArgs"/> instance.</param>
@@ -146,6 +150,12 @@ namespace Exiled.Events.Handlers
         public static void OnAnnouncingNtfEntrance(AnnouncingNtfEntranceEventArgs ev) => AnnouncingNtfEntrance.InvokeSafely(ev);
 
         /// <summary>
+        /// Called before announcing the Chaos entrance.
+        /// </summary>
+        /// <param name="ev">The <see cref="AnnouncingChaosEntranceEventArgs"/> instance.</param>
+        public static void OnAnnouncingChaosEntrance(AnnouncingChaosEntranceEventArgs ev) => AnnouncingChaosEntrance.InvokeSafely(ev);
+
+        /// <summary>
         /// Called before a <see cref="Scp079Generator"/> has been activated.
         /// </summary>
         /// <param name="ev">The <see cref="GeneratorActivatingEventArgs"/> instance.</param>
@@ -156,6 +166,12 @@ namespace Exiled.Events.Handlers
         /// </summary>
         /// <param name="ev">The <see cref="DecontaminatingEventArgs"/> instance.</param>
         public static void OnDecontaminating(DecontaminatingEventArgs ev) => Decontaminating.InvokeSafely(ev);
+
+        /// <summary>
+        /// Called after an elevator sequence is updated.
+        /// </summary>
+        /// <param name="ev">The <see cref="ElevatorSequencesUpdatedEventArgs"/> instance.</param>
+        public static void OnElevatorSequencesUpdated(ElevatorSequencesUpdatedEventArgs ev) => ElevatorSequencesUpdated.InvokeSafely(ev);
 
         /// <summary>
         /// Called before a grenade explodes.
@@ -209,6 +225,12 @@ namespace Exiled.Events.Handlers
         /// </summary>
         /// <param name="ev">The <see cref="PickupDestroyedEventArgs"/> instance.</param>
         public static void OnPickupDestroyed(PickupDestroyedEventArgs ev) => PickupDestroyed.InvokeSafely(ev);
+
+        /// <summary>
+        /// Invoked before a room connector spawns.
+        /// </summary>
+        /// <param name="ev">The <see cref="SpawningRoomConnectorEventArgs"/> instance.</param>
+        public static void OnSpawningRoomConnector(SpawningRoomConnectorEventArgs ev) => SpawningRoomConnector.InvokeSafely(ev);
 
         /// <summary>
         /// Invoked before a team vehicle is spawned.

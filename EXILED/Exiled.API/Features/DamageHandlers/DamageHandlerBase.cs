@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
-// <copyright file="DamageHandlerBase.cs" company="Exiled Team">
-// Copyright (c) Exiled Team. All rights reserved.
+// <copyright file="DamageHandlerBase.cs" company="ExMod Team">
+// Copyright (c) ExMod Team. All rights reserved.
 // Licensed under the CC BY-SA 3.0 license.
 // </copyright>
 // -----------------------------------------------------------------------
@@ -15,6 +15,7 @@ namespace Exiled.API.Features.DamageHandlers
     using Enums;
 
     using Extensions;
+    using PlayerRoles.PlayableScps.Scp1507;
     using PlayerRoles.PlayableScps.Scp3114;
     using PlayerRoles.PlayableScps.Scp939;
 
@@ -116,6 +117,12 @@ namespace Exiled.API.Features.DamageHandlers
                         return DamageType.Scp939;
                     case JailbirdDamageHandler:
                         return DamageType.Jailbird;
+                    case Scp1507DamageHandler:
+                        return DamageType.Scp1507;
+                    case Scp956DamageHandler:
+                        return DamageType.Scp956;
+                    case SnowballDamageHandler:
+                        return DamageType.SnowBall;
                     case Scp3114DamageHandler scp3114DamageHandler:
                         return scp3114DamageHandler.Subtype switch
                         {

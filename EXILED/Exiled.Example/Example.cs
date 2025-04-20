@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
-// <copyright file="Example.cs" company="Exiled Team">
-// Copyright (c) Exiled Team. All rights reserved.
+// <copyright file="Example.cs" company="ExMod Team">
+// Copyright (c) ExMod Team. All rights reserved.
 // Licensed under the CC BY-SA 3.0 license.
 // </copyright>
 // -----------------------------------------------------------------------
@@ -74,7 +74,7 @@ namespace Exiled.Example
             Exiled.Events.Handlers.Server.RoundStarted += serverHandler.OnRoundStarted;
 
             Exiled.Events.Handlers.Player.Destroying += playerHandler.OnDestroying;
-            Exiled.Events.Handlers.Player.Spawning += playerHandler.OnSpawning;
+            Exiled.Events.Handlers.Player.Spawned += playerHandler.OnSpawned;
             Exiled.Events.Handlers.Player.Escaping += playerHandler.OnEscaping;
             Exiled.Events.Handlers.Player.Hurting += playerHandler.OnHurting;
             Exiled.Events.Handlers.Player.Dying += playerHandler.OnDying;

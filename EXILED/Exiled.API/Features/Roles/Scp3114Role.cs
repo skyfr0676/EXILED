@@ -1,13 +1,12 @@
 // -----------------------------------------------------------------------
-// <copyright file="Scp3114Role.cs" company="Exiled Team">
-// Copyright (c) Exiled Team. All rights reserved.
+// <copyright file="Scp3114Role.cs" company="ExMod Team">
+// Copyright (c) ExMod Team. All rights reserved.
 // Licensed under the CC BY-SA 3.0 license.
 // </copyright>
 // -----------------------------------------------------------------------
 
 namespace Exiled.API.Features.Roles
 {
-    using System;
     using System.Collections.Generic;
 
     using Exiled.API.Enums;
@@ -161,19 +160,9 @@ namespace Exiled.API.Features.Roles
         /// <summary>
         /// Gets or sets the SCP-3114's Ragdoll used for it's FakeIdentity.
         /// </summary>
-        [Obsolete("Ragdoll in Role now has other meaning. Use IdentityRagdoll instead.")]
-        public new Ragdoll Ragdoll
-        {
-            get => IdentityRagdoll;
-            set => IdentityRagdoll = value;
-        }
-
-        /// <summary>
-        /// Gets or sets the SCP-3114's Ragdoll used for it's FakeIdentity.
-        /// </summary>
         public Ragdoll IdentityRagdoll
         {
-            get => Ragdoll.Get(Identity.CurIdentity.Ragdoll);
+            get => Features.Ragdoll.Get(Identity.CurIdentity.Ragdoll);
             set
             {
                 Identity.CurIdentity.Ragdoll = value?.Base;
@@ -230,9 +219,14 @@ namespace Exiled.API.Features.Roles
         }
 
         /// <summary>
+        /// Gets or sets the next bound dance.
+        /// </summary>
+        public DanceType? NextDanceType { get; set; }
+
+        /// <summary>
         /// Gets or sets the bound dance.
         /// </summary>
-        internal DanceType DanceType { get; set; }
+        internal DanceType DanceType { get; set; } = DanceType.None;
 
         /// <summary>
         /// Updates the identity of SCP-3114.
@@ -261,5 +255,26 @@ namespace Exiled.API.Features.Roles
         /// <param name="alreadySpawned">The List of Roles already spawned.</param>
         /// <returns>The Spawn Chance.</returns>
         public float GetSpawnChance(List<RoleTypeId> alreadySpawned) => Base is ISpawnableScp spawnableScp ? spawnableScp.GetSpawnChance(alreadySpawned) : 0;
+
+        /// <summary>
+        /// SCP-3114 starts dancing.
+        /// </summary>
+        /// <param name="danceType">The dance you want to do.</param>
+        public void StartDancing(DanceType danceType)
+        {
+            Dance.IsDancing = true;
+            DanceType = danceType;
+            Dance._serverStartPos = new RelativePositioning.RelativePosition(Dance.CastRole.FpcModule.Position);
+            Dance.ServerSendRpc(true);
+        }
+
+        /// <summary>
+        /// Stops the SCP-3114 from Dancing.
+        /// </summary>
+        public void StopDancing()
+        {
+            Dance.IsDancing = false;
+            Dance.ServerSendRpc(true);
+        }
     }
 }

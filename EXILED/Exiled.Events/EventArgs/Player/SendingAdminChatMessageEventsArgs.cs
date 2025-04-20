@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
-// <copyright file="SendingAdminChatMessageEventsArgs.cs" company="Exiled Team">
-// Copyright (c) Exiled Team. All rights reserved.
+// <copyright file="SendingAdminChatMessageEventsArgs.cs" company="ExMod Team">
+// Copyright (c) ExMod Team. All rights reserved.
 // Licensed under the CC BY-SA 3.0 license.
 // </copyright>
 // -----------------------------------------------------------------------
@@ -39,7 +39,7 @@ namespace Exiled.Events.EventArgs.Player
         }
 
         /// <summary>
-        /// Gets or sets a value indicating whether the pickup can be searched.
+        /// Gets or sets a value indicating whether the message will be sent to other.
         /// </summary>
         public bool IsAllowed { get; set; }
 

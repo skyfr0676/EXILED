@@ -1,6 +1,6 @@
-﻿// -----------------------------------------------------------------------
-// <copyright file="BitwiseExtensions.cs" company="Exiled Team">
-// Copyright (c) Exiled Team. All rights reserved.
+// -----------------------------------------------------------------------
+// <copyright file="BitwiseExtensions.cs" company="ExMod Team">
+// Copyright (c) ExMod Team. All rights reserved.
 // Licensed under the CC BY-SA 3.0 license.
 // </copyright>
 // -----------------------------------------------------------------------
@@ -58,6 +58,22 @@ namespace Exiled.API.Extensions
             }
 
             return (T)Enum.ToObject(typeof(T), currentValue);
+        }
+
+        /// <summary>
+        /// Checks if flag has specified value.
+        /// </summary>
+        /// <param name="flag">Flag to check.</param>
+        /// <param name="value">Value to check in flag.</param>
+        /// <typeparam name="T">The type of the enum.</typeparam>
+        /// <returns><see langword="true"/> if value is presented in flag. Otherwise, <see langword="false"/>.</returns>
+        public static bool HasFlagFast<T>(this T flag, T value)
+            where T : Enum
+        {
+            long flagValue = Convert.ToInt64(flag);
+            long valueValue = Convert.ToInt64(value);
+
+            return (flagValue & valueValue) == valueValue;
         }
     }
 }

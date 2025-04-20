@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
-// <copyright file="Scp914.cs" company="Exiled Team">
-// Copyright (c) Exiled Team. All rights reserved.
+// <copyright file="Scp914.cs" company="ExMod Team">
+// Copyright (c) ExMod Team. All rights reserved.
 // Licensed under the CC BY-SA 3.0 license.
 // </copyright>
 // -----------------------------------------------------------------------
@@ -77,7 +77,7 @@ namespace Exiled.API.Features
         /// <summary>
         /// Gets a value indicating all of the GameObjects currently present inside SCP-914's intake chamber.
         /// </summary>
-        public static Collider[] InsideIntake => Physics.OverlapBox(IntakePosition, Scp914Controller.IntakeChamberSize);
+        public static Collider[] InsideIntake => Physics.OverlapBox(Scp914Controller.IntakeChamber.position, Scp914Controller.IntakeChamberSize);
 
         /// <summary>
         /// Gets the intake booth <see cref="UnityEngine.Transform"/>.
@@ -116,8 +116,7 @@ namespace Exiled.API.Features
                     {
                         pickups.Add(pickup);
                     }
-                    else if (Player.TryGet(gameObject, out Player player)
-                        && Physics.Linecast(player.Position, IntakePosition, Scp914Upgrader.SolidObjectMask))
+                    else if (Player.TryGet(gameObject, out Player player))
                     {
                         players.Add(player);
                     }

@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
-// <copyright file="CustomHealthStat.cs" company="Exiled Team">
-// Copyright (c) Exiled Team. All rights reserved.
+// <copyright file="CustomHealthStat.cs" company="ExMod Team">
+// Copyright (c) ExMod Team. All rights reserved.
 // Licensed under the CC BY-SA 3.0 license.
 // </copyright>
 // -----------------------------------------------------------------------
@@ -11,6 +11,7 @@ namespace Exiled.API.Features
 
     /// <summary>
     /// A custom version of <see cref="HealthStat"/> which allows the player's max amount of health to be changed.
+    /// TODO: Move to Features.CustomStats.
     /// </summary>
     public class CustomHealthStat : HealthStat
     {

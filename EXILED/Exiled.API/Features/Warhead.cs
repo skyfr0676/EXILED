@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
-// <copyright file="Warhead.cs" company="Exiled Team">
-// Copyright (c) Exiled Team. All rights reserved.
+// <copyright file="Warhead.cs" company="ExMod Team">
+// Copyright (c) ExMod Team. All rights reserved.
 // Licensed under the CC BY-SA 3.0 license.
 // </copyright>
 // -----------------------------------------------------------------------
@@ -35,7 +35,7 @@ namespace Exiled.API.Features
         /// <summary>
         /// Gets the cached <see cref="AlphaWarheadOutsitePanel"/> component.
         /// </summary>
-        public static AlphaWarheadOutsitePanel OutsitePanel => alphaWarheadOutsitePanel != null ? alphaWarheadOutsitePanel : (alphaWarheadOutsitePanel = Object.FindObjectOfType<AlphaWarheadOutsitePanel>());
+        public static AlphaWarheadOutsitePanel OutsitePanel => alphaWarheadOutsitePanel != null ? alphaWarheadOutsitePanel : (alphaWarheadOutsitePanel = UnityEngine.Object.FindObjectOfType<AlphaWarheadOutsitePanel>());
 
         /// <summary>
         /// Gets the <see cref="GameObject"/> of the warhead lever.
@@ -43,7 +43,12 @@ namespace Exiled.API.Features
         public static GameObject Lever => SitePanel.lever.gameObject;
 
         /// <summary>
-        /// Gets or sets a value indicating whether or not automatic detonation is enabled.
+        /// Gets or sets a value indicating whether DeadmanSwitch detonation is enabled.
+        /// </summary>
+        public static bool DeadmanSwitchEnabled { get; set; } = true;
+
+        /// <summary>
+        /// Gets or sets a value indicating whether automatic detonation is enabled.
         /// </summary>
         public static bool AutoDetonate
         {
@@ -52,7 +57,7 @@ namespace Exiled.API.Features
         }
 
         /// <summary>
-        /// Gets or sets a value indicating whether or not doors will be opened when the warhead activates.
+        /// Gets or sets a value indicating whether doors will be opened when the warhead activates.
         /// </summary>
         public static bool OpenDoors
         {
@@ -66,7 +71,7 @@ namespace Exiled.API.Features
         public static IReadOnlyCollection<BlastDoor> BlastDoors => BlastDoor.Instances;
 
         /// <summary>
-        /// Gets or sets a value indicating whether or not the warhead lever is enabled.
+        /// Gets or sets a value indicating whether the warhead lever is enabled.
         /// </summary>
         public static bool LeverStatus
         {
@@ -75,7 +80,7 @@ namespace Exiled.API.Features
         }
 
         /// <summary>
-        /// Gets or sets a value indicating whether or not the warhead's outside panel has been opened.
+        /// Gets or sets a value indicating whether the warhead's outside panel has been opened.
         /// </summary>
         public static bool IsKeycardActivated
         {
@@ -111,12 +116,12 @@ namespace Exiled.API.Features
         }
 
         /// <summary>
-        /// Gets a value indicating whether or not the warhead has already been detonated.
+        /// Gets a value indicating whether the warhead has already been detonated.
         /// </summary>
-        public static bool IsDetonated => Controller._alreadyDetonated;
+        public static bool IsDetonated => Controller.AlreadyDetonated;
 
         /// <summary>
-        /// Gets a value indicating whether or not the warhead detonation is in progress.
+        /// Gets a value indicating whether the warhead detonation is in progress.
         /// </summary>
         public static bool IsInProgress => Controller.Info.InProgress;
 
@@ -135,7 +140,7 @@ namespace Exiled.API.Features
         public static float RealDetonationTimer => Controller.CurScenario.TimeToDetonate;
 
         /// <summary>
-        /// Gets or sets a value indicating whether or not the warhead can be disabled.
+        /// Gets or sets a value indicating whether the warhead can be disabled.
         /// </summary>
         public static bool IsLocked
         {
@@ -153,7 +158,7 @@ namespace Exiled.API.Features
         }
 
         /// <summary>
-        /// Gets a value indicating whether or not the warhead can be started.
+        /// Gets a value indicating whether the warhead can be started.
         /// </summary>
         public static bool CanBeStarted => !IsInProgress && !IsDetonated && Controller.CooldownEndTime <= NetworkTime.time;
 
@@ -182,9 +187,30 @@ namespace Exiled.API.Features
         }
 
         /// <summary>
+        /// Starts the warhead countdown.
+        /// </summary>
+        /// <param name="isAutomatic">Indicates whether the warhead is started automatically.</param>
+        /// <param name="suppressSubtitles">If <see langword="true"/>, subtitles will not be displayed during the countdown.</param>
+        /// <param name="trigger">The <see cref="Player"/> of the entity that triggered the warhead.</param>
+        public static void Start(bool isAutomatic, bool suppressSubtitles = false, Player trigger = null)
+        {
+            Controller.InstantPrepare();
+            Controller.StartDetonation(isAutomatic, suppressSubtitles, trigger == null ? null : trigger.ReferenceHub);
+        }
+
+        /// <summary>
         /// Stops the warhead.
         /// </summary>
         public static void Stop() => Controller.CancelDetonation();
+
+        /// <summary>
+        /// Stops the warhead detonation process.
+        /// </summary>
+        /// <param name="disabler">
+        /// The <see cref="Player"/> who is disabling the warhead.
+        /// If <see langword="null"/>, the warhead will be stopped without a specific player reference.
+        /// </param>
+        public static void Stop(Player disabler) => Controller.CancelDetonation(disabler.ReferenceHub);
 
         /// <summary>
         /// Detonates the warhead.
@@ -192,16 +218,33 @@ namespace Exiled.API.Features
         public static void Detonate() => Controller.ForceTime(0f);
 
         /// <summary>
+        /// Detonates the warhead after the specified remaining time.
+        /// </summary>
+        /// <param name="remaining">
+        /// The time in seconds until the warhead detonates.
+        /// If set to <see langword="0"/>, the warhead will detonate immediately.
+        /// </param>
+        public static void Detonate(float remaining) => Controller.ForceTime(remaining);
+
+        /// <summary>
         /// Shake all players, like if the warhead has been detonated.
         /// </summary>
         public static void Shake() => Controller.RpcShake(false);
 
         /// <summary>
-        /// Gets whether or not the provided position will be detonated by the alpha warhead.
+        /// Shake all players, like if the warhead has been detonated.
+        /// </summary>
+        /// <param name="archieve">
+        /// If <see langword="true"/>, the shake effect will be archived.
+        /// </param>
+        public static void Shake(bool archieve) => Controller.RpcShake(archieve);
+
+        /// <summary>
+        /// Gets whether the provided position will be detonated by the alpha warhead.
         /// </summary>
         /// <param name="pos">The position to check.</param>
         /// <param name="includeOnlyLifts">If <see langword="true"/>, only lifts will be checked.</param>
-        /// <returns>Whether or not the given position is prone to being detonated.</returns>
+        /// <returns>Whether the given position is prone to being detonated.</returns>
         public static bool CanBeDetonated(Vector3 pos, bool includeOnlyLifts = false) => AlphaWarheadController.CanBeDetonated(pos, includeOnlyLifts);
     }
 }

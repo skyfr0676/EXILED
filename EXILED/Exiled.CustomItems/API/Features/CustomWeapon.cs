@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
-// <copyright file="CustomWeapon.cs" company="Exiled Team">
-// Copyright (c) Exiled Team. All rights reserved.
+// <copyright file="CustomWeapon.cs" company="ExMod Team">
+// Copyright (c) ExMod Team. All rights reserved.
 // Licensed under the CC BY-SA 3.0 license.
 // </copyright>
 // -----------------------------------------------------------------------
@@ -8,6 +8,7 @@
 namespace Exiled.CustomItems.API.Features
 {
     using System;
+    using System.Linq;
 
     using Exiled.API.Enums;
     using Exiled.API.Extensions;
@@ -16,11 +17,10 @@ namespace Exiled.CustomItems.API.Features
     using Exiled.API.Features.Items;
     using Exiled.API.Features.Pickups;
     using Exiled.Events.EventArgs.Player;
-
+    using InventorySystem;
     using InventorySystem.Items.Firearms.Attachments;
     using InventorySystem.Items.Firearms.Attachments.Components;
-    using InventorySystem.Items.Firearms.BasicMessages;
-
+    using InventorySystem.Items.Firearms.Modules;
     using UnityEngine;
 
     using Firearm = Exiled.API.Features.Items.Firearm;
@@ -57,10 +57,12 @@ namespace Exiled.CustomItems.API.Features
         /// <summary>
         /// Gets or sets a value indicating how big of a clip the weapon will have.
         /// </summary>
+        /// <remarks>Warning for <see cref="ItemType.GunShotgun"/> and <see cref="ItemType.GunRevolver"/>.
+        /// They are not fully compatible with this features.</remarks>
         public virtual byte ClipSize { get; set; }
 
         /// <summary>
-        /// Gets or sets a value indicating whether or not to allow friendly fire with this weapon on FF-enabled servers.
+        /// Gets or sets a value indicating whether to allow friendly fire with this weapon on FF-enabled servers.
         /// </summary>
         public virtual bool FriendlyFire { get; set; }
 
@@ -76,9 +78,6 @@ namespace Exiled.CustomItems.API.Features
             if (!Attachments.IsEmpty())
                 firearm.AddAttachment(Attachments);
 
-            firearm.Ammo = ClipSize;
-            firearm.MaxAmmo = ClipSize;
-
             Pickup? pickup = firearm.CreatePickup(position);
 
             if (pickup is null)
@@ -86,6 +85,9 @@ namespace Exiled.CustomItems.API.Features
                 Log.Debug($"{nameof(Spawn)}: Pickup is null.");
                 return null;
             }
+
+            if (ClipSize > 0)
+                firearm.MagazineAmmo = ClipSize;
 
             pickup.Weight = Weight;
             pickup.Scale = Scale;
@@ -104,8 +106,9 @@ namespace Exiled.CustomItems.API.Features
                 if (!Attachments.IsEmpty())
                     firearm.AddAttachment(Attachments);
 
-                byte ammo = firearm.Ammo;
-                firearm.MaxAmmo = ClipSize;
+                if (ClipSize > 0)
+                    firearm.MagazineAmmo = ClipSize;
+                int ammo = firearm.MagazineAmmo;
                 Log.Debug($"{nameof(Name)}.{nameof(Spawn)}: Spawning weapon with {ammo} ammo.");
                 Pickup? pickup = firearm.CreatePickup(position);
                 pickup.Scale = Scale;
@@ -130,8 +133,8 @@ namespace Exiled.CustomItems.API.Features
                 if (!Attachments.IsEmpty())
                     firearm.AddAttachment(Attachments);
 
-                firearm.Ammo = ClipSize;
-                firearm.MaxAmmo = ClipSize;
+                if (ClipSize > 0)
+                    firearm.MagazineAmmo = ClipSize;
             }
 
             Log.Debug($"{nameof(Give)}: Adding {item.Serial} to tracker.");
@@ -144,6 +147,7 @@ namespace Exiled.CustomItems.API.Features
         protected override void SubscribeEvents()
         {
             Exiled.Events.Handlers.Player.ReloadingWeapon += OnInternalReloading;
+            Exiled.Events.Handlers.Player.ReloadedWeapon += OnInternalReloaded;
             Exiled.Events.Handlers.Player.Shooting += OnInternalShooting;
             Exiled.Events.Handlers.Player.Shot += OnInternalShot;
             Exiled.Events.Handlers.Player.Hurting += OnInternalHurting;
@@ -155,6 +159,7 @@ namespace Exiled.CustomItems.API.Features
         protected override void UnsubscribeEvents()
         {
             Exiled.Events.Handlers.Player.ReloadingWeapon -= OnInternalReloading;
+            Exiled.Events.Handlers.Player.ReloadedWeapon -= OnInternalReloaded;
             Exiled.Events.Handlers.Player.Shooting -= OnInternalShooting;
             Exiled.Events.Handlers.Player.Shot -= OnInternalShot;
             Exiled.Events.Handlers.Player.Hurting -= OnInternalHurting;
@@ -167,6 +172,14 @@ namespace Exiled.CustomItems.API.Features
         /// </summary>
         /// <param name="ev"><see cref="ReloadingWeaponEventArgs"/>.</param>
         protected virtual void OnReloading(ReloadingWeaponEventArgs ev)
+        {
+        }
+
+        /// <summary>
+        /// Handles reloaded for custom weapons.
+        /// </summary>
+        /// <param name="ev"><see cref="ReloadedWeaponEventArgs"/>.</param>
+        protected virtual void OnReloaded(ReloadedWeaponEventArgs ev)
         {
         }
 
@@ -201,49 +214,44 @@ namespace Exiled.CustomItems.API.Features
             if (!Check(ev.Player.CurrentItem))
                 return;
 
-            Log.Debug($"{nameof(Name)}.{nameof(OnInternalReloading)}: Reloading weapon. Calling external reload event..");
+            if (ClipSize > 0 && ev.Firearm.Base.GetTotalStoredAmmo() >= ClipSize)
+            {
+                ev.IsAllowed = false;
+                return;
+            }
+
             OnReloading(ev);
+        }
 
-            Log.Debug($"{nameof(Name)}.{nameof(OnInternalReloading)}: External event ended. {ev.IsAllowed}");
-            if (!ev.IsAllowed)
-            {
-                Log.Debug($"{nameof(Name)}.{nameof(OnInternalReloading)}: External event turned is allowed to false, returning.");
+        private void OnInternalReloaded(ReloadedWeaponEventArgs ev)
+        {
+            if (!Check(ev.Item))
                 return;
+
+            if (ClipSize > 0)
+            {
+                int ammoChambered = ((AutomaticActionModule)ev.Firearm.Base.Modules.FirstOrDefault(x => x is AutomaticActionModule))?.SyncAmmoChambered ?? 0;
+                int ammoToGive = ClipSize - ammoChambered;
+
+                AmmoType ammoType = ev.Firearm.AmmoType;
+                int firearmAmmo = ev.Firearm.MagazineAmmo;
+                int ammoDrop = -(ClipSize - firearmAmmo - ammoChambered);
+
+                int ammoInInventory = ev.Player.GetAmmo(ammoType) + firearmAmmo;
+                if (ammoToGive < ammoInInventory)
+                {
+                    ev.Firearm.MagazineAmmo = ammoToGive;
+                    int newAmmo = ev.Player.Inventory.GetCurAmmo(ammoType.GetItemType()) + ammoDrop;
+                    ev.Player.Inventory.ServerSetAmmo(ammoType.GetItemType(), newAmmo);
+                }
+                else
+                {
+                    ev.Firearm.MagazineAmmo = ammoInInventory;
+                    ev.Player.Inventory.ServerSetAmmo(ammoType.GetItemType(), 0);
+                }
             }
 
-            Log.Debug($"{nameof(Name)}.{nameof(OnInternalReloading)}: Continuing with internal reload..");
-            ev.IsAllowed = false;
-
-            byte remainingClip = ((Firearm)ev.Player.CurrentItem).Ammo;
-
-            if (remainingClip >= ClipSize)
-                return;
-
-            Log.Debug($"{ev.Player.Nickname} ({ev.Player.UserId}) [{ev.Player.Role}] is reloading a {Name} ({Id}) [{Type} ({remainingClip}/{ClipSize})]!");
-
-            AmmoType ammoType = ev.Firearm.AmmoType;
-
-            if (!ev.Player.Ammo.ContainsKey(ammoType.GetItemType()))
-            {
-                Log.Debug($"{nameof(Name)}.{nameof(OnInternalReloading)}: {ev.Player.Nickname} does not have ammo to reload this weapon.");
-                return;
-            }
-
-            ev.Player.Connection.Send(new RequestMessage(ev.Firearm.Serial, RequestType.Reload));
-
-            byte amountToReload = (byte)Math.Min(ClipSize - remainingClip, ev.Player.Ammo[ammoType.GetItemType()]);
-
-            if (amountToReload <= 0)
-                return;
-
-            ev.Player.ReferenceHub.playerEffectsController.GetEffect<CustomPlayerEffects.Invisible>().Intensity = 0;
-
-            ev.Player.Ammo[ammoType.GetItemType()] -= amountToReload;
-            ev.Player.Inventory.SendAmmoNextFrame = true;
-
-            ((Firearm)ev.Player.CurrentItem).Ammo = (byte)(((Firearm)ev.Player.CurrentItem).Ammo + amountToReload);
-
-            Log.Debug($"{ev.Player.Nickname} ({ev.Player.UserId}) [{ev.Player.Role}] reloaded a {Name} ({Id}) [{Type} ({((Firearm)ev.Player.CurrentItem).Ammo}/{ClipSize})]!");
+            OnReloaded(ev);
         }
 
         private void OnInternalShooting(ShootingEventArgs ev)

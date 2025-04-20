@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
-// <copyright file="CommonExtensions.cs" company="Exiled Team">
-// Copyright (c) Exiled Team. All rights reserved.
+// <copyright file="CommonExtensions.cs" company="ExMod Team">
+// Copyright (c) ExMod Team. All rights reserved.
 // Licensed under the CC BY-SA 3.0 license.
 // </copyright>
 // -----------------------------------------------------------------------
@@ -56,9 +56,11 @@ namespace Exiled.API.Extensions
         /// <returns>The new modfied curve.</returns>
         public static AnimationCurve Multiply(this AnimationCurve curve, float amount)
         {
-            for (int i = 0; i < curve.length; i++)
-                curve.keys[i].value *= amount;
+            Keyframe[] keys = curve.keys;
+            for (int i = 0; i < keys.Length; i++)
+                keys[i].value *= amount;
 
+            curve.keys = keys;
             return curve;
         }
 
@@ -70,9 +72,11 @@ namespace Exiled.API.Extensions
         /// <returns>The new modfied curve.</returns>
         public static AnimationCurve Add(this AnimationCurve curve, float amount)
         {
-            for (int i = 0; i < curve.length; i++)
-                curve.keys[i].value += amount;
+            Keyframe[] keys = curve.keys;
+            for (int i = 0; i < keys.Length; i++)
+                keys[i].value += amount;
 
+            curve.keys = keys;
             return curve;
         }
     }

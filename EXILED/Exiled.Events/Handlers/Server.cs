@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
-// <copyright file="Server.cs" company="Exiled Team">
-// Copyright (c) Exiled Team. All rights reserved.
+// <copyright file="Server.cs" company="ExMod Team">
+// Copyright (c) ExMod Team. All rights reserved.
 // Licensed under the CC BY-SA 3.0 license.
 // </copyright>
 // -----------------------------------------------------------------------
@@ -10,9 +10,10 @@ namespace Exiled.Events.Handlers
     using System.Collections.Generic;
 
     using Respawning;
+    using Respawning.Waves;
+
 #pragma warning disable SA1623 // Property summary documentation should match accessors
 
-    using Exiled.Events.EventArgs.Player;
     using Exiled.Events.EventArgs.Server;
     using Exiled.Events.Features;
 
@@ -122,6 +123,11 @@ namespace Exiled.Events.Handlers
         public static Event<UnbannedEventArgs> Unbanned { get; set; } = new();
 
         /// <summary>
+        /// Invoked before before the completion of an objective.
+        /// </summary>
+        public static Event<CompletingObjectiveEventArgs> CompletingObjective { get; set; } = new();
+
+        /// <summary>
         /// Called before waiting for players.
         /// </summary>
         public static void OnWaitingForPlayers() => WaitingForPlayers.InvokeSafely();
@@ -163,9 +169,9 @@ namespace Exiled.Events.Handlers
         /// <summary>
         /// Called after team spawns.
         /// </summary>
-        /// <param name="teamType"><inheritdoc cref="RespawnedTeamEventArgs.Team"/></param>
+        /// <param name="teamType"><inheritdoc cref="RespawnedTeamEventArgs.Wave"/></param>
         /// <param name="hubs"><inheritdoc cref="RespawnedTeamEventArgs.Players"/></param>
-        public static void OnRespawnedTeam(SpawnableTeamType teamType, List<ReferenceHub> hubs) => RespawnedTeam.InvokeSafely(new RespawnedTeamEventArgs(teamType, hubs));
+        public static void OnRespawnedTeam(SpawnableWaveBase teamType, List<ReferenceHub> hubs) => RespawnedTeam.InvokeSafely(new RespawnedTeamEventArgs(teamType, hubs));
 
         /// <summary>
         /// Called before adding an unit name.
@@ -232,5 +238,11 @@ namespace Exiled.Events.Handlers
         /// </summary>
         /// <param name="ev">The <see cref="UnbannedEventArgs"/> instance.</param>
         public static void OnUnbanned(UnbannedEventArgs ev) => Unbanned.InvokeSafely(ev);
+
+        /// <summary>
+        /// Called before the completion of an objective.
+        /// </summary>
+        /// <param name="ev">The <see cref="CompletingObjectiveEventArgs"/> instance.</param>
+        public static void OnCompletingObjective(CompletingObjectiveEventArgs ev) => CompletingObjective.InvokeSafely(ev);
     }
 }

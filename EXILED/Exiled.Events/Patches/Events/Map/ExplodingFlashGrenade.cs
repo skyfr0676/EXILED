@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
-// <copyright file="ExplodingFlashGrenade.cs" company="Exiled Team">
-// Copyright (c) Exiled Team. All rights reserved.
+// <copyright file="ExplodingFlashGrenade.cs" company="ExMod Team">
+// Copyright (c) ExMod Team. All rights reserved.
 // Licensed under the CC BY-SA 3.0 license.
 // </copyright>
 // -----------------------------------------------------------------------
@@ -8,10 +8,12 @@
 namespace Exiled.Events.Patches.Events.Map
 {
     using System.Collections.Generic;
+    using System.Linq;
     using System.Reflection.Emit;
 
     using API.Features;
     using API.Features.Pools;
+    using Exiled.API.Extensions;
     using Exiled.Events.EventArgs.Map;
     using Exiled.Events.Patches.Generic;
     using HarmonyLib;
@@ -61,16 +63,18 @@ namespace Exiled.Events.Patches.Events.Map
 
         private static void ProcessEvent(FlashbangGrenade instance, float distance)
         {
-            List<Player> targetToAffect = ListPool<Player>.Pool.Get();
-            foreach (ReferenceHub referenceHub in ReferenceHub.AllHubs)
+            HashSet<Player> targetToAffect = HashSetPool<Player>.Pool.Get();
+            foreach (Player player in ReferenceHub.AllHubs.Select(Player.Get))
             {
-                Player player = Player.Get(referenceHub);
-                if ((instance.transform.position - referenceHub.transform.position).sqrMagnitude >= distance)
+                if ((instance.transform.position - player.Position).sqrMagnitude > distance)
                     continue;
-                if (!ExiledEvents.Instance.Config.CanFlashbangsAffectThrower && instance.PreviousOwner.SameLife(new(referenceHub)))
+
+                if (!ExiledEvents.Instance.Config.CanFlashbangsAffectThrower && instance.PreviousOwner.CompareLife(player.ReferenceHub))
                     continue;
-                if (!IndividualFriendlyFire.CheckFriendlyFirePlayer(instance.PreviousOwner, player.ReferenceHub) && !instance.PreviousOwner.SameLife(new(referenceHub)))
+
+                if (!IndividualFriendlyFire.CheckFriendlyFirePlayer(instance.PreviousOwner, player.ReferenceHub) && !instance.PreviousOwner.CompareLife(player.ReferenceHub))
                     continue;
+
                 if (Physics.Linecast(instance.transform.position, player.CameraTransform.position, instance._blindingMask))
                     continue;
 
@@ -79,7 +83,7 @@ namespace Exiled.Events.Patches.Events.Map
 
             ExplodingGrenadeEventArgs explodingGrenadeEvent = new(Player.Get(instance.PreviousOwner.Hub), instance, targetToAffect);
 
-            ListPool<Player>.Pool.Return(targetToAffect);
+            HashSetPool<Player>.Pool.Return(targetToAffect);
 
             Handlers.Map.OnExplodingGrenade(explodingGrenadeEvent);
 
@@ -87,9 +91,7 @@ namespace Exiled.Events.Patches.Events.Map
                 return;
 
             foreach (Player player in explodingGrenadeEvent.TargetsToAffect)
-            {
                 instance.ProcessPlayer(player.ReferenceHub);
-            }
         }
     }
 }

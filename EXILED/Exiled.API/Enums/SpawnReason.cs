@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
-// <copyright file="SpawnReason.cs" company="Exiled Team">
-// Copyright (c) Exiled Team. All rights reserved.
+// <copyright file="SpawnReason.cs" company="ExMod Team">
+// Copyright (c) ExMod Team. All rights reserved.
 // Licensed under the CC BY-SA 3.0 license.
 // </copyright>
 // -----------------------------------------------------------------------
@@ -56,5 +56,10 @@ namespace Exiled.API.Enums
         /// The user will be destroyed.
         /// </summary>
         Destroyed,
+
+        /// <summary>
+        /// The user has been spawn by the usage of an Item.
+        /// </summary>
+        ItemUsage,
     }
 }

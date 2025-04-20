@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
-// <copyright file="Scp079.cs" company="Exiled Team">
-// Copyright (c) Exiled Team. All rights reserved.
+// <copyright file="Scp079.cs" company="ExMod Team">
+// Copyright (c) ExMod Team. All rights reserved.
 // Licensed under the CC BY-SA 3.0 license.
 // </copyright>
 // -----------------------------------------------------------------------
@@ -83,6 +83,16 @@ namespace Exiled.Events.Handlers
         public static Event<ZoneBlackoutEventArgs> ZoneBlackout { get; set; } = new();
 
         /// <summary>
+        /// Invoked before SCP-079 loses a signal by SCP-2176.
+        /// </summary>
+        public static Event<LosingSignalEventArgs> LosingSignal { get; set; } = new();
+
+        /// <summary>
+        /// Invoked after SCP-079 loses a signal by SCP-2176.
+        /// </summary>
+        public static Event<LostSignalEventArgs> LostSignal { get; set; } = new();
+
+        /// <summary>
         /// Called before SCP-079 switches cameras.
         /// </summary>
         /// <param name="ev">The <see cref="ChangingCameraEventArgs" /> instance.</param>
@@ -159,5 +169,17 @@ namespace Exiled.Events.Handlers
         /// </summary>
         /// <param name="ev">The <see cref="PingingEventArgs" /> instance.</param>
         public static void OnZoneBlackout(ZoneBlackoutEventArgs ev) => ZoneBlackout.InvokeSafely(ev);
+
+        /// <summary>
+        /// Called before SCP-079 loses a signal by SCP-2176.
+        /// </summary>
+        /// <param name="ev">The <see cref="LosingSignalEventArgs" /> instance.</param>
+        public static void OnLosingSignal(LosingSignalEventArgs ev) => LosingSignal.InvokeSafely(ev);
+
+        /// <summary>
+        /// Called after SCP-079 loses a signal by SCP-2176.
+        /// </summary>
+        /// <param name="ev">The <see cref="LostSignalEventArgs" /> instance.</param>
+        public static void OnLostSignal(LostSignalEventArgs ev) => LostSignal.InvokeSafely(ev);
     }
 }

@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
-// <copyright file="ActivatingEventArgs.cs" company="Exiled Team">
-// Copyright (c) Exiled Team. All rights reserved.
+// <copyright file="ActivatingEventArgs.cs" company="ExMod Team">
+// Copyright (c) ExMod Team. All rights reserved.
 // Licensed under the CC BY-SA 3.0 license.
 // </copyright>
 // -----------------------------------------------------------------------
@@ -8,6 +8,8 @@
 namespace Exiled.Events.EventArgs.Scp914
 {
     using API.Features;
+
+    using global::Scp914;
 
     using Interfaces;
 
@@ -32,7 +34,7 @@ namespace Exiled.Events.EventArgs.Scp914
         }
 
         /// <summary>
-        /// Gets or sets a value indicating whether or not SCP-914 can be activated.
+        /// Gets or sets a value indicating whether SCP-914 can be activated.
         /// </summary>
         public bool IsAllowed { get; set; }
 
@@ -40,5 +42,14 @@ namespace Exiled.Events.EventArgs.Scp914
         /// Gets the player who's activating SCP-914.
         /// </summary>
         public Player Player { get; }
+
+        /// <summary>
+        /// Gets or sets SCP-914 working knob setting.
+        /// </summary>
+        public Scp914KnobSetting KnobSetting
+        {
+            get => Scp914.KnobStatus;
+            set => Scp914.KnobStatus = value;
+        }
     }
 }

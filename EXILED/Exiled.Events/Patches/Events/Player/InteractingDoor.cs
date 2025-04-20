@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
-// <copyright file="InteractingDoor.cs" company="Exiled Team">
-// Copyright (c) Exiled Team. All rights reserved.
+// <copyright file="InteractingDoor.cs" company="ExMod Team">
+// Copyright (c) ExMod Team. All rights reserved.
 // Licensed under the CC BY-SA 3.0 license.
 // </copyright>
 // -----------------------------------------------------------------------
@@ -44,10 +44,11 @@ namespace Exiled.Events.Patches.Events.Player
                 0,
                 new CodeInstruction[]
                 {
-                    // InteractingDoorEventArgs ev = new(Player.Get(ply), __instance, false, true);
+                    // InteractingDoorEventArgs ev = new(Player.Get(ply), __instance, colliderId, false, true);
                     new(OpCodes.Ldarg_1),
                     new(OpCodes.Call, Method(typeof(Player), nameof(Player.Get), new[] { typeof(ReferenceHub) })),
                     new(OpCodes.Ldarg_0),
+                    new(OpCodes.Ldarg_2),
                     new(OpCodes.Ldc_I4_0),
                     new(OpCodes.Ldc_I4_1),
                     new(OpCodes.Newobj, GetDeclaredConstructors(typeof(InteractingDoorEventArgs))[0]),

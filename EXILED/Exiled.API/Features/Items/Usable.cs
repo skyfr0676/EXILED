@@ -1,12 +1,13 @@
 // -----------------------------------------------------------------------
-// <copyright file="Usable.cs" company="Exiled Team">
-// Copyright (c) Exiled Team. All rights reserved.
+// <copyright file="Usable.cs" company="ExMod Team">
+// Copyright (c) ExMod Team. All rights reserved.
 // Licensed under the CC BY-SA 3.0 license.
 // </copyright>
 // -----------------------------------------------------------------------
 
 namespace Exiled.API.Features.Items
 {
+    using Exiled.API.Extensions;
     using Exiled.API.Features.Pickups;
     using Exiled.API.Interfaces;
 
@@ -109,11 +110,11 @@ namespace Exiled.API.Features.Items
         /// <param name="rotation">The rotation of the item.</param>
         /// <param name="spawn">Whether the <see cref="Pickup"/> should be initially spawned.</param>
         /// <returns>The created <see cref="Pickup"/>.</returns>
-        public override Pickup CreatePickup(Vector3 position, Quaternion rotation = default, bool spawn = true)
+        public override Pickup CreatePickup(Vector3 position, Quaternion? rotation = null, bool spawn = true)
         {
             PickupSyncInfo info = new(Type, Weight, Serial);
 
-            ItemPickupBase ipb = InventoryExtensions.ServerCreatePickup(Base, info, position, rotation);
+            ItemPickupBase ipb = InventoryExtensions.ServerCreatePickup(Base, info, position, rotation ?? Quaternion.identity);
 
             Pickup pickup = Pickup.Get(ipb);
 
@@ -126,19 +127,29 @@ namespace Exiled.API.Features.Items
         /// <summary>
         /// Uses the item.
         /// </summary>
-        /// <exception cref="System.InvalidOperationException">The <see cref="Item.Owner"/> of the item cannot be <see langword="null"/>.</exception>
-        public virtual void Use()
-        {
-            if (Owner is null)
-                throw new System.InvalidOperationException("The Owner of the item cannot be null.");
+        public virtual void Use() => Use(Owner);
 
-            Owner.UseItem(this);
+        /// <summary>
+        /// Uses the item.
+        /// </summary>
+        /// <param name="owner">Target <see cref="Player"/> to use an <see cref="Usable"/>.</param>
+        public virtual void Use(Player owner = null)
+        {
+            Player oldOwner = Owner;
+            owner ??= Owner;
+
+            Base.Owner = owner.ReferenceHub;
+            Base.ServerOnUsingCompleted();
+
+            typeof(UsableItemsController).InvokeStaticEvent(nameof(UsableItemsController.ServerOnUsingCompleted), new object[] { owner.ReferenceHub, Base });
+
+            Base.Owner = oldOwner.ReferenceHub;
         }
 
         /// <inheritdoc/>
-        internal override void ReadPickupInfo(Pickup pickup)
+        internal override void ReadPickupInfoBefore(Pickup pickup)
         {
-            base.ReadPickupInfo(pickup);
+            base.ReadPickupInfoBefore(pickup);
             if (pickup is UsablePickup usablePickup)
             {
                 UseTime = usablePickup.UseTime;

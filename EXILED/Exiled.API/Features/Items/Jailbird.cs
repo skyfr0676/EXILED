@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
-// <copyright file="Jailbird.cs" company="Exiled Team">
-// Copyright (c) Exiled Team. All rights reserved.
+// <copyright file="Jailbird.cs" company="ExMod Team">
+// Copyright (c) ExMod Team. All rights reserved.
 // Licensed under the CC BY-SA 3.0 license.
 // </copyright>
 // -----------------------------------------------------------------------
@@ -11,6 +11,7 @@ namespace Exiled.API.Features.Items
 
     using Exiled.API.Features.Pickups;
     using Exiled.API.Interfaces;
+    using InventorySystem.Items;
     using InventorySystem.Items.Autosync;
     using InventorySystem.Items.Jailbird;
     using Mirror;
@@ -97,7 +98,11 @@ namespace Exiled.API.Features.Items
         public float TotalDamageDealt
         {
             get => Base._hitreg.TotalMeleeDamageDealt;
-            set => Base._hitreg.TotalMeleeDamageDealt = value;
+            set
+            {
+                Base._hitreg.TotalMeleeDamageDealt = value;
+                Base._deterioration.RecheckUsage();
+            }
         }
 
         /// <summary>
@@ -106,7 +111,11 @@ namespace Exiled.API.Features.Items
         public int TotalCharges
         {
             get => Base.TotalChargesPerformed;
-            set => Base.TotalChargesPerformed = value;
+            set
+            {
+                Base.TotalChargesPerformed = value;
+                Base._deterioration.RecheckUsage();
+            }
         }
 
         /// <summary>
@@ -152,13 +161,14 @@ namespace Exiled.API.Features.Items
         public void Break()
         {
             WearState = JailbirdWearState.Broken;
-            using (new AutosyncRpc(Base, true, out NetworkWriter networkWriter))
+            ItemIdentifier identifier = new(Base);
+            using (new AutosyncRpc(identifier, out NetworkWriter networkWriter))
             {
                 networkWriter.WriteByte(0);
                 networkWriter.WriteByte((byte)JailbirdWearState.Broken);
             }
 
-            using (new AutosyncRpc(Base, true, out NetworkWriter networkWriter2))
+            using (new AutosyncRpc(identifier, out NetworkWriter networkWriter2))
             {
                 networkWriter2.WriteByte(1);
             }
@@ -183,9 +193,9 @@ namespace Exiled.API.Features.Items
         public override string ToString() => $"{Type} ({Serial}) [{Weight}] *{Scale}*";
 
         /// <inheritdoc/>
-        internal override void ReadPickupInfo(Pickup pickup)
+        internal override void ReadPickupInfoBefore(Pickup pickup)
         {
-            base.ReadPickupInfo(pickup);
+            base.ReadPickupInfoBefore(pickup);
             if (pickup is JailbirdPickup jailbirdPickup)
             {
                 MeleeDamage = jailbirdPickup.MeleeDamage;

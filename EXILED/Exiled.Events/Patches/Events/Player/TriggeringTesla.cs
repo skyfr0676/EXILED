@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
-// <copyright file="TriggeringTesla.cs" company="Exiled Team">
-// Copyright (c) Exiled Team. All rights reserved.
+// <copyright file="TriggeringTesla.cs" company="ExMod Team">
+// Copyright (c) ExMod Team. All rights reserved.
 // Licensed under the CC BY-SA 3.0 license.
 // </copyright>
 // -----------------------------------------------------------------------
@@ -8,6 +8,7 @@
 namespace Exiled.Events.Patches.Events.Player
 {
     using System.Collections.Generic;
+    using System.Linq;
     using System.Reflection.Emit;
 
     using API.Features;
@@ -68,7 +69,7 @@ namespace Exiled.Events.Patches.Events.Player
         {
             TeslaGate teslaGate = TeslaGate.Get(baseTeslaGate);
 
-            foreach (Player player in Player.List)
+            foreach (Player player in ReferenceHub.AllHubs.Select(Player.Get))
             {
                 if (player is null || !teslaGate.CanBeIdle(player))
                     continue;

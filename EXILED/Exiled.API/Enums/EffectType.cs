@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
-// <copyright file="EffectType.cs" company="Exiled Team">
-// Copyright (c) Exiled Team. All rights reserved.
+// <copyright file="EffectType.cs" company="ExMod Team">
+// Copyright (c) ExMod Team. All rights reserved.
 // Licensed under the CC BY-SA 3.0 license.
 // </copyright>
 // -----------------------------------------------------------------------
@@ -21,15 +21,15 @@ namespace Exiled.API.Enums
         /// <summary>
         /// This EffectType do not exist it's only use when not found or error.
         /// </summary>
-        None = -1, // TODO: remove = -1
+        None,
 
         /// <summary>
-        /// The player isn't able to open their inventory or reload a weapon.
+        /// Prevents the player from reloading weapons and using medical items.
         /// </summary>
         AmnesiaItems,
 
         /// <summary>
-        /// The player isn't able to see properly.
+        /// Makes SCP-939 invisible to players under its effect. Visibility is temporarily restored when SCP-939 takes damage or attacks.
         /// </summary>
         AmnesiaVision,
 
@@ -239,5 +239,49 @@ namespace Exiled.API.Enums
         /// <see cref="CustomPlayerEffects.Slowness"/>.
         /// </summary>
         Slowness,
+
+        /// <summary>
+        /// <see cref="CustomPlayerEffects.Scp1344"/>.
+        /// </summary>
+        Scp1344,
+
+        /// <summary>
+        /// <see cref="CustomPlayerEffects.SeveredEyes"/>.
+        /// </summary>
+        SeveredEyes,
+
+        /// <summary>
+        /// <see cref="CustomPlayerEffects.PitDeath"/>.
+        /// </summary>
+        PitDeath,
+
+        /// <summary>
+        /// <see cref="CustomPlayerEffects.Blurred"/>.
+        /// </summary>
+        Blurred,
+
+        /// <summary>
+        /// Makes you a flamingo.
+        /// </summary>
+        [Obsolete("Only availaible for Christmas and AprilFools.")]
+        BecomingFlamingo,
+
+        /// <summary>
+        /// Makes you a Child after eating Cake.
+        /// </summary>
+        [Obsolete("Only availaible for Christmas and AprilFools.")]
+        Scp559,
+
+        /// <summary>
+        /// Scp956 found you.
+        /// </summary>
+        [Obsolete("Only availaible for Christmas and AprilFools.")]
+        Scp956Target,
+
+        /// <summary>
+        /// you are snowed.
+        /// </summary>
+        [Obsolete("Only availaible for Christmas and AprilFools.")]
+        Snowed,
     }
 }

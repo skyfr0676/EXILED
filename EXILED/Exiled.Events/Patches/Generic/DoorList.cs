@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
-// <copyright file="DoorList.cs" company="Exiled Team">
-// Copyright (c) Exiled Team. All rights reserved.
+// <copyright file="DoorList.cs" company="ExMod Team">
+// Copyright (c) ExMod Team. All rights reserved.
 // Licensed under the CC BY-SA 3.0 license.
 // </copyright>
 // -----------------------------------------------------------------------
@@ -76,7 +76,6 @@ namespace Exiled.Events.Patches.Generic
             foreach (Room room in rooms)
             {
                 room.DoorsValue.Add(door);
-                room.NearestRoomsValue.AddRange(rooms.Except(new List<Room>() { room }));
             }
 
             if (door.Is(out CheckpointDoor checkpoint))

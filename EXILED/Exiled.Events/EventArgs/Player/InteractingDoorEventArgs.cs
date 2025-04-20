@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
-// <copyright file="InteractingDoorEventArgs.cs" company="Exiled Team">
-// Copyright (c) Exiled Team. All rights reserved.
+// <copyright file="InteractingDoorEventArgs.cs" company="ExMod Team">
+// Copyright (c) ExMod Team. All rights reserved.
 // Licensed under the CC BY-SA 3.0 license.
 // </copyright>
 // -----------------------------------------------------------------------
@@ -9,6 +9,7 @@ namespace Exiled.Events.EventArgs.Player
 {
     using API.Features;
     using Exiled.API.Features.Doors;
+    using Interactables;
     using Interactables.Interobjects.DoorUtils;
     using Interfaces;
 
@@ -26,34 +27,49 @@ namespace Exiled.Events.EventArgs.Player
         /// <param name="door">
         /// <inheritdoc cref="Door" />
         /// </param>
+        /// <param name="colliderId">
+        /// <inheritdoc cref="ColliderId"/>
+        /// </param>
         /// <param name="isAllowed">
         /// <inheritdoc cref="IsAllowed" />
         /// </param>
         /// <param name="canInteract">
         /// <inheritdoc cref="CanInteract" />
         /// </param>
-        public InteractingDoorEventArgs(Player player, DoorVariant door, bool isAllowed = true, bool canInteract = true)
+        public InteractingDoorEventArgs(Player player, DoorVariant door, byte colliderId, bool isAllowed = true, bool canInteract = true)
         {
             Player = player;
             Door = Door.Get(door);
+            ColliderId = colliderId;
+            Collider = InteractableCollider.TryGetCollider(door, colliderId, out InteractableCollider interactableCollider) ? interactableCollider : null;
             IsAllowed = isAllowed;
             CanInteract = canInteract;
         }
 
         /// <summary>
-        /// Gets or sets a value indicating whether or not the player can interact with the door.
+        /// Gets or sets a value indicating whether the player can interact with the door.
         /// </summary>
         public bool CanInteract { get; set; }
 
         /// <summary>
-        /// Gets or sets a value indicating whether or not the player can access the door.
+        /// Gets or sets a value indicating whether the player can access the door.
         /// </summary>
         public bool IsAllowed { get; set; }
 
         /// <summary>
-        /// Gets or sets the <see cref="API.Features.Doors.Door" /> instance.
+        /// Gets or sets the <see cref="API.Features.Doors.Door"/> instance.
         /// </summary>
         public Door Door { get; set; }
+
+        /// <summary>
+        /// Gets the <see cref="InteractableCollider"/> instance that the player interacted with.
+        /// </summary>
+        public InteractableCollider Collider { get; }
+
+        /// <summary>
+        /// Gets the ColliderId of <see cref="InteractableCollider"/> that the player interacted with.
+        /// </summary>
+        public byte ColliderId { get; }
 
         /// <summary>
         /// Gets the player who's interacting with the door.

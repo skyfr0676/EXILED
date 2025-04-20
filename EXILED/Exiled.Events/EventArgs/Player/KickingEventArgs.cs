@@ -1,18 +1,16 @@
 // -----------------------------------------------------------------------
-// <copyright file="KickingEventArgs.cs" company="Exiled Team">
-// Copyright (c) Exiled Team. All rights reserved.
+// <copyright file="KickingEventArgs.cs" company="ExMod Team">
+// Copyright (c) ExMod Team. All rights reserved.
 // Licensed under the CC BY-SA 3.0 license.
 // </copyright>
 // -----------------------------------------------------------------------
 
 namespace Exiled.Events.EventArgs.Player
 {
-    using System;
-    using System.Linq;
     using System.Reflection;
 
     using API.Features;
-
+    using CommandSystem;
     using Interfaces;
 
     /// <summary>
@@ -34,6 +32,9 @@ namespace Exiled.Events.EventArgs.Player
         /// <param name="issuer">
         /// <inheritdoc cref="Player" />
         /// </param>
+        /// <param name="commandSender">
+        /// <inheritdoc cref="ICommandSender" />
+        /// </param>
         /// <param name="reason">
         /// <inheritdoc cref="Reason" />
         /// </param>
@@ -43,10 +44,11 @@ namespace Exiled.Events.EventArgs.Player
         /// <param name="isAllowed">
         /// <inheritdoc cref="IsAllowed" />
         /// </param>
-        public KickingEventArgs(Player target, Player issuer, string reason, string fullMessage, bool isAllowed = true)
+        public KickingEventArgs(Player target, Player issuer, ICommandSender commandSender, string reason, string fullMessage, bool isAllowed = true)
         {
             Target = target;
             Player = issuer ?? Server.Host;
+            CommandSender = commandSender;
             Reason = reason;
             startkickmessage = fullMessage;
             IsAllowed = isAllowed;
@@ -76,17 +78,12 @@ namespace Exiled.Events.EventArgs.Player
         public string Reason { get; set; }
 
         /// <summary>
-        /// Gets or sets the full kick message.
+        /// Gets the full kick message.
         /// </summary>
-        public string FullMessage
-        {
-            get => startkickmessage + Reason;
-            [Obsolete("this will be remove use Reason instead of FullMessage")]
-            set => Reason = value.StartsWith(startkickmessage) ? value.Remove(0, startkickmessage.Count()) : value;
-        }
+        public string FullMessage => startkickmessage + Reason;
 
         /// <summary>
-        /// Gets or sets a value indicating whether or not action is taken against the target.
+        /// Gets or sets a value indicating whether action is taken against the target.
         /// </summary>
         public bool IsAllowed
         {
@@ -120,6 +117,11 @@ namespace Exiled.Events.EventArgs.Player
                 issuer = value;
             }
         }
+
+        /// <summary>
+        /// Gets the command sender.
+        /// </summary>
+        public ICommandSender CommandSender { get; }
 
         /// <summary>
         /// Logs the kick, anti-backdoor protection from malicious plugins.

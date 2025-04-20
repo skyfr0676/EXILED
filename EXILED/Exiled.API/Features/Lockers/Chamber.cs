@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
-// <copyright file="Chamber.cs" company="Exiled Team">
-// Copyright (c) Exiled Team. All rights reserved.
+// <copyright file="Chamber.cs" company="ExMod Team">
+// Copyright (c) ExMod Team. All rights reserved.
 // Licensed under the CC BY-SA 3.0 license.
 // </copyright>
 // -----------------------------------------------------------------------
@@ -16,6 +16,7 @@ namespace Exiled.API.Features.Lockers
     using Exiled.API.Extensions;
     using Exiled.API.Features.Pickups;
     using Exiled.API.Interfaces;
+    using InventorySystem.Items.Pickups;
     using MapGeneration.Distributors;
     using UnityEngine;
 
@@ -142,7 +143,7 @@ namespace Exiled.API.Features.Lockers
         }
 
         /// <summary>
-        /// Gets or sets a value indicating whether or not items should be spawned as soon as they one chamber is opened.
+        /// Gets or sets a value indicating whether items should be spawned as soon as they one chamber is opened.
         /// </summary>
         public bool InitiallySpawn
         {
@@ -160,9 +161,17 @@ namespace Exiled.API.Features.Lockers
         }
 
         /// <summary>
-        /// Gets a value indicating whether the chamber is currently open.
+        /// Gets or sets a value indicating whether the chamber is currently open.
         /// </summary>
-        public bool IsOpen => Base.IsOpen;
+        public bool IsOpen
+        {
+            get => Base.IsOpen;
+            set
+            {
+                Base.SetDoor(value, null);
+                Locker.Base.RefreshOpenedSyncvar();
+            }
+        }
 
         /// <summary>
         /// Gets the id of this chamber in <see cref="Locker"/>.
@@ -179,6 +188,56 @@ namespace Exiled.API.Features.Lockers
         /// Gets a value indicating whether the chamber is interactable.
         /// </summary>
         public bool CanInteract => Base.CanInteract;
+
+        /// <summary>
+        /// Adds an item to the current chamber.
+        /// </summary>
+        /// <param name="item">The pickup to add.</param>
+        public void AddItem(Pickup item)
+        {
+            Transform parent = UseMultipleSpawnpoints && Spawnpoints.Any()
+                ? Spawnpoints.GetRandomValue()
+                : Spawnpoint;
+
+            if (IsOpen)
+            {
+                item.Transform.SetParent(parent);
+
+                if (!item.IsSpawned)
+                    item.Spawn();
+
+                return;
+            }
+
+            // If the item is already spawned on the network, unspawn it before proceeding.
+            if (item.IsSpawned)
+                item.UnSpawn();
+
+            // Set the item's parent transform.
+            item.Transform.SetParent(parent);
+
+            // Lock the item in place.
+            item.IsLocked = true;
+
+            // Notify any pickup distributor triggers.
+            (item.Base as IPickupDistributorTrigger)?.OnDistributed();
+
+            // If the item has a Rigidbody component, make it kinematic and reset its position and rotation.
+            if (item.Rigidbody != null)
+            {
+                item.Rigidbody.isKinematic = true;
+                item.Rigidbody.transform.localPosition = Vector3.zero;
+                item.Rigidbody.transform.localRotation = Quaternion.identity;
+
+                // Add the Rigidbody to the list of bodies to be unfrozen later.
+                SpawnablesDistributorBase.BodiesToUnfreeze.Add(item.Rigidbody);
+            }
+
+            Base.Content.Add(item.Base);
+            item.Spawn();
+            if (Base._wasEverOpened)
+                item.IsLocked = false;
+        }
 
         /// <summary>
         /// Spawns a specified item from <see cref="AcceptableTypes"/>.
