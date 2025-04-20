@@ -196,6 +196,11 @@ namespace Exiled.API.Features.Items
         }
 
         /// <summary>
+        /// Gets the <see cref="ItemIdentifier"/> for this item.
+        /// </summary>
+        public ItemIdentifier Identifier => Base.ItemId;
+
+        /// <summary>
         /// Gets an existing <see cref="Item"/> or creates a new instance of one.
         /// </summary>
         /// <param name="itemBase">The <see cref="ItemBase"/> to convert into an item.</param>
@@ -357,7 +362,7 @@ namespace Exiled.API.Features.Items
         /// <param name="owner">The <see cref="Player"/> who owns the item by default.</param>
         /// <typeparam name="T">The specified <see cref="Item"/> type.</typeparam>
         /// <returns>The <see cref="Item"/> created. This can be cast as a subclass.</returns>
-        public static Item Create<T>(ItemType type, Player owner = null)
+        public static Item Create<T>(ItemType type, Player owner = null) // TODO modify return type to "T"
             where T : Item => Create(type, owner) as T;
 
         /// <summary>
