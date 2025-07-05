@@ -521,16 +521,16 @@ namespace Exiled.CustomRoles.API.Features
                 if (KeepPositionOnSpawn)
                 {
                     if (KeepInventoryOnSpawn)
-                        player.Role.Set(Role, SpawnReason.ForceClass, RoleSpawnFlags.None);
+                        player.Role.Set(Role, SpawnReason.CustomRole, RoleSpawnFlags.None);
                     else
-                        player.Role.Set(Role, SpawnReason.ForceClass, RoleSpawnFlags.AssignInventory);
+                        player.Role.Set(Role, SpawnReason.CustomRole, RoleSpawnFlags.AssignInventory);
                 }
                 else
                 {
                     if (KeepInventoryOnSpawn && player.IsAlive)
-                        player.Role.Set(Role, SpawnReason.ForceClass, RoleSpawnFlags.UseSpawnpoint);
+                        player.Role.Set(Role, SpawnReason.CustomRole, RoleSpawnFlags.UseSpawnpoint);
                     else
-                        player.Role.Set(Role, SpawnReason.ForceClass, RoleSpawnFlags.All);
+                        player.Role.Set(Role, SpawnReason.CustomRole, RoleSpawnFlags.All);
                 }
             }
 
@@ -954,7 +954,7 @@ namespace Exiled.CustomRoles.API.Features
 
         private void OnInternalChangingRole(ChangingRoleEventArgs ev)
         {
-            if (ev.IsAllowed && ev.Reason != SpawnReason.Destroyed && Check(ev.Player) && ((ev.NewRole == RoleTypeId.Spectator && !KeepRoleOnDeath) || (ev.NewRole != RoleTypeId.Spectator && !KeepRoleOnChangingRole)))
+            if (ev.IsAllowed && ev.Reason is not(SpawnReason.Destroyed or SpawnReason.CustomRole) && Check(ev.Player) && ((ev.NewRole == RoleTypeId.Spectator && !KeepRoleOnDeath) || (ev.NewRole != RoleTypeId.Spectator && !KeepRoleOnChangingRole)))
                 RemoveRole(ev.Player);
         }
 
