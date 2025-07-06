@@ -37,14 +37,6 @@ namespace Exiled.CustomRoles.API.Features
     /// </summary>
     public abstract class CustomRole
     {
-        /// <summary>
-        /// Gets or sets the number of players that naturally spawned with this custom role.
-        /// </summary>
-        [YamlIgnore]
-        #pragma warning disable SA1401 // Fields should be private
-        public int SpawnedPlayers = 0;
-        #pragma warning restore SA1401 // Fields should be private
-
         private const float AddRoleDelay = 0.25f;
 
         private static Dictionary<Type, CustomRole?> typeLookupTable = new();
@@ -183,6 +175,12 @@ namespace Exiled.CustomRoles.API.Features
         /// Gets or sets a <see cref="string"/> for the ability usage help sent to players in the player console.
         /// </summary>
         public virtual string AbilityUsage { get; set; } = "Enter \".special\" in the console to use your ability. If you have multiple abilities, you can use this command to cycle through them, or specify the one to use with \".special ROLENAME AbilityNum\"";
+
+        /// <summary>
+        /// Gets or sets the number of players that naturally spawned with this custom role.
+        /// </summary>
+        [YamlIgnore]
+        public int SpawnedPlayers { get; set; }
 
         /// <summary>
         /// Gets a <see cref="CustomRole"/> by ID.
