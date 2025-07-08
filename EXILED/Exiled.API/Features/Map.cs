@@ -67,7 +67,7 @@ namespace Exiled.API.Features
         /// <returns>
         /// The remaining time in seconds for the decontamination process.
         /// </returns>
-        public static float RemainingDecontaminationTime => Mathf.Min(0, (float)(DecontaminationController.Singleton.DecontaminationPhases[DecontaminationController.Singleton.DecontaminationPhases.Length - 1].TimeTrigger - DecontaminationController.GetServerTime));
+        public static float RemainingDecontaminationTime => Mathf.Max(0, (float)(DecontaminationController.Singleton.DecontaminationPhases[DecontaminationController.Singleton.DecontaminationPhases.Length - 1].TimeTrigger - DecontaminationController.GetServerTime));
 
         /// <summary>
         /// Gets all <see cref="PocketDimensionTeleport"/> objects.
@@ -107,7 +107,7 @@ namespace Exiled.API.Features
         /// <summary>
         /// Gets the <see cref="global::SqueakSpawner"/>.
         /// </summary>
-        public static SqueakSpawner SqueakSpawner => squeakSpawner ??= Object.FindObjectOfType<SqueakSpawner>();
+        public static SqueakSpawner SqueakSpawner => squeakSpawner ??= Object.FindFirstObjectByType<SqueakSpawner>();
 
         /// <summary>
         /// Sends a staff message to all players online with <see cref="PlayerPermissions.AdminChat"/> permission.
@@ -117,13 +117,12 @@ namespace Exiled.API.Features
         public static void StaffMessage(string message, Player player = null)
         {
             player ??= Server.Host;
-
             foreach (Player target in Player.List)
             {
                 if (!CommandProcessor.CheckPermissions(target.Sender, PlayerPermissions.AdminChat))
                     continue;
 
-                player.ReferenceHub.encryptedChannelManager.TrySendMessageToClient(player.NetId + "!" + message, EncryptedChannelManager.EncryptedChannel.AdminChat);
+                target.ReferenceHub.encryptedChannelManager.TrySendMessageToClient(player.NetId + "!" + message, EncryptedChannelManager.EncryptedChannel.AdminChat);
             }
         }
 
@@ -382,19 +381,9 @@ namespace Exiled.API.Features
         /// <param name="firearmType">The type of firearm to play the sound of.</param>
         /// <param name="maxDistance">The maximum distance the sound can be heard from.</param>
         /// <param name="audioClipId">The audio clip ID to play.</param>
+        [Obsolete("This method is not working. Use PlayGunSound(Player, Vector3, FirearmType, float, int, bool) overload instead.")]
         public static void PlayGunSound(Vector3 position, ItemType firearmType, byte maxDistance = 45, byte audioClipId = 0)
         {
-            // TODO: Not finish
-            /*
-            GunAudioMessage msg = new()
-            {
-                Weapon = firearmType,
-                AudioClipId = audioClipId,
-                MaxDistance = maxDistance,
-                ShooterHub = ReferenceHub._hostHub,
-                ShooterPosition = new RelativePosition(position),
-            };
-            msg.SendToAuthenticated();*/
         }
 
         /// <summary>
