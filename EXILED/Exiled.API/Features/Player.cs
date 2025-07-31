@@ -2150,7 +2150,7 @@ namespace Exiled.API.Features
         /// <param name="cassieAnnouncement">The <see cref="CassieAnnouncement"/> cassie announcement to make if the damage kills the player.</param>
         /// <param name="deathText"> The <see langword="string"/> death text to appear on <see cref="Player"/> screen. </param>
         public void Hurt(Player attacker, float amount, DamageType damageType, CassieAnnouncement cassieAnnouncement, string deathText) =>
-            Hurt(new GenericDamageHandler(this, attacker, amount, damageType, cassieAnnouncement, deathText));
+            Hurt(new GenericDamageHandler(this, attacker, amount, damageType, cassieAnnouncement, deathText, false));
 
         /// <summary>
         /// Hurts the player.
