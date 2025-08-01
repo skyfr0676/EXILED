@@ -610,7 +610,11 @@ namespace Exiled.API.Features
         /// <summary>
         /// Gets a value indicating whether the player is jumping.
         /// </summary>
-        public bool IsJumping => Role is FpcRole fpc && fpc.FirstPersonController.FpcModule.Motor.IsJumping;
+        public bool IsJumping
+        {
+            get => Role is FpcRole fpc && fpc.FirstPersonController.FpcModule.Motor.JumpController.IsJumping;
+            set => _ = Role is FpcRole fpc ? fpc.FirstPersonController.FpcModule.Motor.JumpController.IsJumping = value : _ = value;
+        }
 
         /// <summary>
         /// Gets the player's IP address.
