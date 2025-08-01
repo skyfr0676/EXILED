@@ -608,7 +608,7 @@ namespace Exiled.API.Features
         public bool HasFlashlightModuleEnabled => CurrentItem is Firearm firearm && firearm.FlashlightEnabled;
 
         /// <summary>
-        /// Gets a value indicating whether the player is jumping.
+        /// Gets or sets a value indicating whether the player is jumping.
         /// </summary>
         public bool IsJumping
         {
