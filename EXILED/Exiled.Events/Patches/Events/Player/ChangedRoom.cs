@@ -15,8 +15,8 @@ namespace Exiled.Events.Patches.Events.Player
     using Exiled.Events.EventArgs.Player;
     using Exiled.Events.Handlers;
     using HarmonyLib;
-    using LabApi.Events.Handlers;
     using MapGeneration;
+    using PlayerRoles;
     using UnityEngine;
 
     using static HarmonyLib.AccessTools;
@@ -34,12 +34,17 @@ namespace Exiled.Events.Patches.Events.Player
 
             Label jump = generator.DefineLabel();
             int offset = 2;
-            int index = newInstructions.FindIndex(x => x == (object)Method(typeof(Object), "op_Inequality", new[] { typeof(Object), typeof(Object) })) + offset;
+            int index = newInstructions.FindIndex(x => x.Calls(Method(typeof(Object), "op_Inequality", new[] { typeof(Object), typeof(Object) }))) + offset;
 
             newInstructions[index].labels.Add(jump);
 
             newInstructions.InsertRange(index, new CodeInstruction[]
             {
+                // referenceHub
+                new(OpCodes.Ldarg_0),
+                new(OpCodes.Ldfld, Field(typeof(CurrentRoomPlayerCache), nameof(CurrentRoomPlayerCache._roleManager))),
+                new(OpCodes.Callvirt, PropertyGetter(typeof(PlayerRoleManager), nameof(PlayerRoleManager.Hub))),
+
                 // oldRoom
                 new(OpCodes.Ldloc_2),
 
