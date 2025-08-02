@@ -34,7 +34,7 @@ namespace Exiled.Events.Patches.Events.Player
 
             Label jump = generator.DefineLabel();
             int offset = 2;
-            int index = newInstructions.FindIndex(x => x == (object)Method(typeof(PlayerEvents), "op_Inequality", new[] { typeof(Object), typeof(Object) })) + offset;
+            int index = newInstructions.FindIndex(x => x == (object)Method(typeof(Object), "op_Inequality", new[] { typeof(Object), typeof(Object) })) + offset;
 
             newInstructions[index].labels.Add(jump);
 
@@ -44,22 +44,8 @@ namespace Exiled.Events.Patches.Events.Player
                 new(OpCodes.Ldloc_2),
 
                 // newRoom
-                new(OpCodes.Ldloc_3),
-
-                // if (oldRoom == newRoom) goto jump;
-                new(OpCodes.Call, Method(typeof(object), nameof(object.ReferenceEquals), new[] { typeof(object), typeof(object) })),
-                new(OpCodes.Brtrue_S, jump),
-
-                // this._roleManager.gameObject.GetComponent<ReferenceHub>();
                 new(OpCodes.Ldarg_0),
-                new(OpCodes.Ldfld, Field(typeof(CurrentRoomPlayerCache), nameof(CurrentRoomPlayerCache._roleManager))),
-                new(OpCodes.Call, Method(typeof(Component), nameof(Component.GetComponent)).MakeGenericMethod(typeof(ReferenceHub))),
-
-                // oldRoom
-                new(OpCodes.Ldloc_2),
-
-                // newRoom
-                new(OpCodes.Ldloc_3),
+                new(OpCodes.Ldfld, Field(typeof(CurrentRoomPlayerCache), nameof(CurrentRoomPlayerCache._lastDetected))),
 
                 // RoomChangedEventArgs ev = new RoomChangedEventArgs(hub, oldRoom, newRoom);
                 new(OpCodes.Newobj, GetDeclaredConstructors(typeof(RoomChangedEventArgs))[0]),
