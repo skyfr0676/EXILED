@@ -15,6 +15,7 @@ namespace Exiled.Events.Patches.Events.Player
     using Exiled.Events.EventArgs.Player;
     using Exiled.Events.Handlers;
     using HarmonyLib;
+    using LabApi.Events.Handlers;
     using MapGeneration;
     using UnityEngine;
 
@@ -31,38 +32,23 @@ namespace Exiled.Events.Patches.Events.Player
         {
             List<CodeInstruction> newInstructions = ListPool<CodeInstruction>.Pool.Get(instructions);
 
-            Label returnLabel = generator.DefineLabel();
+            Label jump = generator.DefineLabel();
+            int offset = 2;
+            int index = newInstructions.FindIndex(x => x == (object)Method(typeof(PlayerEvents), "op_Inequality", new[] { typeof(Object), typeof(Object) })) + offset;
 
-            LocalBuilder oldRoom = generator.DeclareLocal(typeof(RoomIdentifier));
-            LocalBuilder newRoom = generator.DeclareLocal(typeof(RoomIdentifier));
-
-            int index = newInstructions.FindIndex(i => i.opcode == OpCodes.Ldloca_S);
+            newInstructions[index].labels.Add(jump);
 
             newInstructions.InsertRange(index, new CodeInstruction[]
             {
-                // RoomIdentifier oldRoom = this._lastDetected
-                new(OpCodes.Ldarg_0),
-                new(OpCodes.Ldfld, Field(typeof(CurrentRoomPlayerCache), nameof(CurrentRoomPlayerCache._lastDetected))),
-                new(OpCodes.Stloc_S, oldRoom),
-            });
-
-            int lastIndex = newInstructions.Count - 1;
-
-            newInstructions[lastIndex].WithLabels(returnLabel);
-
-            newInstructions.InsertRange(lastIndex, new CodeInstruction[]
-            {
-                // newRoom = lastDetected
-                new(OpCodes.Ldloc_1),
-                new(OpCodes.Dup),
-                new(OpCodes.Stloc_S, newRoom),
-
                 // oldRoom
-                new(OpCodes.Ldloc_S, oldRoom),
+                new(OpCodes.Ldloc_2),
 
-                // if (oldRoom == newRoom) return;
+                // newRoom
+                new(OpCodes.Ldloc_3),
+
+                // if (oldRoom == newRoom) goto jump;
                 new(OpCodes.Call, Method(typeof(object), nameof(object.ReferenceEquals), new[] { typeof(object), typeof(object) })),
-                new(OpCodes.Brtrue_S, returnLabel),
+                new(OpCodes.Brtrue_S, jump),
 
                 // this._roleManager.gameObject.GetComponent<ReferenceHub>();
                 new(OpCodes.Ldarg_0),
@@ -70,10 +56,10 @@ namespace Exiled.Events.Patches.Events.Player
                 new(OpCodes.Call, Method(typeof(Component), nameof(Component.GetComponent)).MakeGenericMethod(typeof(ReferenceHub))),
 
                 // oldRoom
-                new(OpCodes.Ldloc_S, oldRoom),
+                new(OpCodes.Ldloc_2),
 
                 // newRoom
-                new(OpCodes.Ldloc_S, newRoom),
+                new(OpCodes.Ldloc_3),
 
                 // RoomChangedEventArgs ev = new RoomChangedEventArgs(hub, oldRoom, newRoom);
                 new(OpCodes.Newobj, GetDeclaredConstructors(typeof(RoomChangedEventArgs))[0]),
