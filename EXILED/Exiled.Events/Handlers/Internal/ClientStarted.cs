@@ -33,14 +33,30 @@ namespace Exiled.Events.Handlers.Internal
 
             foreach (KeyValuePair<uint, GameObject> prefab in NetworkClient.prefabs)
             {
-                if(!prefabs.ContainsKey(prefab.Key) && prefab.Value.TryGetComponent(out Component component))
+                if (!prefabs.ContainsKey(prefab.Key))
+                {
+                    if (!prefab.Value.TryGetComponent(out NetworkBehaviour component))
+                    {
+                        Log.Error($"Failed to get component for prefab: {prefab.Value.name} ({prefab.Key})");
+                        continue;
+                    }
+
                     prefabs.Add(prefab.Key, (prefab.Value, component));
+                }
             }
 
             foreach (NetworkIdentity ragdollPrefab in RagdollManager.AllRagdollPrefabs)
             {
-                if(!prefabs.ContainsKey(ragdollPrefab.assetId) && ragdollPrefab.gameObject.TryGetComponent(out Component component))
+                if (!prefabs.ContainsKey(ragdollPrefab.assetId))
+                {
+                    if (!ragdollPrefab.TryGetComponent(out BasicRagdoll component))
+                    {
+                        Log.Error($"Failed to get component for ragdoll prefab: {ragdollPrefab.name}");
+                        continue;
+                    }
+
                     prefabs.Add(ragdollPrefab.assetId, (ragdollPrefab.gameObject, component));
+                }
             }
 
             for (int i = 0; i < EnumUtils<PrefabType>.Values.Length; i++)
