@@ -7,14 +7,14 @@
 
 namespace Exiled.API.Features.Pickups
 {
-    using Exiled.API.Features.Items;
+    using System;
+
     using Exiled.API.Interfaces;
     using InventorySystem.Items;
     using InventorySystem.Items.Firearms;
     using InventorySystem.Items.Firearms.Attachments;
     using InventorySystem.Items.Firearms.Modules;
-    using System;
-    using UnityEngine;
+
     using BaseFirearm = InventorySystem.Items.Firearms.FirearmPickup;
 
     /// <summary>
