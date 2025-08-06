@@ -8,12 +8,11 @@
 namespace Exiled.API.Features.Roles
 {
     using System.Collections.Generic;
-    using System.Reflection;
 
     using Exiled.API.Features.Pools;
-    using HarmonyLib;
     using PlayerRoles;
     using PlayerRoles.FirstPersonControl;
+    using PlayerRoles.FirstPersonControl.Thirdperson;
     using PlayerRoles.Ragdolls;
     using PlayerRoles.Spectating;
     using PlayerRoles.Visibility;
@@ -65,6 +64,15 @@ namespace Exiled.API.Features.Roles
         {
             get => FirstPersonController.FpcModule.Motor.ReceivedPosition;
             set => FirstPersonController.FpcModule.Motor.ReceivedPosition = value;
+        }
+
+        /// <summary>
+        /// Gets or sets the <see cref="CharacterModel"/> associated with the player.
+        /// </summary>
+        public CharacterModel Model
+        {
+            get => FirstPersonController.FpcModule.CharacterModelInstance;
+            set => FirstPersonController.FpcModule.CharacterModelInstance = value;
         }
 
         /// <summary>
@@ -303,6 +311,16 @@ namespace Exiled.API.Features.Roles
 
             StaminaUsageMultiplier = 1f;
             StaminaRegenMultiplier = 1f;
+        }
+
+        /// <summary>
+        /// Makes the player jump using the default or a specified strength.
+        /// </summary>
+        /// <param name="jumpStrength">Optional. The strength of the jump. If not provided, the default jump speed for Role is used.</param>
+        public void Jump(float? jumpStrength = null)
+        {
+            float strength = jumpStrength ?? FirstPersonController.FpcModule.JumpSpeed;
+            FirstPersonController.FpcModule.Motor.JumpController.ForceJump(strength);
         }
     }
 }

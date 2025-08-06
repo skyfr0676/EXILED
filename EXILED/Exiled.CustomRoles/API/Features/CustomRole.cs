@@ -39,6 +39,9 @@ namespace Exiled.CustomRoles.API.Features
     {
         private const float AddRoleDelay = 0.25f;
 
+        // used in AddRole and InternalChangingRole
+        private static bool skipChangingCheck;
+
         private static Dictionary<Type, CustomRole?> typeLookupTable = new();
 
         private static Dictionary<string, CustomRole?> stringLookupTable = new();
@@ -512,27 +515,35 @@ namespace Exiled.CustomRoles.API.Features
         {
             Log.Debug($"{Name}: Adding role to {player.Nickname}.");
             player.UniqueRole = Name;
-            TrackedPlayers.Add(player);
 
             if (Role != RoleTypeId.None)
             {
-                if (KeepPositionOnSpawn)
+                try
                 {
-                    if (KeepInventoryOnSpawn)
-                        player.Role.Set(Role, SpawnReason.CustomRole, RoleSpawnFlags.None);
+                    skipChangingCheck = true;
+                    if (KeepPositionOnSpawn)
+                    {
+                        if (KeepInventoryOnSpawn)
+                            player.Role.Set(Role, SpawnReason.ForceClass, RoleSpawnFlags.None);
+                        else
+                            player.Role.Set(Role, SpawnReason.ForceClass, RoleSpawnFlags.AssignInventory);
+                    }
                     else
-                        player.Role.Set(Role, SpawnReason.CustomRole, RoleSpawnFlags.AssignInventory);
+                    {
+                        if (KeepInventoryOnSpawn && player.IsAlive)
+                            player.Role.Set(Role, SpawnReason.ForceClass, RoleSpawnFlags.UseSpawnpoint);
+                        else
+                            player.Role.Set(Role, SpawnReason.ForceClass, RoleSpawnFlags.All);
+                    }
                 }
-                else
+                finally
                 {
-                    if (KeepInventoryOnSpawn && player.IsAlive)
-                        player.Role.Set(Role, SpawnReason.CustomRole, RoleSpawnFlags.UseSpawnpoint);
-                    else
-                        player.Role.Set(Role, SpawnReason.CustomRole, RoleSpawnFlags.All);
+                    skipChangingCheck = false;
                 }
             }
 
             player.UniqueRole = Name;
+            TrackedPlayers.Add(player);
 
             Timing.CallDelayed(
                 AddRoleDelay,
@@ -564,7 +575,7 @@ namespace Exiled.CustomRoles.API.Features
             Log.Debug($"{Name}: Setting health values.");
             player.Health = MaxHealth;
             player.MaxHealth = MaxHealth;
-            Timing.CallDelayed(0.1f, () => player.Scale = Scale); // To fix : remove the delay in 14.1.2 once the crash issue is resolved
+            player.Scale = Scale;
             if (Gravity.HasValue && player.Role is FpcRole fpcRole)
                 fpcRole.Gravity = Gravity.Value;
             Vector3 position = GetSpawnPosition();
@@ -627,6 +638,7 @@ namespace Exiled.CustomRoles.API.Features
             TrackedPlayers.Remove(player);
             player.CustomInfo = string.Empty;
             player.InfoArea |= PlayerInfoArea.Role | PlayerInfoArea.Nickname;
+            player.Scale = Vector3.one;
             if (CustomAbilities is not null)
             {
                 foreach (CustomAbility ability in CustomAbilities)
@@ -951,8 +963,10 @@ namespace Exiled.CustomRoles.API.Features
 
         private void OnInternalChangingRole(ChangingRoleEventArgs ev)
         {
-            if (ev.IsAllowed && ev.Reason is not(SpawnReason.Destroyed or SpawnReason.CustomRole) && Check(ev.Player) && ((ev.NewRole == RoleTypeId.Spectator && !KeepRoleOnDeath) || (ev.NewRole != RoleTypeId.Spectator && !KeepRoleOnChangingRole)))
+            if (!skipChangingCheck && ev.IsAllowed && ev.Reason != SpawnReason.Destroyed && Check(ev.Player) && ((ev.NewRole == RoleTypeId.Spectator && !KeepRoleOnDeath) || (ev.NewRole != RoleTypeId.Spectator && !KeepRoleOnChangingRole)))
                 RemoveRole(ev.Player);
+            else
+                skipChangingCheck = false;
         }
 
         private void OnSpawningRagdoll(SpawningRagdollEventArgs ev)

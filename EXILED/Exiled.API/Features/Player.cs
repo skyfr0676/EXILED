@@ -608,9 +608,13 @@ namespace Exiled.API.Features
         public bool HasFlashlightModuleEnabled => CurrentItem is Firearm firearm && firearm.FlashlightEnabled;
 
         /// <summary>
-        /// Gets a value indicating whether the player is jumping.
+        /// Gets or sets a value indicating whether the player is jumping.
         /// </summary>
-        public bool IsJumping => Role is FpcRole fpc && fpc.FirstPersonController.FpcModule.Motor.IsJumping;
+        public bool IsJumping
+        {
+            get => Role is FpcRole fpc && fpc.FirstPersonController.FpcModule.Motor.JumpController.IsJumping;
+            set => _ = Role is FpcRole fpc ? fpc.FirstPersonController.FpcModule.Motor.JumpController.IsJumping = value : _ = value;
+        }
 
         /// <summary>
         /// Gets the player's IP address.
@@ -2135,8 +2139,20 @@ namespace Exiled.API.Features
         /// <param name="damageType">The <see cref="DamageType"/> of the damage dealt.</param>
         /// <param name="cassieAnnouncement">The <see cref="CassieAnnouncement"/> cassie announcement to make if the damage kills the player.</param>
         /// <param name="deathText"> The <see langword="string"/> death text to appear on <see cref="Player"/> screen. </param>
-        public void Hurt(Player attacker, float amount, DamageType damageType = DamageType.Unknown, CassieAnnouncement cassieAnnouncement = null, string deathText = null) =>
-            Hurt(new GenericDamageHandler(this, attacker, amount, damageType, cassieAnnouncement, deathText));
+        public void Hurt(Player attacker, float amount, DamageType damageType, CassieAnnouncement cassieAnnouncement, string deathText) =>
+            Hurt(new GenericDamageHandler(this, attacker, amount, damageType, cassieAnnouncement, deathText, false));
+
+        /// <summary>
+        /// Hurts the player.
+        /// </summary>
+        /// <param name="attacker">The <see cref="Player"/> attacking player.</param>
+        /// <param name="amount">The <see langword="float"/> amount of damage to deal.</param>
+        /// <param name="damageType">The <see cref="DamageType"/> of the damage dealt.</param>
+        /// <param name="cassieAnnouncement">The <see cref="CassieAnnouncement"/> cassie announcement to make if the damage kills the player.</param>
+        /// <param name="deathText">The <see langword="string"/> death text to appear on <see cref="Player"/> screen.</param>
+        /// <param name="overrideCassieForAllRole">Whether to play Cassie for non-SCPs as well.</param>
+        public void Hurt(Player attacker, float amount, DamageType damageType, CassieAnnouncement cassieAnnouncement, string deathText, bool overrideCassieForAllRole) =>
+            Hurt(new GenericDamageHandler(this, attacker, amount, damageType, cassieAnnouncement, deathText, overrideCassieForAllRole));
 
         /// <summary>
         /// Hurts the player.
@@ -3497,6 +3513,13 @@ namespace Exiled.API.Features
             ReferenceHub.playerStats.GetModule<AhpStat>()
                 .ServerAddProcess(amount, limit, decay, efficacy, sustain, persistant);
         }
+
+        /// <summary>
+        /// Adds a new <see cref="RegenerationProcess"/> to the player.
+        /// </summary>
+        /// <param name="rate">Health points regenerated per second.</param>
+        /// <param name="duration">Total duration of the regeneration (in seconds).</param>
+        public void AddRegeneration(float rate, float duration) => AddRegeneration(0, rate, duration, 1f, 1f);
 
         /// <summary>
         /// Adds a new <see cref="RegenerationProcess"/> to the player.
