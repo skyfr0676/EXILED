@@ -1,5 +1,5 @@
 // -----------------------------------------------------------------------
-// <copyright file="RemoveObserverEventArgs.cs" company="ExMod Team">
+// <copyright file="RemovedObserverEventArgs.cs" company="ExMod Team">
 // Copyright (c) ExMod Team. All rights reserved.
 // Licensed under the CC BY-SA 3.0 license.
 // </copyright>
@@ -14,18 +14,18 @@ namespace Exiled.Events.EventArgs.Scp173
     /// <summary>
     /// Contains all information after a player stops looking at SCP-173.
     /// </summary>
-    public class RemoveObserverEventArgs : IScp173Event
+    public class RemovedObserverEventArgs : IScp173Event
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="RemoveObserverEventArgs"/> class.
+        /// Initializes a new instance of the <see cref="RemovedObserverEventArgs"/> class.
         /// </summary>
         /// <param name="player"><inheritdoc cref="Scp173" /></param>
-        /// <param name="target"><inheritdoc cref="Player" /></param>
-        public RemoveObserverEventArgs(Player player, Player target)
+        /// <param name="observer"><inheritdoc cref="Player" /></param>
+        public RemovedObserverEventArgs(Player player, Player observer)
         {
             Scp173 = player.Role.As<Scp173Role>();
             Player = player;
-            Target = target;
+            Observer = observer;
         }
 
         /// <inheritdoc />
@@ -37,8 +37,8 @@ namespace Exiled.Events.EventArgs.Scp173
         public Player Player { get; }
 
         /// <summary>
-        /// Gets the target who no longer sees SCP-173.
+        /// Gets the observer who no longer sees SCP-173.
         /// </summary>
-        public Player Target { get; }
+        public Player Observer { get; }
     }
 }

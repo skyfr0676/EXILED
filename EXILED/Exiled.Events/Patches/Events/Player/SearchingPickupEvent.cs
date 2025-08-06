@@ -55,7 +55,7 @@ namespace Exiled.Events.Patches.Events.Player
                     new(OpCodes.Callvirt, PropertyGetter(typeof(SearchCoordinator), nameof(SearchCoordinator.Hub))),
                     new(OpCodes.Call, Method(typeof(Player), nameof(Player.Get), new[] { typeof(ReferenceHub) })),
 
-                    // request.Target
+                    // request.Observer
                     new(OpCodes.Ldloca_S, 0),
                     new(OpCodes.Callvirt, PropertyGetter(typeof(SearchRequest), nameof(SearchRequest.Target))),
 
@@ -67,7 +67,7 @@ namespace Exiled.Events.Patches.Events.Player
                     new(OpCodes.Ldarg_2),
                     new(OpCodes.Ldind_Ref),
 
-                    // request.Target.SearchTimeForPlayer(Hub)
+                    // request.Observer.SearchTimeForPlayer(Hub)
                     new(OpCodes.Ldloca_S, 0),
                     new(OpCodes.Callvirt, PropertyGetter(typeof(SearchRequest), nameof(SearchRequest.Target))),
                     new(OpCodes.Ldarg_0),
@@ -107,7 +107,7 @@ namespace Exiled.Events.Patches.Events.Player
             offset = -5;
             index = newInstructions.FindIndex(i => i.opcode == OpCodes.Stloc_S && i.operand is LocalBuilder { LocalIndex: 4 }) + offset;
 
-            // replace "request.Target.SearchTimeForPlayer(this.Hub);" with ev.SearchTime
+            // replace "request.Observer.SearchTimeForPlayer(this.Hub);" with ev.SearchTime
             // remove base-game SearchTime setter
             newInstructions.RemoveRange(index, 5);
 

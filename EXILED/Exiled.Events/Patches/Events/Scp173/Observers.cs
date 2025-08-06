@@ -83,7 +83,7 @@ namespace Exiled.Events.Patches.Events.Scp173
             // RemoveObserver patch
             int index2 = newInstructions.FindLastIndex(x => x.Calls(Method(typeof(HashSet<ReferenceHub>), nameof(HashSet<ReferenceHub>.Remove)))) + 2;
 
-            LocalBuilder ev2 = generator.DeclareLocal(typeof(RemoveObserverEventArgs));
+            LocalBuilder ev2 = generator.DeclareLocal(typeof(RemovedObserverEventArgs));
 
             newInstructions.InsertRange(index2, new CodeInstruction[]
             {
@@ -97,11 +97,11 @@ namespace Exiled.Events.Patches.Events.Scp173
                 new(OpCodes.Ldarg_1),
                 new(OpCodes.Call, Method(typeof(Player), nameof(Player.Get), new[] { typeof(ReferenceHub) })),
 
-                // new RemoveObserverEventArgs(Player.Get(Owner), Player.Get(ply));
-                new(OpCodes.Newobj, GetDeclaredConstructors(typeof(RemoveObserverEventArgs))[0]),
+                // new RemovedObserverEventArgs(Player.Get(Owner), Player.Get(ply));
+                new(OpCodes.Newobj, GetDeclaredConstructors(typeof(RemovedObserverEventArgs))[0]),
                 new(OpCodes.Stloc, ev2),
 
-                // Scp173.OnRemovingObserver(new RemoveObserverEventArgs(Player.Get(Owner), Player.Get(ply)));
+                // Scp173.OnRemovingObserver(new RemovedObserverEventArgs(Player.Get(Owner), Player.Get(ply)));
                 new(OpCodes.Ldloc, ev2),
                 new(OpCodes.Call, Method(typeof(Handlers.Scp173), nameof(Handlers.Scp173.OnRemoveObserver))),
             });

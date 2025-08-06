@@ -50,7 +50,7 @@ namespace Exiled.Events.Handlers
         /// <summary>
         /// Invoked after a player stops looking at SCP-173.
         /// </summary>
-        public static Event<RemoveObserverEventArgs> RemoveObserver { get; set; } = new();
+        public static Event<RemovedObserverEventArgs> RemoveObserver { get; set; } = new();
 
         /// <summary>
         /// Called before players near SCP-173 blink.
@@ -92,6 +92,6 @@ namespace Exiled.Events.Handlers
         /// Called after a player stops looking at SCP-173.
         /// </summary>
         /// <param name="ev">The <see cref="AddingObserverEventArgs" /> instance.</param>
-        public static void OnRemoveObserver(RemoveObserverEventArgs ev) => RemoveObserver.InvokeSafely(ev);
+        public static void OnRemoveObserver(RemovedObserverEventArgs ev) => RemoveObserver.InvokeSafely(ev);
     }
 }

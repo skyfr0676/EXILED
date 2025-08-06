@@ -56,7 +56,7 @@ namespace Exiled.Events.Patches.Events.Scp049
                     new(OpCodes.Callvirt, PropertyGetter(typeof(StandardSubroutine<Scp049Role>), nameof(StandardSubroutine<Scp049Role>.Owner))),
                     new(OpCodes.Call, Method(typeof(Player), nameof(Player.Get), new[] { typeof(ReferenceHub) })),
 
-                    // Player.Get(this.Target)
+                    // Player.Get(this.Observer)
                     new(OpCodes.Ldarg_0),
                     new(OpCodes.Callvirt, PropertyGetter(typeof(Scp049SenseAbility), nameof(Scp049SenseAbility.Target))),
                     new(OpCodes.Call, Method(typeof(Player), nameof(Player.Get), new[] { typeof(ReferenceHub) })),
@@ -78,13 +78,13 @@ namespace Exiled.Events.Patches.Events.Scp049
                     new(OpCodes.Callvirt, PropertyGetter(typeof(ActivatingSenseEventArgs), nameof(ActivatingSenseEventArgs.IsAllowed))),
                     new(OpCodes.Brfalse_S, failedLabel),
 
-                    // if (ev.Target == null)
+                    // if (ev.Observer == null)
                     //    return;
                     new(OpCodes.Ldloc_S, ev.LocalIndex),
                     new(OpCodes.Callvirt, PropertyGetter(typeof(ActivatingSenseEventArgs), nameof(ActivatingSenseEventArgs.Target))),
                     new(OpCodes.Brfalse_S, failedLabel),
 
-                    // this.Target = ev.Target.ReferenceHub;
+                    // this.Observer = ev.Observer.ReferenceHub;
                     new(OpCodes.Ldarg_0),
                     new(OpCodes.Ldloc_S, ev.LocalIndex),
                     new(OpCodes.Callvirt, PropertyGetter(typeof(ActivatingSenseEventArgs), nameof(ActivatingSenseEventArgs.Target))),

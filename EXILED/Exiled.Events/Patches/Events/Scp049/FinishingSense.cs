@@ -42,7 +42,7 @@ namespace Exiled.Events.Patches.Events.Scp049
                 new(OpCodes.Ldarg_0),
                 new(OpCodes.Callvirt, PropertyGetter(typeof(Scp049SenseAbility), nameof(Scp049SenseAbility.Owner))),
 
-                // this.Target
+                // this.Observer
                 new(OpCodes.Ldarg_0),
                 new(OpCodes.Callvirt, PropertyGetter(typeof(Scp049SenseAbility), nameof(Scp049SenseAbility.Target))),
 
@@ -113,7 +113,7 @@ namespace Exiled.Events.Patches.Events.Scp049
                 new(OpCodes.Ldarg_0),
                 new(OpCodes.Callvirt, PropertyGetter(typeof(Scp049SenseAbility), nameof(Scp049SenseAbility.Owner))),
 
-                // this.Target
+                // this.Observer
                 new(OpCodes.Ldarg_0),
                 new(OpCodes.Callvirt, PropertyGetter(typeof(Scp049SenseAbility), nameof(Scp049SenseAbility.Target))),
 
@@ -201,7 +201,7 @@ namespace Exiled.Events.Patches.Events.Scp049
                 new(OpCodes.Ldarg_0),
                 new(OpCodes.Callvirt, PropertyGetter(typeof(Scp049SenseAbility), nameof(Scp049SenseAbility.Owner))),
 
-                // this.Target;
+                // this.Observer;
                 new(OpCodes.Ldarg_0),
                 new(OpCodes.Callvirt, PropertyGetter(typeof(Scp049SenseAbility), nameof(Scp049SenseAbility.Target))),
 
