@@ -227,7 +227,7 @@ namespace Exiled.Events.Patches.Generic
                     new CodeInstruction(OpCodes.Ldarg_0).MoveLabelsFrom(newInstructions[index]),
                     new(OpCodes.Callvirt, PropertyGetter(typeof(AttackerDamageHandler), nameof(AttackerDamageHandler.Attacker))),
 
-                    // Load Observer (ply)
+                    // Load Target (ply)
                     new(OpCodes.Ldarg_1),
 
                     // Set default FF to 1.

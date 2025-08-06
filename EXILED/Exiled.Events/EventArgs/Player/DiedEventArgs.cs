@@ -29,7 +29,7 @@ namespace Exiled.Events.EventArgs.Player
         /// <param name="target">
         /// <inheritdoc cref="Player" />
         /// </param>
-        /// <param name="targetOldRole">Observer's old <see cref="RoleTypeId" />.</param>
+        /// <param name="targetOldRole">Target's old <see cref="RoleTypeId" />.</param>
         /// <param name="damageHandler">
         /// <inheritdoc cref="DamageHandler" />
         /// </param>

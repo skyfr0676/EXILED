@@ -31,7 +31,7 @@ namespace Exiled.CustomItems.API.EventArgs
             if (item is null)
                 Log.Warn("Item is null");
             if (ev.Player is null)
-                Log.Warn("Observer is null");
+                Log.Warn("Target is null");
             if (ev.DamageHandler.Base is null)
                 Log.Warn("handler base is null");
 

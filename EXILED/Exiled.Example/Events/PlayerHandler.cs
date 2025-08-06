@@ -159,7 +159,7 @@ namespace Exiled.Example.Events
         /// <inheritdoc cref="Exiled.Events.Handlers.Player.OnShooting(ShootingEventArgs)"/>
         public void OnShooting(ShootingEventArgs ev)
         {
-            Log.Info($"{ev.Player.Nickname} is shooting a {ev.Player.CurrentItem.Type}! Observer Pos: {ev.ClaimedTarget?.Position} Direction: {ev.Direction} Allowed: {ev.IsAllowed}");
+            Log.Info($"{ev.Player.Nickname} is shooting a {ev.Player.CurrentItem.Type}! Target Pos: {ev.ClaimedTarget?.Position} Direction: {ev.Direction} Allowed: {ev.IsAllowed}");
         }
 
         /// <inheritdoc cref="Exiled.Events.Handlers.Player.OnReloadingWeapon(ReloadingWeaponEventArgs)"/>
@@ -221,7 +221,7 @@ namespace Exiled.Example.Events
 
             if (ev.Player.Role == RoleTypeId.Scientist)
             {
-                Log.Info("Observer is a nerd, setting damage to 1 because it's mean to bully nerds.");
+                Log.Info("Target is a nerd, setting damage to 1 because it's mean to bully nerds.");
                 ev.Amount = 1f;
             }
         }

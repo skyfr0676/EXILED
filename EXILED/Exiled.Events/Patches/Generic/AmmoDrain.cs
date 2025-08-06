@@ -71,7 +71,7 @@ namespace Exiled.Events.Patches.Generic
         /// Calculates modified ammo limit.
         /// </summary>
         /// <param name="ammoLimit">Current ammo limit for reloading.</param>
-        /// <param name="ammoDrain">Observer <see cref="API.Features.Items.Firearm.AmmoDrain"/>.</param>
+        /// <param name="ammoDrain">Target <see cref="API.Features.Items.Firearm.AmmoDrain"/>.</param>
         /// <returns>Modified ammo limit for reloading.</returns>
         internal static int GetAmmoDrainLimit(int ammoLimit, int ammoDrain)
         {

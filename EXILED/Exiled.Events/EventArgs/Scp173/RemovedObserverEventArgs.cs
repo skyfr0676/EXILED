@@ -37,7 +37,7 @@ namespace Exiled.Events.EventArgs.Scp173
         public Player Player { get; }
 
         /// <summary>
-        /// Gets the observer who no longer sees SCP-173.
+        /// Gets the target who no longer sees SCP-173.
         /// </summary>
         public Player Observer { get; }
     }
