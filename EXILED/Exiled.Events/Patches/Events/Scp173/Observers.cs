@@ -25,7 +25,7 @@ namespace Exiled.Events.Patches.Events.Scp173
     /// Adds the <see cref="Handlers.Scp173.AddingObserver" /> event.
     /// </summary>
     [EventPatch(typeof(Handlers.Scp173), nameof(Handlers.Scp173.AddingObserver))]
-    [EventPatch(typeof(Handlers.Scp173), nameof(Handlers.Scp173.RemoveObserver))]
+    [EventPatch(typeof(Handlers.Scp173), nameof(Handlers.Scp173.RemovedObserver))]
     [HarmonyPatch(typeof(Scp173ObserversTracker), nameof(Scp173ObserversTracker.UpdateObserver))]
     internal static class Observers
     {
@@ -103,7 +103,7 @@ namespace Exiled.Events.Patches.Events.Scp173
 
                 // Scp173.OnRemovingObserver(new RemovedObserverEventArgs(Player.Get(Owner), Player.Get(ply)));
                 new(OpCodes.Ldloc, ev2),
-                new(OpCodes.Call, Method(typeof(Handlers.Scp173), nameof(Handlers.Scp173.OnRemoveObserver))),
+                new(OpCodes.Call, Method(typeof(Handlers.Scp173), nameof(Handlers.Scp173.OnRemovedObserver))),
             });
 
             for (int z = 0; z < newInstructions.Count; z++)
