@@ -98,7 +98,11 @@ namespace Exiled.API.Features.Items
         public float TotalDamageDealt
         {
             get => Base._hitreg.TotalMeleeDamageDealt;
-            set => Base._hitreg.TotalMeleeDamageDealt = value;
+            set
+            {
+                Base._hitreg.TotalMeleeDamageDealt = value;
+                Base._deterioration.RecheckUsage();
+            }
         }
 
         /// <summary>
@@ -107,7 +111,11 @@ namespace Exiled.API.Features.Items
         public int TotalCharges
         {
             get => Base.TotalChargesPerformed;
-            set => Base.TotalChargesPerformed = value;
+            set
+            {
+                Base.TotalChargesPerformed = value;
+                Base._deterioration.RecheckUsage();
+            }
         }
 
         /// <summary>
@@ -185,9 +193,9 @@ namespace Exiled.API.Features.Items
         public override string ToString() => $"{Type} ({Serial}) [{Weight}] *{Scale}*";
 
         /// <inheritdoc/>
-        internal override void ReadPickupInfo(Pickup pickup)
+        internal override void ReadPickupInfoBefore(Pickup pickup)
         {
-            base.ReadPickupInfo(pickup);
+            base.ReadPickupInfoBefore(pickup);
             if (pickup is JailbirdPickup jailbirdPickup)
             {
                 MeleeDamage = jailbirdPickup.MeleeDamage;

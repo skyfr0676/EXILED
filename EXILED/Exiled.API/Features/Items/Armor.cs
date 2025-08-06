@@ -65,21 +65,22 @@ namespace Exiled.API.Features.Items
         public bool IsWorn => Base.IsWorn;
 
         /// <summary>
+        /// Gets or sets a value indicating whether excess ammo should be removed when the armor is dropped.
+        /// </summary>
+        [Obsolete("Not functional anymore", true)]
+        public bool RemoveExcessOnDrop
+        {
+            get => false;
+            set => _ = value;
+        }
+
+        /// <summary>
         /// Gets or sets the Weight of the armor.
         /// </summary>
         public new float Weight
         {
             get => Base.Weight;
             set => Base._weight = value;
-        }
-
-        /// <summary>
-        /// Gets or sets a value indicating whether excess ammo should be removed when the armor is dropped.
-        /// </summary>
-        public bool RemoveExcessOnDrop
-        {
-            get => !Base.DontRemoveExcessOnDrop;
-            set => Base.DontRemoveExcessOnDrop = !value;
         }
 
         /// <summary>
@@ -150,7 +151,6 @@ namespace Exiled.API.Features.Items
         {
             Weight = Weight,
             StaminaUseMultiplier = StaminaUseMultiplier,
-            RemoveExcessOnDrop = RemoveExcessOnDrop,
             CategoryLimits = CategoryLimits,
             StaminaRegenMultiplier = StaminaRegenMultiplier,
             AmmoLimits = AmmoLimits,
@@ -159,14 +159,13 @@ namespace Exiled.API.Features.Items
         };
 
         /// <inheritdoc/>
-        internal override void ReadPickupInfo(Pickup pickup)
+        internal override void ReadPickupInfoBefore(Pickup pickup)
         {
-            base.ReadPickupInfo(pickup);
+            base.ReadPickupInfoBefore(pickup);
             if (pickup is Pickups.BodyArmorPickup armorPickup)
             {
                 HelmetEfficacy = armorPickup.HelmetEfficacy;
                 VestEfficacy = armorPickup.VestEfficacy;
-                RemoveExcessOnDrop = armorPickup.RemoveExcessOnDrop;
                 StaminaUseMultiplier = armorPickup.StaminaUseMultiplier;
                 StaminaRegenMultiplier = armorPickup.StaminaRegenMultiplier;
                 AmmoLimits = armorPickup.AmmoLimits;

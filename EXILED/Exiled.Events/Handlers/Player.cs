@@ -17,15 +17,16 @@ namespace Exiled.Events.Handlers
 
     using Exiled.Events.Features;
 
-    using PluginAPI.Core.Attributes;
-    using PluginAPI.Enums;
-    using PluginAPI.Events;
-
     /// <summary>
     /// Player related events.
     /// </summary>
     public class Player
     {
+        /// <summary>
+        /// Invoked after a player triggers the attack as an SCP.
+        /// </summary>
+        public static Event<HitEventArgs> Hit { get; set; } = new ();
+
         /// <summary>
         /// Invoked before authenticating a <see cref="API.Features.Player"/>.
         /// </summary>
@@ -101,6 +102,11 @@ namespace Exiled.Events.Handlers
         /// Invoked after a <see cref="API.Features.Player"/> has stopped the use of a <see cref="API.Features.Items.Usable"/>.
         /// </summary>
         public static Event<CancelledItemUseEventArgs> CancelledItemUse { get; set; } = new();
+
+        /// <summary>
+        /// Invoked after a <see cref="API.Features.Player"/>'s aspect ratio has changed.
+        /// </summary>
+        public static Event<ChangedRatioEventArgs> ChangedRatio { get; set; } = new();
 
         /// <summary>
         /// Invoked after a <see cref="API.Features.Player"/> interacted with something.
@@ -289,6 +295,11 @@ namespace Exiled.Events.Handlers
         public static Event<ReloadingWeaponEventArgs> ReloadingWeapon { get; set; } = new();
 
         /// <summary>
+        /// Invoked after a <see cref="API.Features.Player"/> reloads a weapon.
+        /// </summary>
+        public static Event<ReloadedWeaponEventArgs> ReloadedWeapon { get; set; } = new();
+
+        /// <summary>
         /// Invoked before spawning a <see cref="API.Features.Player"/>.
         /// </summary>
         public static Event<SpawningEventArgs> Spawning { get; set; } = new();
@@ -429,6 +440,11 @@ namespace Exiled.Events.Handlers
         public static Event<UnloadingWeaponEventArgs> UnloadingWeapon { get; set; } = new();
 
         /// <summary>
+        /// Invoked after a <see cref="API.Features.Player"/> unloads a weapon.
+        /// </summary>
+        public static Event<UnloadedWeaponEventArgs> UnloadedWeapon { get; set; } = new();
+
+        /// <summary>
         /// Invoked before a <see cref="API.Features.Player"/> triggers an aim action.
         /// </summary>
         public static Event<AimingDownSightEventArgs> AimingDownSight { get; set; } = new();
@@ -477,6 +493,11 @@ namespace Exiled.Events.Handlers
         /// Invoked after a <see cref="API.Features.Player"/> changed spectated player.
         /// </summary>
         public static Event<ChangingSpectatedPlayerEventArgs> ChangingSpectatedPlayer { get; set; } = new();
+
+        /// <summary>
+        /// Invoked when a <see cref="API.Features.Player"/> changes rooms.
+        /// </summary>
+        public static Event<RoomChangedEventArgs> RoomChanged { get; set; } = new();
 
         /// <summary>
         /// Invoked before a <see cref="API.Features.Player"/> toggles the NoClip mode.
@@ -544,6 +565,16 @@ namespace Exiled.Events.Handlers
         public static Event<ChangingNicknameEventArgs> ChangingNickname { get; set; } = new();
 
         /// <summary>
+        /// Invoked before a <see cref="API.Features.Player"/> sends valid command.
+        /// </summary>
+        public static Event<SendingValidCommandEventArgs> SendingValidCommand { get; set; } = new();
+
+        /// <summary>
+        /// Invoked after a <see cref="API.Features.Player"/> sends valid command.
+        /// </summary>
+        public static Event<SentValidCommandEventArgs> SentValidCommand { get; set; } = new();
+
+        /// <summary>
         /// Invoked before a player's emotion changed.
         /// </summary>
         public static Event<ChangingEmotionEventArgs> ChangingEmotion { get; set; } = new();
@@ -554,9 +585,30 @@ namespace Exiled.Events.Handlers
         public static Event<ChangedEmotionEventArgs> ChangedEmotion { get; set; } = new();
 
         /// <summary>
+        /// Invoked before a <see cref="API.Features.Player"/>'s rotates the revolver.
+        /// </summary>
+        public static Event<RotatingRevolverEventArgs> RotatingRevolver { get; set; } = new();
+
+        /// <summary>
         /// Invoked before disruptor's mode is changed.
         /// </summary>
         public static Event<ChangingDisruptorModeEventArgs> ChangingDisruptorMode { get; set; } = new();
+
+        /// <summary>
+        /// Invoked before the player explode with the micro HID.
+        /// </summary>
+        public static Event<ExplodingMicroHIDEventArgs> ExplodingMicroHID { get; set; } = new();
+
+        /// <summary>
+        /// Invoked before the micro HID opens a door.
+        /// </summary>
+        public static Event<MicroHIDOpeningDoorEventArgs> MicroHIDOpeningDoor { get; set; } = new();
+
+        /// <summary>
+        /// Invoked before player interacts with coffee cup.
+        /// </summary>
+        [Obsolete("Never available (for now).")]
+        public static Event<DrinkingCoffeeEventArgs> DrinkingCoffee { get; set; } = new();
 
         /// <summary>
         /// Called before a player's emotion changed.
@@ -641,6 +693,12 @@ namespace Exiled.Events.Handlers
         /// </summary>
         /// <param name="ev">The <see cref="CancelledItemUseEventArgs"/> instance.</param>
         public static void OnCancelledItemUse(CancelledItemUseEventArgs ev) => CancelledItemUse.InvokeSafely(ev);
+
+        /// <summary>
+        /// Called after a <see cref="API.Features.Player"/>'s aspect ratio changes.
+        /// </summary>
+        /// <param name="ev">The <see cref="ChangedRatioEventArgs"/> instance.</param>
+        public static void OnChangedRatio(ChangedRatioEventArgs ev) => ChangedRatio.InvokeSafely(ev);
 
         /// <summary>
         /// Called after a <see cref="API.Features.Player"/> interacted with something.
@@ -758,6 +816,12 @@ namespace Exiled.Events.Handlers
         public static void OnRemovedHandcuffs(RemovedHandcuffsEventArgs ev) => RemovedHandcuffs.InvokeSafely(ev);
 
         /// <summary>
+        /// Called when a <see cref="API.Features.Player"/> changes rooms.
+        /// </summary>
+        /// <param name="ev">The <see cref="RoomChangedEventArgs"/> instance.</param>
+        public static void OnRoomChanged(RoomChangedEventArgs ev) => RoomChanged.InvokeSafely(ev);
+
+        /// <summary>
         /// Called before a <see cref="API.Features.Player"/> escapes.
         /// </summary>
         /// <param name="ev">The <see cref="EscapingEventArgs"/> instance.</param>
@@ -816,6 +880,12 @@ namespace Exiled.Events.Handlers
         /// </summary>
         /// <param name="ev">The <see cref="ReloadingWeaponEventArgs"/> instance.</param>
         public static void OnReloadingWeapon(ReloadingWeaponEventArgs ev) => ReloadingWeapon.InvokeSafely(ev);
+
+        /// <summary>
+        /// Called after a <see cref="API.Features.Player"/> reloads a weapon.
+        /// </summary>
+        /// <param name="ev">The <see cref="ReloadedWeaponEventArgs"/> instance.</param>
+        public static void OnReloadedWeapon(ReloadedWeaponEventArgs ev) => ReloadedWeapon.InvokeSafely(ev);
 
         /// <summary>
         /// Called before spawning a <see cref="API.Features.Player"/>.
@@ -920,6 +990,12 @@ namespace Exiled.Events.Handlers
         public static void OnUnloadingWeapon(UnloadingWeaponEventArgs ev) => UnloadingWeapon.InvokeSafely(ev);
 
         /// <summary>
+        /// Called after a <see cref="API.Features.Player"/> unloads a weapon.
+        /// </summary>
+        /// <param name="ev">The <see cref="UnloadedWeaponEventArgs"/> instance.</param>
+        public static void OnUnloadedWeapon(UnloadedWeaponEventArgs ev) => UnloadedWeapon.InvokeSafely(ev);
+
+        /// <summary>
         /// Called before a <see cref="API.Features.Player"/> triggers an aim action.
         /// </summary>
         /// <param name="ev">The <see cref="AimingDownSightEventArgs"/> instance.</param>
@@ -1019,7 +1095,7 @@ namespace Exiled.Events.Handlers
         {
             ItemAddedEventArgs ev = new(referenceHub, itemBase, pickupBase);
 
-            ev.Item.ReadPickupInfo(ev.Pickup);
+            ev.Item.ReadPickupInfoAfter(ev.Pickup);
 
             ev.Player.ItemsValue.Add(ev.Item);
 
@@ -1194,38 +1270,58 @@ namespace Exiled.Events.Handlers
         public static void OnChangingNickname(ChangingNicknameEventArgs ev) => ChangingNickname.InvokeSafely(ev);
 
         /// <summary>
+        /// Called before a <see cref="Player"/> sends valid command.
+        /// </summary>
+        /// <param name="ev">The <see cref="SendingValidCommandEventArgs"/> instance.</param>
+        public static void OnSendingValidCommand(SendingValidCommandEventArgs ev) => SendingValidCommand.InvokeSafely(ev);
+
+        /// <summary>
+        /// Called after a <see cref="Player"/> sends valid command.
+        /// </summary>
+        /// <param name="ev">The <see cref="SentValidCommandEventArgs"/> instance.</param>
+        public static void OnSentValidCommand(SentValidCommandEventArgs ev) => SentValidCommand.InvokeSafely(ev);
+
+        /// <summary>
+        /// Called before a <see cref="API.Features.Player"/>'s rotates the revolver.
+        /// </summary>
+        /// <param name="ev">The <see cref="RotatingRevolverEventArgs"/> instance.</param>
+        public static void OnRotatingRevolver(RotatingRevolverEventArgs ev) => RotatingRevolver.InvokeSafely(ev);
+
+        /// <summary>
         /// Called before disruptor's mode is changed.
         /// </summary>
         /// <param name="ev">The <see cref="ChangingDisruptorModeEventArgs"/> instance.</param>
         public static void OnChangingDisruptorMode(ChangingDisruptorModeEventArgs ev) => ChangingDisruptorMode.InvokeSafely(ev);
 
         /// <summary>
+        /// Called before disruptor's mode is changed.
+        /// </summary>
+        /// <param name="ev">The <see cref="ExplodingMicroHIDEventArgs"/> instance.</param>
+        public static void OnExplodingMicroHID(ExplodingMicroHIDEventArgs ev) => ExplodingMicroHID.InvokeSafely(ev);
+
+        /// <summary>
+        /// Called before the micro HID opens a door.
+        /// </summary>
+        /// <param name="ev">The <see cref="ChangingDisruptorModeEventArgs"/> instance.</param>
+        public static void OnMicroHIDOpeningDoor(MicroHIDOpeningDoorEventArgs ev) => MicroHIDOpeningDoor.InvokeSafely(ev);
+
+        /// <summary>
+        /// Called before player interacts with coffee cup.
+        /// </summary>
+        /// <param name="ev">The <see cref="DrinkingCoffeeEventArgs"/> instance.</param>
+        [Obsolete("Never available (for now).")]
+        public static void OnDrinkingCoffee(DrinkingCoffeeEventArgs ev) => DrinkingCoffee.InvokeSafely(ev);
+
+        /// <summary>
         /// Called before pre-authenticating a <see cref="API.Features.Player"/>.
         /// </summary>
-        /// <param name="userId"><inheritdoc cref="PreAuthenticatingEventArgs.UserId"/></param>
-        /// <param name="ipAddress"><inheritdoc cref="PreAuthenticatingEventArgs.IpAddress"/></param>
-        /// <param name="expiration"><inheritdoc cref="PreAuthenticatingEventArgs.Expiration"/></param>
-        /// <param name="flags"><inheritdoc cref="PreAuthenticatingEventArgs.Flags"/></param>
-        /// <param name="country"><inheritdoc cref="PreAuthenticatingEventArgs.Country"/></param>
-        /// <param name="signature"><inheritdoc cref="PreAuthenticatingEventArgs.Signature"/></param>
-        /// <param name="request"><inheritdoc cref="PreAuthenticatingEventArgs.Request"/></param>
-        /// <param name="readerStartPosition"><inheritdoc cref="PreAuthenticatingEventArgs.ReaderStartPosition"/></param>
-        /// <returns>Returns the <see cref="PreauthCancellationData"/> instance.</returns>
-        [PluginEvent(ServerEventType.PlayerPreauth)]
-        public PreauthCancellationData OnPreAuthenticating(
-            string userId,
-            string ipAddress,
-            long expiration,
-            CentralAuthPreauthFlags flags,
-            string country,
-            byte[] signature,
-            LiteNetLib.ConnectionRequest request,
-            int readerStartPosition)
-        {
-            PreAuthenticatingEventArgs ev = new(userId, ipAddress, expiration, flags, country, signature, request, readerStartPosition);
-            PreAuthenticating.InvokeSafely(ev);
+        /// <param name="ev"><The cref="PreAuthenticatingEventArgs"/> instance.</param>
+        public static void OnPreAuthenticating(PreAuthenticatingEventArgs ev) => PreAuthenticating.InvokeSafely(ev);
 
-            return ev.CachedPreauthData;
-        }
+        /// <summary>
+        /// Called after a player triggers the melee attack as an SCP.
+        /// </summary>
+        /// <param name="ev">The <see cref="HitEventArgs"/> instance.</param>
+        public static void OnHit(HitEventArgs ev) => Hit.InvokeSafely(ev);
     }
 }

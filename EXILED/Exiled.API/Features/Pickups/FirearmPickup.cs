@@ -7,9 +7,13 @@
 
 namespace Exiled.API.Features.Pickups
 {
-    using Exiled.API.Interfaces;
+    using System;
 
+    using Exiled.API.Interfaces;
+    using InventorySystem.Items;
     using InventorySystem.Items.Firearms;
+    using InventorySystem.Items.Firearms.Attachments;
+    using InventorySystem.Items.Firearms.Modules;
 
     using BaseFirearm = InventorySystem.Items.Firearms.FirearmPickup;
 
@@ -36,12 +40,7 @@ namespace Exiled.API.Features.Pickups
             : base(type)
         {
             Base = (BaseFirearm)((Pickup)this).Base;
-            IsDistributed = true;
-
-            // TODO not finish
-            /*
-            if (type is ItemType.ParticleDisruptor && Status.Ammo == 0)
-                Status = new FirearmStatus(5, FirearmStatusFlags.MagazineInserted, 0);*/
+            Ammo = MaxAmmo;
         }
 
         /// <summary>
@@ -50,45 +49,64 @@ namespace Exiled.API.Features.Pickups
         public new BaseFirearm Base { get; }
 
         /// <summary>
-        /// Gets or sets a value indicating whether the pickup is already distributed.
+        /// Gets a value indicating whether the pickup is already distributed.
         /// </summary>
-        public bool IsDistributed { get; set; }
+        [Obsolete("Feature deprecated")]
+        public bool IsDistributed { get; }
 
-        // TODO NOT FINISH
-        /*{
-            get => Base.Distributed;
-            set => Base.Distributed = value;
-        }*/
-
-        // TODO not finish
-
-        /*
         /// <summary>
-        /// Gets or sets the <see cref="FirearmStatus"/>.
+        /// Gets or sets a value indicating how much ammo can contain this <see cref="FirearmPickup"/>.
         /// </summary>
-        public FirearmStatus Status
+        public int MaxAmmo { get; set; }
+
+        /// <summary>
+        /// Gets or sets a value indicating how much ammo have this <see cref="FirearmPickup"/>.
+        /// </summary>
+        public int Ammo
         {
-            get => Base.NetworkStatus;
-            set => Base.NetworkStatus = value;
+            get
+            {
+                if (!AttachmentPreview.TryGetOrAddInstance(Type, out Firearm baseFirearm))
+                    return 0;
+
+                Items.Firearm firearm = Items.Item.Get<Items.Firearm>(baseFirearm);
+
+                ushort oldSerial = firearm.Serial;
+
+                firearm.Serial = Serial;
+
+                int ammo = firearm.PrimaryMagazine.Ammo;
+
+                firearm.Serial = oldSerial;
+
+                return ammo;
+            }
+
+            set
+            {
+                if (!AttachmentPreview.TryGetOrAddInstance(Type, out Firearm baseFirearm))
+                    return;
+
+                Items.Firearm firearm = Items.Item.Get<Items.Firearm>(baseFirearm);
+
+                ushort oldSerial = firearm.Serial;
+
+                firearm.Serial = Serial;
+
+                firearm.PrimaryMagazine.Ammo = value;
+
+                firearm.Serial = oldSerial;
+            }
         }
-        */
 
         /// <summary>
-        /// Gets or sets a value indicating how many ammo have this <see cref="FirearmPickup"/>.
+        /// Gets or sets the ammo drain per shoot.
         /// </summary>
-        /// <remarks>This will be updated only when item will be picked up.</remarks>
-        public int Ammo { get; set; }
-
-        /*
-        /// <summary>
-        /// Gets or sets the <see cref="FirearmStatusFlags"/>.
-        /// </summary>
-        public FirearmStatusFlags Flags
-        {
-            get => Base.NetworkStatus.Flags;
-            set => Base.NetworkStatus = new(Base.NetworkStatus.Ammo, value, Base.NetworkStatus.Attachments);
-        }
-        */
+        /// <remarks>
+        /// Always <see langword="1"/> by default.
+        /// Applied on a high layer nether basegame ammo controllers.
+        /// </remarks>
+        public int AmmoDrain { get; set; } = 1;
 
         /// <summary>
         /// Gets or sets a value indicating whether the attachment code have this <see cref="FirearmPickup"/>.
@@ -96,13 +114,43 @@ namespace Exiled.API.Features.Pickups
         public uint Attachments
         {
             get => Base.Worldmodel.AttachmentCode;
-            set => Base.Worldmodel.AttachmentCode = value;
+            set => Base.Worldmodel.Setup(Base.CurId, Base.Worldmodel.WorldmodelType, value);
         }
 
         /// <summary>
-        /// Returns the FirearmPickup in a human readable format.
+        /// Initializes the item as if it was spawned naturally by map generation.
+        /// </summary>
+        public void Distribute() => Base.OnDistributed();
+
+        /// <summary>
+        /// Returns the FirearmPickup in a human-readable format.
         /// </summary>
         /// <returns>A string containing FirearmPickup related data.</returns>
-        public override string ToString() => $"{Type} ({Serial}) [{Weight}] *{Scale}* |{IsDistributed}| -{/*Ammo*/0}-";
+        public override string ToString() => $"{Type} ({Serial}) [{Weight}] *{Scale}*";
+
+        /// <inheritdoc/>
+        internal override void ReadItemInfo(Items.Item item)
+        {
+            if (item is Items.Firearm firearm)
+            {
+                MaxAmmo = firearm.PrimaryMagazine.ConstantMaxAmmo;
+                AmmoDrain = firearm.AmmoDrain;
+            }
+
+            base.ReadItemInfo(item);
+        }
+
+        /// <inheritdoc/>
+        protected override void InitializeProperties(ItemBase itemBase)
+        {
+            base.InitializeProperties(itemBase);
+            if (!(itemBase as Firearm).TryGetModule(out IPrimaryAmmoContainerModule magazine))
+            {
+                Log.Error($"firearm prefab {itemBase.ItemTypeId} doesnt have an primary magazine module(unexpected)");
+                return;
+            }
+
+            MaxAmmo = magazine.AmmoMax;
+        }
     }
 }

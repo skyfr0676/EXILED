@@ -17,7 +17,7 @@ namespace Exiled.Events.EventArgs.Player
     /// <summary>
     /// Contains all information before MicroHID energy is changed.
     /// </summary>
-    public class UsingMicroHIDEnergyEventArgs : IDeniableEvent, IItemEvent
+    public class UsingMicroHIDEnergyEventArgs : IDeniableEvent, IMicroHIDEvent
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="UsingMicroHIDEnergyEventArgs" /> class.
@@ -55,5 +55,8 @@ namespace Exiled.Events.EventArgs.Player
         /// Gets or sets a value indicating whether the MicroHID energy can be changed.
         /// </summary>
         public bool IsAllowed { get; set; }
+
+        /// <inheritdoc/>
+        public Player Player => MicroHID.Owner;
     }
 }
