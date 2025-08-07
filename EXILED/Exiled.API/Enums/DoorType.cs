@@ -343,6 +343,11 @@ namespace Exiled.API.Enums
         /// <summary>
         /// Represents the door that have a window in it like the <see cref="DoorType.EntranceDoor"/>.
         /// </summary>
-        HczWindowedDoor,
+        HczServerRoomCloset,
+
+        /// <summary>
+        /// Represents the checkpoint that handle door for <see cref="DoorType.Scp106Primary"/> and <see cref="DoorType.Scp106Secondary"/>.
+        /// </summary>
+        Scp106Checkpoint,
     }
 }
