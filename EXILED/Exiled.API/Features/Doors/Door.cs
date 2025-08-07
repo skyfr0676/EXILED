@@ -603,14 +603,19 @@ namespace Exiled.API.Features.Doors
 
                 return doorName switch
                 {
-                    "LCZ PortallessBreakableDoor" => DoorType.Airlock,
+                    "LCZ PortallessBreakableDoor" => Room?.Type switch
+                    {
+                        RoomType.Hcz106 => DoorType.Scp106Checkpoint,
+                        RoomType.LczAirlock => DoorType.Airlock,
+                        _ => DoorType.UnknownDoor,
+                    },
                     "LCZ BreakableDoor" => DoorType.LightContainmentDoor,
                     "HCZ BreakableDoor" => DoorType.HeavyContainmentDoor,
                     "HCZ BulkDoor" => DoorType.HeavyBulkDoor,
                     "EZ BreakableDoor" => DoorType.EntranceDoor,
                     "Prison BreakableDoor" => DoorType.PrisonDoor,
                     "914 Door" => DoorType.Scp914Door,
-                    "EZ PortallessBreakableDoor" => DoorType.HczWindowedDoor,
+                    "EZ PortallessBreakableDoor" => DoorType.HczServerRoomCloset,
                     "EZ Keycard BreakableDoor" => Room?.Type switch
                     {
                         RoomType.HczEzCheckpointA => DoorType.CheckpointArmoryA,
