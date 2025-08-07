@@ -339,5 +339,10 @@ namespace Exiled.API.Enums
         /// Represents the HCZ_127_LAB door.
         /// </summary>
         Hcz127Lab,
+
+        /// <summary>
+        /// Represents the door that have a window in it like the <see cref="DoorType.EntranceDoor"/>.
+        /// </summary>
+        HczWindowedDoor,
     }
 }
