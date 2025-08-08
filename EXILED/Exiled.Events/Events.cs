@@ -5,6 +5,9 @@
 // </copyright>
 // -----------------------------------------------------------------------
 
+using Exiled.Events.Patches.Fixes;
+using MEC;
+
 namespace Exiled.Events
 {
     using System;
@@ -90,6 +93,7 @@ namespace Exiled.Events
             ServerSpecificSettingsSync.ServerOnSettingValueReceived += SettingBase.OnSettingUpdated;
 
             ServerConsole.ReloadServerName();
+            Timing.RunCoroutine(Scp3114StrangleFix.Test());
         }
 
         /// <inheritdoc/>
