@@ -615,7 +615,7 @@ namespace Exiled.API.Features.Doors
                     "EZ BreakableDoor" => DoorType.EntranceDoor,
                     "Prison BreakableDoor" => DoorType.PrisonDoor,
                     "914 Door" => DoorType.Scp914Door,
-                    "EZ PortallessBreakableDoor" => DoorType.HczServerRoomCloset,
+                    "EZ PortallessBreakableDoor" => DoorType.ServerRoomCloset,
                     "EZ Keycard BreakableDoor" => Room?.Type switch
                     {
                         RoomType.HczEzCheckpointA => DoorType.CheckpointArmoryA,

@@ -341,9 +341,9 @@ namespace Exiled.API.Enums
         Hcz127Lab,
 
         /// <summary>
-        /// Represents the door that have a window in it like the <see cref="DoorType.EntranceDoor"/>.
+        /// Represents the door in the <see cref="RoomType.HczServerRoom"/> Closet.
         /// </summary>
-        HczServerRoomCloset,
+        ServerRoomCloset,
 
         /// <summary>
         /// Represents the checkpoint that handle door for <see cref="DoorType.Scp106Primary"/> and <see cref="DoorType.Scp106Secondary"/>.
